@@ -1,0 +1,108 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@font-face {
+    font-family: 'DM Sans';
+    src: url(/fonts/DMSans-Regular.woff) format('woff'),
+         url(/fonts/DMSans-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miriam Libre';
+    src: url(/fonts/MiriamLibre-Regular.woff) format('woff'),
+         url(/fonts/MiriamLibre-Regular.ttf) format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.send-button {
+  background-image: url('/images/send-button.png');
+  min-width: 172px;
+  min-height: 88px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+/*Header*/
+.header-container{
+    background: #fff url("../images/blurred_dots.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2{
+    font-family: 'Miriam Libre', serif; 
+}
+
+#title-divider {
+    margin: 25px 0px 25px;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.highlight {
+    box-shadow: inset 0 -38px 0 #FF80DB, inset 0 -1px 0 black
+}
+
+label {
+    color: black;
+    font-family: 'Miriam Libre', serif;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+input[type=text] {
+    background-color: #FFDFF6;
+    width: 30%;
+    padding: 12px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    color: #4b4b4b;
+} 
+
+textarea {
+    background-color: #FFDFF6;
+    width: 60%;
+    padding: 12px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    color: #4b4b4b;
+}
+
+.project-banner {
+  background-color: #AEFFEC;
+}
+
+.add-project-action {
+  border-color: #7d0069;
+}
+

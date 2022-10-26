@@ -1,0 +1,42 @@
+{{ define "main" }}
+
+<div class="wrapper">
+    <header>
+        <div class="hero-content">
+              <h1 class="font-dmsans text-5xl highlight">Nominate a specialist</h1>
+              <hr id="title-divider" width="100%"/>
+              <p>
+We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
+              </p>
+        </div>
+    </header>
+    <div class="container">
+        <form class="font-miriam">
+            <label for="name">Name</label><br>
+            <input type="text" id="name" name="name" placeholder="Name of the specialist"><br>
+            <label for="mail">Email</label><br>
+            <input type="text" id="mail" name="mail" placeholder="Electronic mail"><br>
+            <label for="affiliation">Affiliation</label><br>
+            <input type="text" id="affiliation" name="affiliation" placeholder="Name of the organization"><br><br>
+            <hr width="30%"/>
+            <label for="area">Area of activity</label><br>
+            <input type="text" id="area" name="area" placeholder="Fields of work"><br>
+            <label for="country">Country</label><br>
+            <input type="text" id="country" name="country" placeholder="Nation"><br>
+            <label for="reason">Can you briefly explain why you think this person should be part of the Directory?</label><br>
+            <textarea id="reason" name="reason" placeholder="This person should be part of the Directory because..."></textarea><br><br>
+            <button class="send-button" type="submit"> Send </button>
+        </form>
+    </div>
+    <div class="bg-project-50 project-banner h-auto py-24 px-10">
+       <div class="md:w-100 text-center">
+        <p class="text-5xl font-miriam">Do you want to submit also a project?</p>
+        <p class="text-2xl font-miriam">
+        We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
+        </p>
+        <button class="border-solid border-4 add-project-action py-4 px-8 font-bold font-2xl  font-miriam text-xs hover:bg-gray-200 hover:text-gray-800">Add a project</button>
+       </div>
+    </div>
+</div>
+
+{{ end }}
