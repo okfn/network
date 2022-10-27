@@ -8971,12 +8971,29 @@ label {
 
 input[type=text] {
   background-color: #FFDFF6;
-  width: 30%;
+  width: 60%;
   padding: 12px 5px;
   margin: 8px 0;
   box-sizing: border-box;
   border: none;
   color: #4b4b4b;
+}
+
+input::-moz-placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+input::placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+.field_hr {
+  color: #FF80DB;
+  width: 60%;
+  border-width: 2px;
+  margin-bottom: 20px;
 }
 
 textarea {
@@ -8987,6 +9004,16 @@ textarea {
   box-sizing: border-box;
   border: none;
   color: #4b4b4b;
+}
+
+textarea::-moz-placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+textarea::placeholder {
+  color: black;
+  opacity: 0.7;
 }
 
 .project-banner {

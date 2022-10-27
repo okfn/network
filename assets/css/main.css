@@ -80,13 +80,25 @@ label {
 
 input[type=text] {
     background-color: #FFDFF6;
-    width: 30%;
+    width: 60%;
     padding: 12px 5px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
     color: #4b4b4b;
 } 
+
+input::placeholder {
+  color: black;
+  opacity: 0.7;
+}
+
+.field_hr {
+    color: #FF80DB; 
+    width: 60%;
+    border-width: 2px;
+    margin-bottom: 20px;
+}
 
 textarea {
     background-color: #FFDFF6;
@@ -96,6 +108,11 @@ textarea {
     box-sizing: border-box;
     border: none;
     color: #4b4b4b;
+}
+
+textarea::placeholder {
+  color: black;
+  opacity: 0.7;
 }
 
 .project-banner {
