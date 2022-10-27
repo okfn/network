@@ -8979,6 +8979,16 @@ input[type=text] {
   color: #4b4b4b;
 }
 
+option {
+  background-color: #FFDFF6;
+  width: 60%;
+  padding: 12px 5px;
+  margin: 8px 0;
+  box-sizing: border-box;
+  border: none;
+  color: #4b4b4b;
+}
+
 input::-moz-placeholder {
   color: black;
   opacity: 0.7;
