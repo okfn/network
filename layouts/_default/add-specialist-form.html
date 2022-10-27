@@ -1,34 +1,37 @@
 {{ define "main" }}
 
 <div class="w-full text-center">
-    <div class="md:grid md:grid-cols-5">
+    <div class="w-full pl-10 pt-10 pb-10">
+      <img src="/images/okfn-net-logo.png">
+    </div>
+    <div class="md:grid md:grid-cols-5 page-content">
       <div class="md:col-end-5 md:col-span-3">
           <div class="grid grid-cols-5">
-            <div class="col-end-5 col-span-3">
-                <h1 class="font-miriam text-5xl highlight">Nominate a specialist</h1>
-                <hr id="title-divider" width="100%"/>
+            <div class="md:col-end-5 md:col-span-3 col-span-5 pl-5 pr-5">
+                <div class="font-miriam text-5xl highlight">Nominate a specialist</div>
+                <hr class="bg-black opacity-100" id="title-divider" width="100%"/>
             </div>
-            <div class="col-end-5 col-span-3 text-left pl-10 pr-10">
+            <div class="col-end-5 col-span-3 text-left md:pl-10 md:pr-10">
             We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
             </div>
           </div>
       </div>
-      <div class="md:col-start-2 md:col-span-3 text-left mt-12 mb-12 pl-10 md:pl-0">
+      <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
           <form class="font-miriam w-full">
               <label for="name">Name</label><br>
-              <input type="text" id="name" name="name" placeholder="Name of the specialist"><br>
+              <input class="md:w-2/5 w-full" type="text" id="name" name="name" placeholder="Name of the specialist"><br>
               <br>
               <label for="mail">Email</label><br>
-              <input type="text" id="mail" name="mail" placeholder="Electronic mail"><br>
+              <input class="md:w-2/5 w-full" type="text" id="mail" name="mail" placeholder="Electronic mail"><br>
               <br>
               <label for="affiliation">Affiliation</label><br>
-              <input type="text" id="affiliation" name="affiliation" placeholder="Name of the organization"><br><br>
-              <hr class="field_hr"/>
+              <input class="md:w-2/5 w-full" type="text" id="affiliation" name="affiliation" placeholder="Name of the organization"><br><br>
+              <hr class="md:w-2/5 w-full field_hr"/>
               <label for="area">Area of activity</label><br>
-              <input type="text" id="area" name="area" placeholder="Fields of work"><br>
+              <input class="md:w-2/5 w-full" type="text" id="area" name="area" placeholder="Fields of work"><br>
               <br>
               <label for="country">Country</label><br>
-              <select name="country">
+              <select class="form-control md:w-2/5 w-full" name="country">
               {{ range $.Site.Data.countries.countries }}
                  <option value="{{ .code }}">{{ .name }}</option>
               {{ end }}
@@ -36,7 +39,7 @@
               <br>
               <br>
               <label for="reason">Can you briefly explain why you think this person should be part of the Directory?</label><br>
-              <textarea id="reason" name="reason" placeholder="This person should be part of the Directory because..."></textarea><br><br>
+              <textarea class="md:w-5/6 h-96 w-full" id="reason" name="reason" placeholder="This person should be part of the Directory because..."></textarea><br><br>
               <button class="send-button" type="submit"> Send </button>
           </form>
       </div>

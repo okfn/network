@@ -1,4 +1,6 @@
-module.exports = {
+const withMT = require("@material-tailwind/html/utils/withMT");
+
+module.exports = withMT({
   darkMode: false, // or 'media' or 'class'
   future: {
     // removeDeprecatedGapUtilities: true,
@@ -22,4 +24,4 @@ module.exports = {
   },
   variants: {},
   plugins: [],
-}
+})

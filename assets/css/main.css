@@ -25,6 +25,19 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
+    background: #fff url("../images/blurred_dots.png");
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 30%;
+    display: flex;
+    align-items: center;
+}
+
+.page-content {
+    background: url("../images/blurred_dots_bottom.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 30%;
 }
 
 .wrapper{
@@ -80,7 +93,6 @@ label {
 
 input[type=text] {
     background-color: #FFDFF6;
-    width: 60%;
     padding: 12px 5px;
     margin: 8px 0;
     box-sizing: border-box;
@@ -105,15 +117,14 @@ input::placeholder {
 }
 
 .field_hr {
-    color: #FF80DB; 
-    width: 60%;
-    border-width: 2px;
+    background-color: #FF80DB; 
     margin-bottom: 20px;
+    opacity: 1;
+    height: 4px;
 }
 
 textarea {
     background-color: #FFDFF6;
-    width: 60%;
     padding: 12px 5px;
     margin: 8px 0;
     box-sizing: border-box;
