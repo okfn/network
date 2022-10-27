@@ -1,0 +1,76 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+@font-face {
+    font-family: 'DM Sans', sans-serif;
+    src: url("../css/fonts/DMSans-Regular.woff") format('woff'),
+         url("../css/fonts/DMSans-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+@font-face {
+    font-family: 'Miriam Libre', serif;
+    src: url("../css/fonts/MiriamLibre-Regular.woff") format('woff'),
+         url("../css/fonts/MiriamLibre-Regular.ttf") format('truetype');
+    font-weight: normal;
+    font-style: normal;
+}
+
+body {
+    font-family: 'DM Sans', sans-serif;
+}
+
+.wrapper{
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/*Header*/
+.header-container{
+    background: #fff url("../images/blurred_dots.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    background-size: contain;
+    height: calc(100vh - 72px);
+    display: flex;
+    align-items: center;
+}
+
+header{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+h1, h2{
+    font-family: 'Miriam Libre', serif; 
+}
+
+#title-divider {
+    margin: 25px 0px 25px;
+    border: 2px solid black;
+    border-radius: 2px;
+}
+
+.highlight {
+    box-shadow: inset 0 -18px 0 #FF80DB, inset 0 -1px 0 black
+}
+
+label {
+    color: black;
+    font-family: Miriam Libre, serif;
+    font-size: 24px;
+}
+
+input[type=text] {
+    background-color: #FFDFF6;
+    width: 30%;
+    padding: 12px 5px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    color: #4b4b4b;
+  }
