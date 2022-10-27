@@ -4,16 +4,16 @@
 
 @font-face {
     font-family: 'DM Sans';
-    src: url(/fonts/DMSans-Regular.woff) format('woff'),
-         url(/fonts/DMSans-Regular.ttf) format('truetype');
+    src: url(../fonts/DMSans-Regular.woff) format('woff'),
+         url(../fonts/DMSans-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
 
 @font-face {
     font-family: 'Miriam Libre';
-    src: url(/fonts/MiriamLibre-Regular.woff) format('woff'),
-         url(/fonts/MiriamLibre-Regular.ttf) format('truetype');
+    src: url(../fonts/MiriamLibre-Regular.woff) format('woff'),
+         url(../fonts/MiriamLibre-Regular.ttf) format('truetype');
     font-weight: normal;
     font-style: normal;
 }
@@ -46,7 +46,7 @@ body {
 }
 
 .send-button {
-  background-image: url('/images/send-button.png');
+  background-image: url('../images/send-button.png');
   min-width: 172px;
   min-height: 88px;
   font-weight: bold;
