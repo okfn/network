@@ -154,13 +154,12 @@ textarea::placeholder {
 }
 
 .project-banner {
-  background-color: #AEFFEC;
-}
-
-.specialist-banner {
   background-color: #FF80DB;
 }
 
+.specialist-banner {
+  background-color: #AEFFEC;
+}
 
 .add-project-action {
   border-color: #7d0069;
