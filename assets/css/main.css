@@ -33,8 +33,25 @@ body {
     align-items: center;
 }
 
+body.project-body {
+    background: #fff url("../images/project-background.png");
+    font-family: 'DM Sans', sans-serif;
+    background-repeat: no-repeat;
+    background-position: top right;
+    background-size: 30%;
+    display: flex;
+    align-items: center;
+}
+
 .page-content {
     background: url("../images/blurred_dots_bottom.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 30%;
+}
+
+.project-content {
+    background: url("../images/project-background-bottom.png");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;

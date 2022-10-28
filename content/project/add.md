@@ -6,6 +6,7 @@ footer_text: We equip people with tools and capabilities and connect them with o
 footer_button: Nominate a specialist
 footer_link: /specialist/add
 type: project
+bodyClasses: project-body
 layout: project-form
 ---
 
