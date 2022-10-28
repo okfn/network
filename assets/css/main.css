@@ -80,10 +80,13 @@ h1, h2{
     border-radius: 2px;
 }
 
-.highlight {
+.highlight-specialist {
     box-shadow: inset 0 -38px 0 #FF80DB, inset 0 -1px 0 black
 }
 
+.highlight-project {
+    box-shadow: inset 0 -38px 0 #AEFFEC, inset 0 -1px 0 black
+}
 label {
     color: black;
     font-family: 'Miriam Libre', serif;
@@ -99,6 +102,11 @@ input[type=text] {
     border: none;
     color: #4b4b4b;
 } 
+
+.form-project input[type=text] {
+    background-color: #AEFFEC;
+}
+
 
 option {
     background-color: #FFDFF6;
@@ -123,6 +131,10 @@ input::placeholder {
     height: 4px;
 }
 
+.form-project .field_hr {
+    background-color: #AEFFEC; 
+}
+
 textarea {
     background-color: #FFDFF6;
     padding: 12px 5px;
@@ -130,6 +142,10 @@ textarea {
     box-sizing: border-box;
     border: none;
     color: #4b4b4b;
+}
+
+.form-project textarea {
+    background-color: #AEFFEC;
 }
 
 textarea::placeholder {
@@ -140,6 +156,11 @@ textarea::placeholder {
 .project-banner {
   background-color: #AEFFEC;
 }
+
+.specialist-banner {
+  background-color: #FF80DB;
+}
+
 
 .add-project-action {
   border-color: #7d0069;
