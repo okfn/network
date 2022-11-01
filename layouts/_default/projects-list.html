@@ -1,0 +1,23 @@
+{{ define "main" }}
+<div class="w-full text-center">
+    <div class="w-full pl-10 pt-10 pb-10">
+      <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png">
+    </div>
+    <div class="md:grid md:grid-cols-5 project-content">
+      {{ partial "projects-filters.html" . }}
+      <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
+        <div class="md:grid md:grid-cols-3">
+          {{ $projects := getCSV "," "okfn-network-projects.csv" }}
+          {{ range after 1 $projects }}
+             {{ partial "project-card.html" (dict "project" . "ctx" $) }}
+          {{ end }}
+          {{ range $.Site.Data.project }}
+          {{ end }}
+        </div>
+      </div>
+    </div>
+    <div class="{{ .Params.type }}-banner h-auto py-24 px-10">
+      {{ partial "projects-list-footer.html" . }}
+    </div>
+</div>
+{{ end }}

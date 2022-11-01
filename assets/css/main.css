@@ -174,11 +174,32 @@ textarea::placeholder {
   background-color: #FF80DB;
 }
 
+.projects-list-banner {
+  background-color: #00D1FF;
+}
+
 .specialist-banner {
   background-color: #AEFFEC;
 }
 
 .add-project-action {
-  border-color: #7d0069;
+  border-color: black;
 }
 
+.project-card {
+  background-color: #AEFFEC;
+}
+
+.project-logo {
+  position: relative;
+}
+
+.project-logo:after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  height: 10px;
+  width: 50%;
+  border-bottom: 3px solid #FF80DB;
+}

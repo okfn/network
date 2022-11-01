@@ -8,15 +8,15 @@
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
         <form class="font-miriam w-full form-{{ .Params.type }}">
               <label for="project_name">Project Name</label><br>
-              <input class="md:w-2/5 w-full" type="text" id="name" name="name" placeholder="Name of the specialist"><br>
+              <input class="w-full" type="text" id="project_name" name="project_name" placeholder="Name of the project"><br>
               <br>
               <label for="project_description">Project Description</label><br>
-              <textarea class="md:w-5/6 h-96 w-full" id="reason" name="reason" placeholder="Short description of the project..."></textarea><br><br>
-              <label for="project_organization">Organization</label><br>
-              <input class="md:w-2/5 w-full" type="text" name="project_organization" placeholder="Electronic mail"><br>
+              <textarea class="h-96 w-full" id="project_description" name="project_description" placeholder="Short description of the project..."></textarea><br><br>
+              <label for="project_organisation_email">Organisation email</label><br>
+              <input class="w-full" type="text" name="project_organisation_email" placeholder="Organisation email"><br>
               <br>
               <label for="project_organization_website">Organization website</label><br>
-              <input class="md:w-2/5 w-full" type="text" name="project_organization_websit" placeholder="Organization website"><br>
+              <input class="w-full" type="text" name="project_organization_website" placeholder="Organization website"><br>
               <br>
               <label for="country">Country</label><br>
               <select class="form-control md:w-2/5 w-full" name="country">
@@ -25,11 +25,11 @@
               {{ end }}
               </select>
               <br>
-              <label for="project_languages">Languages</label><br>
-              <input class="md:w-2/5 w-full" type="text" id="mail" name="mail" placeholder="List of languages"><br>
+              <label for="project_languages">Languages spoken</label><br>
+              <input class="w-full" type="text" id="project_languages" name="project_languages" placeholder="Languages spoken"><br>
               <br>
               <label for="project_link">Link to the project</label><br>
-              <input class="md:w-2/5 w-full" type="text" id="mail" name="mail" placeholder="Project URL"><br>
+              <input class="w-full" type="text" id="mail" name="mail" placeholder="Project URL"><br>
               <br>
               <br>
               <button class="send-button" type="submit"> Send </button>
