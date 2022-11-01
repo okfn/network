@@ -186,6 +186,17 @@ textarea::placeholder {
   border-color: black;
 }
 
+.add-project-button {
+  background: #fff url('../images/add-project-button.png');
+  background-repeat: no-repeat;
+  min-height: 182px;
+  min-width: 359px;
+}
+
+.add-project-button > div {
+  width: 200px;
+}
+
 .project-card {
   background-color: #AEFFEC;
 }
