@@ -5,7 +5,7 @@ Website create in Hugo + TailwindCSS to show OKFN Global Directory of specialist
 ## Install
 
  1. You do need to instal [Hugo](https://gohugo.io/getting-started/installing/) version higher or equal to 0.92.2+extended
- 2. Install TailwindCSS and other npm modules running `npm i` ir `yarn`
+ 2. Install TailwindCSS and other npm modules running `npm i` ir `yarn`. You need to use Node version higher or equal to 14.20.1.
  3. Run the website locally running: `hugo serve`
 
 ## Deploy
