@@ -5,5 +5,28 @@
 </head>
 <body class="{{ .Params.bodyClasses }}">
 {{ block "main" . }}{{ end }}
+<footer class="w-full grid grid-cols-5 px-12 pt-14 pb-14">
+  <div class="md:col-span-2 col-span-5">
+    <img src="{{ .Site.BaseURL}}images/okfn-logo-footer.png">
+  </div>
+  <div class="md:col-span-3 col-span-5 md:grid md:grid-cols-6">
+    <div class="md:col-span-1 text-center my-5"> Why is open? </div> 
+    <div class="md:col-span-1 text-center my-5"> Privacy policy</div>
+    <div class="md:col-span-1 text-center my-5"> IP Policy </div>
+    <div class="md:col-span-1 text-center my-5"> Cookie Policy </div>
+    <div class="md:col-span-1 text-center my-5"> Terms of Use </div>
+    <div class="md:col-span-1 text-center my-5"> Contact </div>
+  </div>
+  <div class="md:col-span-5 pt-5 pb-5">
+    <hr></hr>
+  </div>
+  <div class="md:col-span-5 col-span-5 pt-5 license">
+    Source code available under the MIT license.
+    <p>
+    <img class="float-left pr-2" src="{{ .Site.BaseURL}}images/cc-license.png">Content on this site, made by <a href="https://okfn.org">Open Knowledge</a>, is licensed under a <a href="https://creativecommons.org/licenses/by/4.0/">Creative Commons Attribution 4.0 International License</a>.
+    <p>
+    Refer to our <a href="https://okfn.org/attribution/">attributions</a> page for attributions of other work on the site. 
+  </div>
+</footer>
 </body>
 </html>
