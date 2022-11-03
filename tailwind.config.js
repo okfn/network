@@ -11,7 +11,16 @@ module.exports = withMT({
   theme: {
     colors: {
       'project': '#AEFFEC',
-      'specialist': '#FF80DB'
+      'specialist': '#FF80DB',
+      'skyblue': {
+        500: '00D1FF',
+      },
+      'aeroblue':{
+        500: '#AEFFEC'
+      },
+      'lightpink':{
+        500: '#ff80db'
+      }
     },
     extend: {
 
@@ -20,6 +29,9 @@ module.exports = withMT({
       'body': ['"DM Sans"'],
       'dmsans': ['"DM Sans"'],
       'miriam': ['"Miriam Libre"']
+    },
+    borderRadius: {
+      '3xl': '90px',
     },
   },
   variants: {},

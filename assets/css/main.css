@@ -185,11 +185,11 @@ textarea::placeholder {
 }
 
 .add-project-button {
-  background: #fff url('../images/add-project-button.png');
+  background: #fff url('../images/add-project-button.svg');
   background-repeat: no-repeat;
   background-size: 100% 100%;
   min-height: 182px;
-  min-width: 359px;
+  min-width: 120px;
   width: 100%;
 }
 
@@ -198,6 +198,7 @@ textarea::placeholder {
 }
 
 .project-card {
+  min-height: 330px;
   background-color: #AEFFEC;
 }
 
