@@ -1,11 +1,11 @@
-          <div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-            <div class="project-logo">
+          <div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer">
+            <div class="project-logo pl-5 pt-2 pb-2">
               <img src="{{ .ctx.Site.BaseURL }}images/project-logo.png"> 
             </div>
-            <div class="font-bold px-5 pt-2 text-2xl">
+            <div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
               {{ index .project 1 }}
             </div>
-            <div class="px-5 pb-5">
+            <div class="px-10 pt-2">
               {{ index .project 0 }}
             </div>
           </div>
