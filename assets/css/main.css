@@ -152,7 +152,7 @@ input::placeholder {
 
 textarea {
     background-color: #FFDFF6;
-    padding: 12px 5px;
+    padding: 15px 20px;
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
@@ -165,7 +165,13 @@ textarea {
 
 .form-control{
   border: 3px solid #AEFFEC;
+  padding-left: 20px;
 }
+
+input[type="text"]{
+  padding: 15px 20px;
+}
+
 textarea::placeholder {
   color: black;
   opacity: 0.7;
