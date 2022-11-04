@@ -3,28 +3,28 @@
 <meta http-equiv=content-type content="text/html" charset=utf-8>
 <meta http-equiv=x-ua-compatible content="IE=edge,chrome=1">
 <meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=stylesheet href="/okfn_network_website/css/main.min.2a72a6c2fd347c5efff4c738458b8b56d0cdfb36622106466737661609aa9e66.css" integrity="sha256-KnKmwv00fF7/9Mc4RYuLVtDN+zZiIQZGZzdmFgmqnmY=">
+<link rel=stylesheet href="/okfn_network_website/css/main.min.61fcda9be00d070bcd41e27d3a4325756941ed1c3cc54d8157e6c3ce7028410f.css" integrity="sha256-Yfzam+ANBwvNQeJ9OkMldWlB7Rw8xU2BV+bDznAoQQ8=">
 </head>
-<body class=project-body>
+<body class="project-body relative">
 <div class="w-full text-center">
 <div class="w-full pl-10 pt-10 pb-10">
 <img src=https://okfnlabs.org/okfn_network_website/images/okfn-net-logo.png>
 </div>
-<div class="md:grid md:grid-cols-5 project-content">
-<div class="md:col-end-5 md:col-span-3 mb-10">
-<div class="grid grid-cols-5">
+<div class="md:grid md:grid-cols-5 project-content-center">
+<div class="md:col-end-5 md:col-span-3">
+<div class="grid grid-cols-5 pb-10">
 <div class="md:col-start-2 md:col-span-3 col-span-5 pl-5 pr-5">
-<div class="font-miriam text-5xl"><mark class=project>Project Repository</mark></div>
-<hr class="bg-black opacity-100 mt-10" id=title-divider width=100%>
+<div class="font-miriam text-5xl"><mark class="project project">Project Repository</mark></div>
+<hr class="bg-black opacity-100" id=title-divider width=100%>
 </div>
-<div class="col-end-5 col-span-3 text-left md:pl-10 md:pr-10">
+<div class="col-end-5 col-span-3 text-center md:pl-10 md:pr-10 md:pb-10">
 </div>
 </div>
 </div>
 <div class="md:col-end-5 md:col-span-3">
 <div class="grid md:grid-cols-2 grid-cols-1">
 <div class="md:col-span-1 col-span-1">
-<div class="grid place-content-center add-project-button text-lg font-bold">
+<div class="grid place-content-center add-project-button hover:underline text-lg font-bold">
 <div>
 <a href=https://okfnlabs.org/okfn_network_website//project/add>Add a project<br> to the Repository</a>
 </div>
@@ -35,588 +35,592 @@ Filters
 </div>
 </div>
 </div>
+<div class="relative md:col-start-2 md:col-span-3">
+<div id=project-info class="flex absolute place-content-center left-0 top-0 right-0">
+</div>
+</div>
 <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
 <div class="md:grid md:grid-cols-3">
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(0)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Bike Data Project
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Belgium
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(1)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 EqualStreetNames
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Belgium
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(2)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Summer of Code
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Belgium
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(3)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Diário do Clima
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Brazil
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(4)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Monitor da INDA
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Brazil
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(5)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Querido Diário
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Brazil
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(6)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Hack4OpenGLAM
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Finland
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(7)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Fair Public Procurements
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Finland
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(8)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data Thesis Award
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Finland
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(9)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Jugend hackt
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Germany
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(10)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Prototype Fund
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Germany
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(11)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Frag den Staat
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Germany
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(12)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 OpEnergy
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(13)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Budgets
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(14)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Non-profits & Media advocating for good!
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(15)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 National Library of Greece Linked Open Data
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(16)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Entice
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(17)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Risk Open Data Portal
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(18)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Traffic Status Prediction
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Greece
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(19)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Spending Japan
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Japan
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(20)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 MyData Japan
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Japan
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(21)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data Nepal
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(22)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 AskNepal
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(23)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data Awareness Program
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(24)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data Handbook Nepali Version
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(25)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Local Boundaries
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(26)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Data Fellowship
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(27)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Women in Data
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(28)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 OSM Hackfest
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(29)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Climate Knowledge Portal
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(30)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Integrated Data Management System
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nepal
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(31)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 OPENCIT
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Sweden
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(32)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Up!
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Sweden
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(33)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 MobileCit
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Sweden
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(34)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Journalists’ Access to Public Information and Sustainable Journalism in the Baltics
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Sweden
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(35)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Handlingar.se
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Sweden
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(36)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Data Café
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Opendata.ch (Switzerland)
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(37)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Prototype Fund
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Opendata.ch (Switzerland)
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(38)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Hackathons
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Opendata.ch (Switzerland)
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(39)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Sum of all (Swiss) GLAMs
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Opendata.ch (Switzerland)
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(40)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data Index - Ecuador local governments
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Fundapi - Ecuador
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(41)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Data for Public Goods (In Development Stage)
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Jokkolabs Banjul (The Gambia)
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(42)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Russian national digital archive
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(43)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Hub of data
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(44)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open NGO
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(45)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Clearspending: Procurement transparency portal
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(46)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Plain Russian: open source tool to measure clarity of texts in Russian
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(47)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Open Police: Police transparency project
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(48)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Privacy of government mobile apps research
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Russia
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(49)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Ma Dada
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF France
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(50)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 Making Open
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 Nook Studios
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(51)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 GovSpend
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 OKF Nigeria
 </div>
 </div>
-<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl mb-5">
-<div class=project-logo>
+<div class="md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-5 mb-5 hover:underline hover:cursor-pointer" onclick=openProject(52)>
+<div class="project-logo pl-5 pt-2 pb-2">
 <img src=https://okfnlabs.org/okfn_network_website/images/project-logo.png>
 </div>
-<div class="font-bold px-5 pt-2 text-2xl">
+<div class="font-bold px-10 pt-5 text-2xl leading-none text-ellipsis">
 AccessInfo.hk
 </div>
-<div class="px-5 pb-5">
+<div class="px-10 pt-2">
 CivicSight (Hong Kong)
 </div>
 </div>
@@ -631,7 +635,7 @@ We equip people with tools and capabilities and connect them with open knowledge
 </div>
 <div class="col-start-2 col-span-3 pt-20">
 <a href=https://okfnlabs.org/okfn_network_website//project/add>
-<button class="border-solid border-2 add-project-action py-4 px-8 font-bold font-2xl font-miriam text-xs hover:bg-gray-200 hover:text-gray-800">Fill the form</button>
+<button class="border-solid border-2 add-project-action py-4 px-8 font-bold font-2xl font-miriam text-xs hover:bg-aeroblue-500 hover:text-black">Fill the form</button>
 </a>
 </div>
 </div>
@@ -661,4 +665,12 @@ Refer to our <a href=https://okfn.org/attribution/>attributions</a> page for att
 </div>
 </footer>
 </body>
+<script type=text/javascript>var projectInfo=document.getElementById("project-info"),projects=[{project_name:"Bike Data Project",project_organization:"OKF Belgium"},{project_name:"EqualStreetNames",project_organization:"OKF Belgium"},{project_name:"Open Summer of Code",project_organization:"OKF Belgium"},{project_name:"Diário do Clima",project_organization:"OKF Brazil"},{project_name:"Monitor da INDA",project_organization:"OKF Brazil"},{project_name:"Querido Diário",project_organization:"OKF Brazil"},{project_name:"Hack4OpenGLAM",project_organization:"OKF Finland"},{project_name:"Fair Public Procurements",project_organization:"OKF Finland"},{project_name:"Open Data Thesis Award",project_organization:"OKF Finland"},{project_name:"Jugend hackt",project_organization:"OKF Germany"},{project_name:"Prototype Fund",project_organization:"OKF Germany"},{project_name:"Frag den Staat",project_organization:"OKF Germany"},{project_name:"OpEnergy",project_organization:"OKF Greece"},{project_name:"Open Budgets",project_organization:"OKF Greece"},{project_name:"Non-profits \u0026 Media advocating for good!",project_organization:"OKF Greece"},{project_name:"National Library of Greece Linked Open Data",project_organization:"OKF Greece"},{project_name:"Entice",project_organization:"OKF Greece"},{project_name:"Risk Open Data Portal",project_organization:"OKF Greece"},{project_name:"Traffic Status Prediction",project_organization:"OKF Greece"},{project_name:"Open Spending Japan",project_organization:"OKF Japan"},{project_name:"MyData Japan",project_organization:"OKF Japan"},{project_name:"Open Data Nepal",project_organization:"OKF Nepal"},{project_name:"AskNepal",project_organization:"OKF Nepal"},{project_name:"Open Data Awareness Program",project_organization:"OKF Nepal"},{project_name:"Open Data Handbook Nepali Version",project_organization:"OKF Nepal"},{project_name:"Local Boundaries",project_organization:"OKF Nepal"},{project_name:"Data Fellowship",project_organization:"OKF Nepal"},{project_name:"Women in Data",project_organization:"OKF Nepal"},{project_name:"OSM Hackfest",project_organization:"OKF Nepal"},{project_name:"Climate Knowledge Portal",project_organization:"OKF Nepal"},{project_name:"Integrated Data Management System",project_organization:"OKF Nepal"},{project_name:"OPENCIT",project_organization:"OKF Sweden"},{project_name:"Open Up!",project_organization:"OKF Sweden"},{project_name:"MobileCit",project_organization:"OKF Sweden"},{project_name:"Journalists’ Access to Public Information and Sustainable Journalism in the Baltics",project_organization:"OKF Sweden"},{project_name:"Handlingar.se",project_organization:"OKF Sweden"},{project_name:"Data Café",project_organization:"Opendata.ch (Switzerland)"},{project_name:"Prototype Fund",project_organization:"Opendata.ch (Switzerland)"},{project_name:"Hackathons",project_organization:"Opendata.ch (Switzerland)"},{project_name:"Sum of all (Swiss) GLAMs",project_organization:"Opendata.ch (Switzerland)"},{project_name:"Open Data Index - Ecuador local governments",project_organization:"Fundapi - Ecuador"},{project_name:"Open Data for Public Goods (In Development Stage)",project_organization:"Jokkolabs Banjul (The Gambia)"},{project_name:"Russian national digital archive",project_organization:"Russia "},{project_name:"Hub of data",project_organization:"Russia "},{project_name:"Open NGO",project_organization:"Russia "},{project_name:"Clearspending: Procurement transparency portal",project_organization:"Russia "},{project_name:"Plain Russian: open source tool to measure clarity of texts in Russian",project_organization:"Russia "},{project_name:"Open Police: Police transparency project",project_organization:"Russia "},{project_name:"Privacy of government mobile apps research",project_organization:"Russia "},{project_name:"Ma Dada",project_organization:"OKF France"},{project_name:"Making Open ",project_organization:"Nook Studios "},{project_name:"GovSpend ",project_organization:"OKF Nigeria "},{project_name:"AccessInfo.hk",project_organization:"CivicSight (Hong Kong)"}];const projectInfoTemplate=a=>`
+    <div class="w-full bg-white rounded-[8px] border-2 border-[#00D1FF] max-w-[80%]">
+      <div>
+        ${a.project_name}
+      </div>
+
+    </div>
+    `;function openProject(a){console.log(projects[a]),projectInfo.innerHTML=projectInfoTemplate(projects[a])}</script>
 </html>
