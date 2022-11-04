@@ -29,9 +29,6 @@ module.exports = withMT({
       'dmsans': ['"DM Sans"'],
       'miriam': ['"Miriam Libre"']
     },
-    borderRadius: {
-      '3xl': '90px',
-    },
   },
   variants: {},
   plugins: [],

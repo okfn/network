@@ -55,7 +55,7 @@
   const projectInfoTemplate = (project) => `
     <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
-        <div class="md:col-span-1">
+        <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/logos/${project.project_logo}">
           <div class="mt-10 text-2xl text-left">
             ${project.project_name}
@@ -77,10 +77,10 @@
         ${project.project_description}
         </div>
         <div class="mt-10">
-          ${project.project_languages}
+          ${getLanguages(project.project_languages)}
         </div>
-        <div>
-          ${project.project_category}
+        <div class="mt-5">
+          ${getCategories(project.project_category)}
         </div>
 
         </div>
@@ -88,6 +88,30 @@
 
     </div>
     `
+  
+  function getCategories(categories) {
+    let categoriesList = categories.split(',')
+    let categoriesDiv = (l) => `
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5">
+      ${l}
+    </button>
+    `
+    return categoriesList.reduce((langHtml, l) => {
+      return langHtml + categoriesDiv(l, '')
+    }, '')
+  }
+
+  function getLanguages(languages) {
+    let languageList = languages.split(',')
+    let languageDiv = (l) => `
+    <button class="rounded rounded-full border-black border-2 px-5">
+      ${l}
+    </button>
+    `
+    return languageList.reduce((langHtml, l) => {
+      return langHtml + languageDiv(l, '')
+    }, '')
+  }
 
   function closeDialog() {
     projectInfo.style.display = "none"  
