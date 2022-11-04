@@ -57,13 +57,21 @@
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/logos/${project.project_logo}">
-          <div class="mt-10 text-2xl text-left">
+          <div class="mt-10 text-2xl text-left font-bold">
             ${project.project_name}
           </div>
-          <hr>
+          <div class="text-left mt-5">
+            <img class="float-left" src={{ .Site.BaseURL }}images/pin-angle-fill.png>
+            <div class="mt-10 ml-10 text-sm text-left">
+            ${ project.project_region }
+            </div>
+          </div>
+          <div class="my-10">
+            <hr class="border border-black opacity-100"></hr>
+          </div>
           <div class="text-left mt-5">
             <img class="float-left" src="{{ .Site.BaseURL }}images/globe.png">
-            <a class="overflow-hidden float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="${ project.project_link }">${ project.project_link }</a>
+            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="${ project.project_link }">${ project.project_link }</a>
           </div>
         </div>
         <div class="md:col-span-2">
@@ -71,7 +79,7 @@
           <mark class="project">
           The project
           </mark>
-          <img class="float-right" src={{ .Site.BaseURL }}images/close.png onclick="closeDialog()">
+          <img class="float-right" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
         </div>
         <div class="text-left">
         ${project.project_description}
