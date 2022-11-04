@@ -3,15 +3,19 @@
     <div class="w-full pl-10 pt-10 pb-10">
       <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png">
     </div>
-    <div class="md:grid md:grid-cols-5 project-content">
-      {{ partial "form-header.html" . }}
-
+    <div class="md:grid md:grid-cols-5 project-content-center">
       {{ partial "projects-header.html" . }}
+      {{ partial "projects-filters.html" . }}
+      <div class="relative md:col-start-2 md:col-span-3">
+      <div id="project-info" class="flex absolute place-content-center left-0 top-0 right-0">
+      </div>
+      </div>
+
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
         <div class="md:grid md:grid-cols-3">
           {{ $projects := getCSV "," "okfn-network-projects.csv" }}
-          {{ range after 1 $projects }}
-             {{ partial "project-card.html" (dict "project" . "ctx" $) }}
+          {{ range $projNumber, $project := after 1 $projects }}
+             {{ partial "project-card.html" (dict "project" $project "ctx" $ "projNumber" $projNumber) }}
           {{ end }}
           {{ range $.Site.Data.project }}
           {{ end }}
@@ -22,4 +26,37 @@
       {{ partial "projects-list-footer.html" . }}
     </div>
 </div>
+{{ end }}
+
+{{ define "scripts" }}
+
+<script type="text/javascript">
+
+  var projectInfo = document.getElementById("project-info")
+  var projects = [
+          {{ $projects := getCSV "," "okfn-network-projects.csv" }}
+          {{ range $pi, $project := after 1 $projects }}
+           {
+             "project_name": {{ index . 1 }},
+             "project_organization": {{ index . 0 }}
+             },
+          {{ end }}
+   ]
+
+  const projectInfoTemplate = (project) => `
+    <div class="w-full bg-white rounded-[8px] border-2 border-[#00D1FF] max-w-[80%]">
+      <div>
+        ${project.project_name}
+      </div>
+
+    </div>
+    `
+
+  function openProject(projectNumber) {
+    console.log(projects[projectNumber])
+    projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+  }
+
+</script>
+
 {{ end }}

@@ -3,7 +3,7 @@
 <head>
     {{ partial "head.html" . }}
 </head>
-<body class="{{ .Params.bodyClasses }}">
+<body class="{{ .Params.bodyClasses }} relative">
 {{ block "main" . }}{{ end }}
 <footer class="w-full grid grid-cols-5 px-12 pt-14 pb-14">
   <div class="md:col-span-2 col-span-5">
@@ -29,4 +29,5 @@
   </div>
 </footer>
 </body>
+{{ block "scripts" . }}{{ end }}
 </html>

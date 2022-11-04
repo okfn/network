@@ -39,6 +39,7 @@ body.project-body {
     background-position: top right;
     background-size: 30%;
     align-items: center;
+    position: relative;
 }
 
 .page-content {
