@@ -34,6 +34,9 @@ jobs:
 
       - name: Install npm modules
         run: npm ci
+
+      - name: Extract metadata
+        run: python extract-projects-categoris.py
             
       - name: Build
         run: hugo --minify
