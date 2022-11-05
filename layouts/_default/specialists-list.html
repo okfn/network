@@ -8,9 +8,9 @@
       {{ partial "projects-filters.html" . }}
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
         <div class="md:grid md:grid-cols-3">
-          {{ $projects := getCSV "," "okfn-network-experts.csv" }}
-          {{ range after 1 $expert }}
-             {{ partial "project-card.html" (dict "expert" . "ctx" $) }}
+          {{ $experts := getCSV "," "okfn-network-experts.csv" }}
+          {{ range after 1 $experts }}
+             {{ partial "specialist-card.html" (dict "specialist" . "ctx" $) }}
           {{ end }}
           {{ range $.Site.Data.project }}
           {{ end }}
