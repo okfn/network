@@ -1,7 +1,7 @@
 {{ define "main" }}
 <div class="w-full text-center">
-    <div class="w-full pl-10 pt-10 pb-10">
-      <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png">
+    <div class="w-full pl-5 pt-5 pb-5">
+      <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo">
     </div>
     <div class="md:grid md:grid-cols-5 page-content">
       {{ partial "form-header.html" . }}
@@ -20,7 +20,7 @@
               <input class="md:w-2/3 sm:w-full" type="text" id="area" name="area" placeholder="Fields of work"><br>
               <br>
               <label for="country mb-2">Country</label><br>
-              <select class="form-control-specialist md:w-1/5 sm:w-full mt-2" name="country">
+              <select class="form-control form-control-specialist md:w-1/5 sm:w-full mt-2" name="country">
               {{ range $.Site.Data.countries.countries }}
                  <option value="{{ .code }}">{{ .name }}</option>
               {{ end }}
@@ -37,7 +37,7 @@
       </div>
     </div>
     <div class="specialist-banner h-auto py-24 px-10">
-      {{ partial "form-footer.html" . }}
+      {{ partial "specialist-form-footer.html" . }}
     </div>
 </div>
 {{ end }}

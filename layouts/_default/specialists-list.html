@@ -1,12 +1,12 @@
 {{ define "main" }}
 <div class="w-full text-center">
-    <div class="w-full pl-10 pt-10 pb-10">
-      <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png">
+    <div class="w-full pl-5 pt-5 pb-5">
+      <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo">
     </div>
     <div class="md:grid md:grid-cols-5 project-content">
       {{ partial "specialists-header.html" . }}
-      {{ partial "projects-filters.html" . }}
-      <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
+      {{ partial "specialists-filters.html" . }}
+      <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
         <div class="md:grid md:grid-cols-3">
           {{ $experts := getCSV "," "okfn-network-experts.csv" }}
           {{ range after 1 $experts }}
@@ -17,8 +17,8 @@
         </div>
       </div>
     </div>
-    <div class="{{ .Params.type }}-banner h-auto py-24 px-10">
-      {{ partial "projects-list-footer.html" . }}
+    <div class="{{ .Params.type }}-banner h-auto py-24 px-10  bg-specialist">
+      {{ partial "specialists-list-footer.html" . }}
     </div>
 </div>
 {{ end }}
