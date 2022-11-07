@@ -1,3 +1,3 @@
-baseURL = 'https://okfnlabs.org/okfn_network_website/'
+baseURL = 'https://okfnlabs.org/network/'
 languageCode = 'en-us'
-title = 'My New Hugo Site'
+title = 'Open Knowledge Network'
