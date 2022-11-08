@@ -6,6 +6,10 @@
 <link rel=stylesheet href="/network/css/main.min.74cdf611977b07d4f967f03730f2287ca355000306a77eedf902883802c9bcc0.css" integrity="sha256-dM32EZd7B9T5Z/A3MPIofKNVAAMGp37t+QKIOALJvMA=">
 </head>
 <body class="specialist-body relative">
+<div class="fixed mt-[50px] w-full z-10">
+<div id=specialist-info class="grid md:grid-cols-5 flex z-10 absolute place-content-center left-0 top-0 right-0">
+</div>
+</div>
 <div class="w-full text-center">
 <div class="w-full pl-5 pt-5 pb-5">
 <img src=https://okfnlabs.org/network/images/okfn-net-logo.png class=logo>
@@ -26,7 +30,7 @@
 <div class="md:col-span-1 col-span-1">
 <div class="grid place-content-center add-specialist-button hover:underline text-lg font-bold">
 <div>
-<a href=/specialist/add>Nominate a specialist<br> for the Directory</a>
+<a href=https://okfnlabs.org/network//specialist/add>Nominate a specialist<br> for the Directory</a>
 </div>
 </div>
 <div class=font-bold>
@@ -57,7 +61,7 @@ Region
 </div>
 <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
 <div class="md:grid md:grid-cols-3">
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(0)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -67,7 +71,7 @@ Daniel Vazquez
 Asociación aLabs
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(1)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Mel-Flanagan_Nook.jpg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -77,7 +81,7 @@ Mel Flanagan
 Nook Studios
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(2)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Lotte.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -87,7 +91,7 @@ Lotte Goyens
 Open Knowledge Belgium
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(3)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/fernanda_campagnucci.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -97,7 +101,7 @@ Fernanda Campagnucci
 Open Knowledge Brazil
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(4)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/eduardo-bejar.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -107,7 +111,7 @@ Eduardo Bejar
 Open Knowledge Ecuador
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(5)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Hille_portrait.jpg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -117,7 +121,7 @@ Maarja-Leena Saar
 Open Knowledge Estonia
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(6)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Maarja-Olesk-portrait.jpg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -127,7 +131,7 @@ Hille Hinsberg
 Open Knowledge Estonia
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(7)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Melkamu_Beyene.JPG)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -137,7 +141,7 @@ Melkamu Beyene
 Open Knowledge Ethiopia
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(8)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Tarmo.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -147,7 +151,7 @@ Tarmo Toikkanen
 Open Knowledge Finland
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(9)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/MICALLEF_DATACTIVIST-WEB_35.JPG)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -157,7 +161,7 @@ Samuel Goëta
 Open Knowledge France
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(10)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/poncelet-ileleji.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -167,7 +171,7 @@ Poncelet Ileleji
 Jokkolabs
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(11)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Sonja-Fischbauer.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -177,7 +181,7 @@ Sonja Fischbauer
 Open Knowledge Germany
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(12)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/charalampos-bratsas.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -187,7 +191,7 @@ Charalampos Bratsas
 Open Knowledge Greece
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(13)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/kleanthis-koupidis.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -197,7 +201,7 @@ Kleanthis Koupidis
 Open Knowledge Greece
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(14)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -207,7 +211,7 @@ Scott Edmunds
 CivicSight (formerly Open Data Hong Kong)
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(15)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/twatanabe.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -217,7 +221,7 @@ Tomoaki Watanabe
 Open Knowledge Japan
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(16)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/nikesh-balami.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -227,7 +231,7 @@ Nikesh Balami
 Open Knowledge Nepal
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(17)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -237,7 +241,7 @@ Sagar Ghimire
 Open Knowledge Nepal
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(18)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -247,7 +251,7 @@ James Shrestha
 Open Knowledge Nepal
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(19)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -257,7 +261,7 @@ Arjun Gautam
 Open Knowledge Nepal
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(20)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -267,7 +271,7 @@ Oluseun Onigbinde
 Open Knowledge Nigeria
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(21)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Mohamud-M-Hassan.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -277,7 +281,7 @@ Mohamud M. Hassan
 Open Knowledge Somalia
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(22)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/Hussein-Osman-Abdullahi.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -287,7 +291,7 @@ Husein Osman Abdullahi
 Open Knowledge Somalia
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(23)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/elenor.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -297,7 +301,7 @@ Elenor Weijmar
 Open Knowledge Sweden
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(24)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/no-photo.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -307,7 +311,7 @@ Mattias Axell
 Open Knowledge Sweden
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(25)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/alina.png)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -317,7 +321,7 @@ Alina Ostling
 Open Knowledge Sweden
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(26)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/oleg-lavrovsky.jpeg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -327,7 +331,7 @@ Oleg Lavrovsky
 Open Knowledge Switzerland
 </div>
 </div>
-<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline">
+<div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick=openSpecialist(27)>
 <div class="specialist-pic object-cover" style=background-image:url(https://okfnlabs.org/network/images/directory/fh_hires.jpg)>
 </div>
 <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
@@ -378,4 +382,56 @@ Refer to our <a href=https://okfn.org/attribution/>attributions</a> page for att
 </div>
 </footer>
 </body>
+<script type=text/javascript>var specialistInfo=document.getElementById("specialist-info"),specialists=[{specialist_name:"Daniel Vazquez",specialist_description:"Hacktivist, telecommunications and citizen participation specialist, member of the associations Decidim and aLabs. DevRel at Nym.",specialist_email:"daniel@alabs.org",specialist_category:"Civic Tech",specialist_region:"Andes",specialist_languages:"English, Spanish",specialist_logo:"no-photo.png",specialist_organization:"Asociación aLabs"},{specialist_name:"Mel Flanagan",specialist_description:"Mel ",specialist_email:"mel.flanagan@nookstudios.com",specialist_category:"Open Process, Open Goverment, Open Data, Design, Storytelling, Research, Participatory design, Gov Service Design, Fiscal Transparency, Civic Tech",specialist_region:"Australia ",specialist_languages:"English",specialist_logo:"Mel-Flanagan_Nook.jpg",specialist_organization:"Nook Studios"},{specialist_name:"Lotte Goyens",specialist_description:"I'm Lotte, a busy bee with experience in project management, communications and financial management. I'm an advocate for gender equality, human rights and I strongly believe in the power of digitalisation and open source! With the increasing influence of the digital space, it is more important than ever to guarantee fair access to information worldwide. With Open Knowledge Belgium, I witness firsthand how an inspired community filled with people from diverse backgrounds and different disciplines can make a significant impact.",specialist_email:"lotte@openknowledge.be ",specialist_category:"",specialist_region:"Belgium",specialist_languages:"English, Dutch, French",specialist_logo:"Lotte.jpeg",specialist_organization:"Open Knowledge Belgium"},{specialist_name:"Fernanda Campagnucci",specialist_description:"From 2013 to 2019, Fernanda served as public manager at Sao Paulo City Hall, and was responsible for the local policy of transparency, data openness, and integrity at the Comptroller General's Office. In addition, she led technology, innovation, and open government projects at the local Department of Education. She holds a BA in Journalism and a Master's in Education from the University of Sao Paulo, and is PhD candidate in Public Administration and Government at Fundação Getúlio Vargas (EAESP-FGV). She is specialist in Transparency and Accountability from the University of Chile (2014) and was an Open Government fellow at the Organization of American States (2015), Open Data Leader at the Open Data Institute (2016) and a Government fellow at the Digital Governance Operational Unit at the University of United Nations, UNU-EGOV (2018). She is a visiting professor at Insper for “Compliance” and “Innovation in the Public Sector” courses.",specialist_email:"fernanda@ok.org.br ",specialist_category:"Open Government Data, Open Justice",specialist_region:"Brazil",specialist_languages:"English, Portuguese, Spanish",specialist_logo:"fernanda_campagnucci.jpeg",specialist_organization:"Open Knowledge Brazil"},{specialist_name:"Eduardo Bejar",specialist_description:"Ecuadorian computer systems engineer that has been involved with projects related to technology for social change and civic engagement for the last 12+ years. He is the Executive Director of Fundapi (www.fundapi.org), an ecuadorian nonprofit organization working with capacity building for representatives from nonprofit organizations, activists, and volunteers; developing web based solutions for nonprofit organizations; organizing conferences and events like barcamps and hackathons, and fostering the use and adoption of open data and open knowledge in the country.",specialist_email:"edobejar@fundapi.org",specialist_category:"",specialist_region:"Ecuador",specialist_languages:"English, Spanish",specialist_logo:"eduardo-bejar.jpeg",specialist_organization:"Open Knowledge Ecuador"},{specialist_name:"Maarja-Leena Saar",specialist_description:"Hille is independent expert/consultant currently working at Estonian Government Office, advising a policy for Social Innovation, involved in policy-making think tank Praxis, in Independent Review Mechanism for Open Government Partnership and open data/governance initiatives from open budget to policy crowdsourcing (see http://meieraha.eu, http://valvurid.err.ee/, https://rahvakogu.ee/).\n\nIn 2014, the President of Estonia gave her the national award for strengthening civil society in Estonia and Hille is keeping an eye on lobbying and policy-making for us.\n\n",specialist_email:"maarjaleena@okee.ee",specialist_category:"Open Government Data, Fiscal Transparency",specialist_region:"Estonia",specialist_languages:"Estonian, English",specialist_logo:"Hille_portrait.jpg",specialist_organization:"Open Knowledge Estonia"},{specialist_name:"Hille Hinsberg",specialist_description:"She has been a process manager at the Estonian Cooperation Assembly, a competence centre founded by the President of Estonia, working on policy recommendations and initiatives on societal issues like (e-) democracy and public sector reform. She led project rahvaalgatus.ee from idea to exponential growth. Rahvaalgatus.ee is a citizen initiatives platform for sending collective proposals to the Estonian Parliament.\n\nMaarja-Leena is also a big fan of open data and knowledge visualization, her passion in that field was recognized by New Europe 100 and Shuttleworth Foundation. She is a founding member of Open Knowledge Estonia and kicked off the open data boom in Estonia together with the Ministry of Economic Affairs and Communications through strategic partnership.",specialist_email:"hillehinsberg@gmail.com",specialist_category:"Civic Tech, Open Government Data, Fiscal Transparency",specialist_region:"Estonia",specialist_languages:"Estonian, English",specialist_logo:"Maarja-Olesk-portrait.jpg",specialist_organization:"Open Knowledge Estonia"},{specialist_name:"Melkamu Beyene",specialist_description:"Dr.Melkamu Beyene is Assistant professor in the school of information science. He received his Ph.D in Information Retrieval from Addis Ababa University in a joint program with the Institut national des sciences appliquées de Lyon, France by 2017. He is serving as a chief librarian of Addis Ababa University Library system and Chairperson of the Consortium of Ethiopian Academic and Research Libraries from March 08, 2018 up to now.\n\nDr.Melkamu manages plenty of projects related to developing open science platforms, data driven systems and digitization for different organizations in Ethiopia. Dr.Melkamu is currently leading the Abrehot Public Library administration project signed between Addis Ababa City Administration and Addis Ababa University. He has also contributed in the drafting of National and institutional open access and data sharing policies in Ethiopia. His research interest includes Semantic Web, Open Science, Open data, data driven decision making, Data Science, Big Data Analytics, Open Access Publication and Information Retrieval.",specialist_email:"mlkmbeyene@gmail.com",specialist_category:"Open Science, Open Data",specialist_region:"Ethiopia ",specialist_languages:"Amharic?, English",specialist_logo:"Melkamu_Beyene.JPG",specialist_organization:"Open Knowledge Ethiopia "},{specialist_name:"Tarmo Toikkanen",specialist_description:"Executive director of Open Knowledge Finland. Founding member of OKFI, long time board member, director of Creative Commons Finland. Tarmo's special interest is in the use of technology and open content in education.",specialist_email:"tarmo@okf.fi",specialist_category:"Open Education, Open GLAM",specialist_region:"Finland",specialist_languages:"English, Finnish",specialist_logo:"Tarmo.jpeg",specialist_organization:"Open Knowledge Finland"},{specialist_name:"Samuel Goëta",specialist_description:"Samuel Goëta is co-founder of Open Knowledge France, working mainly on the French freedom of information platform madada.fr.  He is also a researcher working on open data and data literacy. He co-founded datactivist.coop, a cooperative company supporting open data projects.",specialist_email:"samgoeta@hey.com",specialist_category:"Open Data, Open Government Data, Data Literacy, FOIA",specialist_region:"France",specialist_languages:"English, French",specialist_logo:"MICALLEF_DATACTIVIST-WEB_35.JPG",specialist_organization:"Open Knowledge France"},{specialist_name:"Poncelet Ileleji",specialist_description:"CEO Jokkolabs Banjul, Chair UNECA IGF Task Force for 17th Global KIGF in Addis Ababa(Linkedin: https://www.linkedin.com/in/poncelet-ileleji-a7316010/?originalSubdomain=gm)",specialist_email:"pileleji@jokkolabs.co",specialist_category:"Digital Rights, Internet Governance, Open Data",specialist_region:"Gambia (innovation hub)",specialist_languages:"English",specialist_logo:"poncelet-ileleji.jpeg",specialist_organization:"Jokkolabs "},{specialist_name:"Sonja Fischbauer",specialist_description:"Sonja works as project lead for Jugend hackt, where she also coordinates fundraising. She studied archaeology and has worked at excavations as well as in museum education, before she traded her shovel for a laptop: As a freelance consultant since 2014, Sonja coordinated multiple community-projects in the field of technology and Free Knowledge, organised hackathons and developed diversity-measures. Since 2018 she’s part of the team at Open Knowledge Foundation Germany in Berlin.",specialist_email:"sonja.fischbauer@okfn.de",specialist_category:"Open Communities",specialist_region:"Germany",specialist_languages:"English, German",specialist_logo:"Sonja-Fischbauer.jpeg",specialist_organization:"Open Knowledge Germany"},{specialist_name:"Charalampos Bratsas",specialist_description:"Dr Charalampos Bratsas is the founder of Open Knowledge Foundation Greece and CEO. He is working as researcher and teaching academic staff at the Department of Mathematics, in Aristotle University of Thessaloniki (AUTH) and participates as researcher in Medical Physics Laboratory of AUTH. Main research areas are Open Data (creator of Greek Open Data Hub), Semantic Web, Social Semantic Web, Linked Data (Greek DBpedia Coordinator), Data Mining, Big Data and AI applications. He is also post-doctoral scientific associate at Complex System Analysis Laboratory of AUTH. He holds a bachelor degree in Maths (1999), master degree in Medical Informatics and PhD in Informatics in Medical Education (2008). He has participated in many European Committee research programs. He has more than 60 articles in the fields of Semantic Web, Big Data, Artificial Intelligence and Data Analysis published in scientific Journals and conference proceedings.",specialist_email:"char.brat@gmail.com",specialist_category:"Civic Tech, Open Science",specialist_region:"Greece",specialist_languages:"English, Greek",specialist_logo:"charalampos-bratsas.jpeg",specialist_organization:"Open Knowledge Greece"},{specialist_name:"Kleanthis Koupidis",specialist_description:"Kleanthis Koupidis graduated from the Mathematics Department of the Aristotle University of Thessaloniki and received his M.Sc. in Web Science from the same Department.\n\nHe works as Data Scientist in research projects with Open Knowledge Greece. He recently worked in OpenBudgets Horizon 2020 project using data mining techniques in fiscal open data. Through Open Knowledge Greece he participated actively to the conformation of the Third Greek Open Government Partnership Action Plan and worked to complete the commitments of the Foundation. Also, he is co-author of Greek Cities Open Data Census and Data Journalism Handbook (Greek edition).",specialist_email:"koupidis.okfgr@gmail.com ",specialist_category:"Civic Tech, Open Science",specialist_region:"Greece",specialist_languages:"English, Greek",specialist_logo:"kleanthis-koupidis.jpeg",specialist_organization:"Open Knowledge Greece"},{specialist_name:"Scott Edmunds",specialist_description:"With a research background and PhD in Molecular Pathology, as well as experience in Open Access publishing, Scott works on reproducible research and scientific data publishing projects as the Editor-in-Chief for GigaScience. Being involved in open science, citizen science and crowdsourcing projects, and seeing first hand the benefits of releasing scientific data quicker, he is keen to promote, aid and share his expertise in this area. As a co-founder of citizen science organisations Bauhinia Genome and CitizenScience.Asia he also teaches data management and curation at The University of Hong Kong.",specialist_email:"scott@gigasciencejournal.com",specialist_category:"Open Science",specialist_region:"Hong Kong",specialist_languages:"English",specialist_logo:"no-photo.png",specialist_organization:"CivicSight (formerly Open Data Hong Kong)"},{specialist_name:"Tomoaki Watanabe",specialist_description:"Tomoaki Watanabe is project-associate professor at Keio University's Graduate School of Media and Governance, working on policy issues related to digital fabrication, among other things. He is a co-founder of Open Knowledge Foundation Japan, and has been involved in open data policy discussion at expert panel at the government. He has been active as a member of Creative Commons Japan for over a decade now, and is the chair of the board for CommonSphere, the not-for-profit organization serving as the host for CC Japan project.",specialist_email:"tomoaki.watanabe@gmail.com ",specialist_category:"Open Government Data, Open GLAM",specialist_region:"Japan",specialist_languages:"English, Japanese",specialist_logo:"twatanabe.jpeg",specialist_organization:"Open Knowledge Japan"},{specialist_name:"Nikesh Balami",specialist_description:"Nikesh is an open data advocate and tech researcher based in Nepal. He is the co-founder and CEO of Open Knowledge Nepal - a non-profit civic tech organization comprised of openness aficionados. He is a strong supporter of open source software and believes in the vision of Open Knowledge to empower citizens regarding technology usage and open data. He loves coffee chat, tweeting, hackathons, blogging, traveling, and open data.",specialist_email:"nikeshbalami@oknp.org",specialist_category:"Civic Tech, Open Data",specialist_region:"Nepal",specialist_languages:"English, Nepalese",specialist_logo:"nikesh-balami.jpeg",specialist_organization:"Open Knowledge Nepal"},{specialist_name:"Sagar Ghimire",specialist_description:"Sagar is Chief Technical Officer at Open Knowledge Nepal. He is an IT professional and an open source enthusiast with an extensive experience in web development and passionate about using web technology and open data to make a better future for everyone.",specialist_email:"sagarg@oknp.org",specialist_category:"Open Tech, Civic Tech",specialist_region:"Nepal",specialist_languages:"English, Nepalese",specialist_logo:"no-photo.png",specialist_organization:"Open Knowledge Nepal"},{specialist_name:"James Shrestha",specialist_description:"James Shrestha is front end developer at Open Knowledge Nepal. He is strong advocate of open knowledge and open source. His interest involve developing solutions using web technology and open data. Beside this he loves collabrative interdisciplinary work on new domains where he can challange himself and enjoys the collabration and knowledge sharing.",specialist_email:"james.shrestha@oknp.org",specialist_category:"Open Tech, Open Data",specialist_region:"Nepal",specialist_languages:"English, Nepalese",specialist_logo:"no-photo.png",specialist_organization:"Open Knowledge Nepal"},{specialist_name:"Arjun Gautam",specialist_description:"Having professional experience of more than five years in making web systems and experience in computer programming since 2010, Arjun Gautam is a creative, productive, and friendly person. Being passionate about openness in technology and working with the tech community, he has worked with some open tech and civic tech organizations.",specialist_email:"arjun.gautam.1694@gmail.com",specialist_category:"Open Tech, Civic Tech",specialist_region:"Nepal",specialist_languages:"English, Nepalese",specialist_logo:"no-photo.png",specialist_organization:"Open Knowledge Nepal"},{specialist_name:"Oluseun Onigbinde",specialist_description:"Oluseun Onigbinde is the Director for BudgIT, a civic organization focused on intersecting civic engeement with institutional improvement. Oluseun is an Ashoka Fellow, Tutu Fellow and also Kinight Innovation Fellow. Oluseun Onigbinde is a leading voice for fiscal accountability and public sector engagement.+",specialist_email:"oluseun@yourbudgit.com",specialist_category:"Open Tech, Civic Tech",specialist_region:"Nigeria",specialist_languages:"English",specialist_logo:"no-photo.png",specialist_organization:"Open Knowledge Nigeria"},{specialist_name:"Mohamud M. Hassan",specialist_description:"Mohamud M. Hassan is academic with interest in ICT for Agriculture, Open access for agriculture and education data. He co-founded a non-profit organization called Dallag intended to help Somali farmers to receive relevant market information. Dallag provides visualization, infographics, and data comprehension support to farmers. Mohamud promotes free access to data and information for agriculture, livestock and education. He is a local organizer for Open Knowledge community in Somalia. Besides, He is an advisor to Somali Youth Civic Education (SYCO) a youth platform that campaigns for Federalism \u0026 citizen participation in peacebuilding, create livelihood and capacity building programs for youth. He has extensive knowledge in creating and managing content. He trains farmers and office staff for a productive work environment. Mohamud has graduated with Masters of Computer Science in Web Technology at UTHM, Malaysia.",specialist_email:"xarbi84@gmail.com",specialist_category:"Open Science, Open Data, Civi Tech",specialist_region:"Somalia",specialist_languages:"English, Somali",specialist_logo:"Mohamud-M-Hassan.jpeg",specialist_organization:"Open Knowledge Somalia"},{specialist_name:"Husein Osman Abdullahi",specialist_description:"Hussein Osman Abdullahi lectures at SIMAD University in Mogadishu, Somalia where he is currently Director Admissions and Records. He holds a BSc. in Information Technology from the SIMAD University and Master of Science in Information Technology from International Islamic University Malaysia (IIUM). Over the years, he has taught courses in the field of ICT, E-commerce, E-procurement, E-Banking, and IT Project Management. Mr Hussein is Regional Coordinator of web 2.0 and social media workshops certified by Technical Centre for Agricultural and Rural Cooperation (CTA) in the Netherlands. Mr Husein is very interested in the new startup culture phenomenal in Somalia particularly in Mogadishu. He is also co-founder of Dallag ICT a non-profit organization for publishing and distributing market information to local farmers.",specialist_email:"xuseengurey@gmail.com",specialist_category:"",specialist_region:"Somalia",specialist_languages:"English, Somali",specialist_logo:"Hussein-Osman-Abdullahi.jpeg",specialist_organization:"Open Knowledge Somalia"},{specialist_name:"Elenor Weijmar",specialist_description:"Elenor runs Sweden's Freedom of Information (FOI) platform called Handlingar.se, a platform that gives citizens a tool to ask authorities for information. During 2021 Elenor conducted research for Sweden in the Global Data Barometer project. The report is planned to be published in late 2021. She is also active in DFRI, an association that promotes digital rights. She is driven by technology and social entrepreneurship and in addition to Handlingar.se Elenor works with coaching start-ups and educates youth in technology and programming.",specialist_email:"elenor@okfn.se",specialist_category:"Open Government Data, Fiscal Transparency, Civic Tech",specialist_region:"Sweden",specialist_languages:"English, Swedish",specialist_logo:"elenor.png",specialist_organization:"Open Knowledge Sweden"},{specialist_name:"Mattias Axell",specialist_description:"Mattias is educated at Kaospilot and is committed to developing people and organizations. He helps others in experimenting with data and engage in systemic change processes. He is an occasional data wrangler, doing experiments like the first visualization of all of Sweden's public bodies. He knows some Python, bits of JavaScript as well as some HTML \u0026 CSS.",specialist_email:"mattias@okfn.se ",specialist_category:"Open Government Data, Fiscal Transparency, Open Communities",specialist_region:"Sweden",specialist_languages:"English, Swedish",specialist_logo:"no-photo.png",specialist_organization:"Open Knowledge Sweden"},{specialist_name:"Alina Ostling",specialist_description:"Alina holds a PhD title in Political Sciences from the European University Institute. She has a strong professional background in democracy, media, public participation, open data and civic tech. In addition to her academic expertise, Alina has a long experience as an expert providing research, evaluation and policy support to the European Commission, international organisations (Council of Europe, UNDP, UNICEF, OSCE/ODIHR) and civil society organisations (Open Government Partnership, Global Integrity, Transparency International).",specialist_email:"alina@okfn.se",specialist_category:"Open Government Data, Civic tech, transparency, open data",specialist_region:"Sweden",specialist_languages:"English, Swedish, Russian, French, Italian",specialist_logo:"alina.png",specialist_organization:"Open Knowledge Sweden"},{specialist_name:"Oleg Lavrovsky",specialist_description:"Oleg Lavrovsky is a software engineer specialized in information management, and an activist dedicated to sharing knowledge for a better world through the art and science of data, a healthy dose of common sense, and community. One of the initiators of the Swiss open data movement, he is active in the Open Knowledge network, runs events around the country, blogs sporadically, contributes open source regularly, and remains highly allergic to prejudice while dedicated to the goals of openness on- and off-line. He's a Russian-Canadian expat \u0026 a family guy.",specialist_email:"oleg@opendata.ch",specialist_category:"Civic Tech Infrastructure, Open Government Data, Open Science",specialist_region:"Switzerland",specialist_languages:"English, German, Russian",specialist_logo:"oleg-lavrovsky.jpeg",specialist_organization:"Open Knowledge Switzerland"},{specialist_name:"Florin Hasler",specialist_description:"Born and raised in Liechtenstein, Florin has been supporting government agencies, NGOs, parties and startups in making their message heard in the political and public sphere. Prior to taking over as Director, he led our Prototype Fund. In his spare time, he co-organizes Züri schenkt, a donation campaign for refugees and Kino im Kocher, a free open air cinema in Bern.",specialist_email:"florin.hasler@opendata.ch",specialist_category:"Civic Tech, Open Government Data,",specialist_region:"Switzerland",specialist_languages:"English, German",specialist_logo:"fh_hires.jpg",specialist_organization:"Open Knowledge Switzerland"}];const specialistInfoTemplate=a=>`
+    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+      <div class="grid md:grid-cols-3">
+        <div class="md:col-span-1 pr-10">
+          <img src="https:\/\/okfnlabs.org\/network\/images/directory/${a.specialist_logo}">
+          <div class="mt-10 text-2xl text-left font-bold">
+            ${a.specialist_name}
+          </div>
+          <div class="text-left mt-5">
+            <img class="float-left" src=https:\/\/okfnlabs\.org\/network\/images/pin-angle-fill.png>
+            <div class="mt-10 ml-10 text-sm text-left">
+            ${a.specialist_region}
+            </div>
+          </div>
+          <div class="my-10">
+            <hr class="border border-black opacity-100"></hr>
+          </div>
+          <div class="text-left mt-5">
+            <img class="float-left" src="https:\/\/okfnlabs.org\/network\/images/globe.png">
+            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="mailto:${a.specialist_email}">${a.specialist_email}</a>
+          </div>
+        </div>
+        <div class="md:col-span-2">
+        <div class="text-2xl text-left mb-10">
+          <mark class="specialist">
+          The specialist
+          </mark>
+          <img class="float-right" src="https:\/\/okfnlabs.org\/network\/images/close.png" onclick="closeDialog()">
+        </div>
+        <div class="text-left">
+        ${a.specialist_description}
+        </div>
+        <div class="mt-10">
+          ${getLanguages(a.specialist_languages)}
+        </div>
+        <div class="mt-5">
+          ${getCategories(a.specialist_category)}
+        </div>
+
+        </div>
+      </div>
+
+    </div>
+    `;function getCategories(a){let b=a.split(','),c=a=>`
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5">
+      ${a}
+    </button>
+    `;return b.reduce((a,b)=>a+c(b,''),'')}function getLanguages(a){let b=a.split(','),c=a=>`
+    <button class="rounded rounded-full border-black border-2 px-5">
+      ${a}
+    </button>
+    `;return b.reduce((a,b)=>a+c(b,''),'')}function closeDialog(){specialistInfo.style.display="none"}function openSpecialist(a){specialistInfo.style.display="grid",specialistInfo.innerHTML=specialistInfoTemplate(specialists[a])}</script>
 </html>
