@@ -14,7 +14,7 @@
       {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
       <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
         <div class="md:grid md:grid-cols-3">
-          {{ range $specialistNumber, $specialist := after 1 $experts }}
+          {{ range $specialistNumber, $specialist := shuffle (after 1 $experts) }}
              {{ partial "specialist-card.html" (dict "specialist" . "ctx" $ "specialistNumber" $specialistNumber) }}
           {{ end }}
           {{ range $.Site.Data.project }}

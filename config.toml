@@ -1,4 +1,4 @@
-baseURL = 'https://okfnlabs.org/network/'
+baseURL = 'https://network.okfn.org/'
 languageCode = 'en-us'
 title = 'Open Knowledge Network'
 [params]
