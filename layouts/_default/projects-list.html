@@ -10,7 +10,7 @@
     </div>
     <div class="md:grid md:grid-cols-5 project-content-center">
       {{ $projects := getCSV "," "okfn-network-projects.csv" }}
-      {{ $projects := shuffle (after 1 $projects) }}
+      {{ $projects := after 1 $projects }}
       {{ partial "projects-header.html" . }}
       {{ partial "projects-filters.html" (dict "projects" $projects "ctx" .) }}
 
