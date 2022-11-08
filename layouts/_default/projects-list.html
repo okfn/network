@@ -9,13 +9,12 @@
       <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo">
     </div>
     <div class="md:grid md:grid-cols-5 project-content-center">
+      {{ $projects := getCSV "," "okfn-network-projects.csv" }}
       {{ partial "projects-header.html" . }}
-
-      {{ partial "projects-filters.html" . }}
+      {{ partial "projects-filters.html" (dict "projects" $projects "ctx" .) }}
 
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
         <div class="md:grid md:grid-cols-3 grid-cols-1">
-          {{ $projects := getCSV "," "okfn-network-projects.csv" }}
           {{ range $projNumber, $project := after 1 $projects }}
              {{ partial "project-card.html" (dict "project" $project "ctx" $ "projNumber" $projNumber) }}
           {{ end }}

@@ -6,9 +6,31 @@
           <a href="{{ .Site.BaseURL}}/specialist/add">Nominate a specialist<br/> for the Directory</a>
           </div>
         </div>
+        <div class="font-bold">
+          {{ len $.experts }} people matching your filters
+        </div>
       </div>
-      <div class="md:col-span-1 col-span-1">
-        Filters
+      <div class="md-col-span2 text-left mx-10">
+        <div class="md:col-span-1 col-span-1">
+          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+            Category
+            <img class="float-right self-center ml-5" src={{ $.ctx.Site.BaseURL }}/images/select-down.png>
+          </button>
+        <div class="md:col-span-1 col-span-1 mt-5">
+          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+            Language
+            <img class="float-right self-center ml-5" src={{ $.ctx.Site.BaseURL }}/images/select-down.png>
+
+          </button>
+        </div>
+        <div class="md:col-span-1 col-span-1 mt-5">
+          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+            Region
+            <img class="float-right self-center ml-5" src={{ $.ctx.Site.BaseURL }}/images/select-down.png>
+
+          </button>
+        </div>
+      </div>
       </div>
     </div>
 </div>

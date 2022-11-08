@@ -4,11 +4,11 @@
       <img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo">
     </div>
     <div class="md:grid md:grid-cols-5 project-content">
+      {{ $experts := getCSV "," "okfn-network-experts.csv" }}
       {{ partial "specialists-header.html" . }}
-      {{ partial "specialists-filters.html" . }}
+      {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
       <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
         <div class="md:grid md:grid-cols-3">
-          {{ $experts := getCSV "," "okfn-network-experts.csv" }}
           {{ range after 1 $experts }}
              {{ partial "specialist-card.html" (dict "specialist" . "ctx" $) }}
           {{ end }}
