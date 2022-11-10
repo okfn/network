@@ -32,7 +32,9 @@
 <script type="text/javascript">
 
   let filters = {
-      region: []
+      region: [],
+      category: [],
+      language: []
   }
 
   function shuffleArray(arr) {
@@ -53,7 +55,7 @@
              "link": {{ index . 3 }},
              "category": {{ index . 4 }},
              "region": {{ index . 5 }},
-             "languages": {{ index . 6 }},  
+             "language": {{ index . 6 }},  
              "logo": {{ index . 8 }},
              "organization": {{ index . 0 }},
              },
@@ -111,7 +113,7 @@
         ${project.description}
         </div>
         <div class="mt-10">
-          ${getLanguages(project.languages)}
+          ${getLanguages(project.language)}
         </div>
         <div class="mt-5">
           ${getCategories(project.category)}
@@ -172,59 +174,93 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<input type="checkbox" name=${name} value=${value}>  ${label}</input>`
+    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
   }
 
   let regions = []
-  function getRegions(regions, projects) {
+  let categories = []
+  let languages = []
+
+  function getFilterChoices(filterChoices, filterName, projects) {
     for (var p of projects) {
-      for (var r of p.region.split(',')) {
+      for (var r of p[filterName].split(',')) {
           r = r.trim()
-          if (r !== '' && regions.indexOf(r) < 0) {
-          regions.push(r)
+          if (r !== '' && filterChoices.indexOf(r) < 0) {
+          filterChoices.push(r)
         }
       }
     }
-    regions.sort()
+    filterChoices.sort()
   } 
 
-  getRegions(regions, projects)
+  getFilterChoices(regions, 'region', projects)
+  getFilterChoices(languages, 'language', projects)
+  getFilterChoices(categories, 'category', projects)
 
   let regionSelector = document.getElementsByClassName('region-selector')[0]
   for (var r of regions) {
     addCheckbox(regionSelector, 'region', r, r)
   }
 
-  function filterProjects() {
+  let categorySelector = document.getElementsByClassName('category-selector')[0]
+  for (var r of categories) {
+    addCheckbox(categorySelector, 'category', r, r)
+  }
+
+  let languageSelector = document.getElementsByClassName('language-selector')[0]
+  for (var r of languages) {
+    addCheckbox(languageSelector, 'language', r, r)
+  }
+
+
+  function filterProjects(projects) {
     let filteredProjects = []
+    let filterNames = Object.keys(filters)
+
     for (var p of projects) {
-      let m = 0 
-      if (filters.region.length > 0) {
-        for (var r of filters.region)  {
-          if (p.region.indexOf(r) >= 0) {
-            m += 1
-          } 
-        }
-      } else {
-        m = 1 
+      let m = 1
+      for (var filterName of filterNames) {
+        if (filters[filterName].length > 0) {
+          for (var f of filters[filterName]) { 
+            if (p[filterName].indexOf(f) >= 0) {
+              m = 1
+              break
+            } else {
+              m = 0
+            }
+          }
+          if (m == 0)
+            break
+        } 
       }
       if (m > 0)
           filteredProjects.push(p)
     }
+
     return filteredProjects
   }
 
   function clickCheckbox(element, filterName) {
+      let filterButton = document.querySelector(`#${filterName}-filter > button > span`) 
+
       if (element.checked) {
         filters[filterName].push(element.value)
+        filterButton.innerText = ' ' +filters[filterName].join(', ')
       } else {
         let fIndex = filters[filterName].findIndex((f) => f === element.value)  
         filters[filterName].splice(fIndex, 1)
+        filterButton.innerText = ' ' + filters[filterName].join(', ')
       }
-      displayProjects(filterProjects())
+      displayProjects(filterProjects(projects))
+  }
+
+  // Configure Category
+
+  for(let c of document.getElementsByName('category')) {
+    c.onchange = () => { clickCheckbox(c, 'category') }
   }
 
   // Configure Region
@@ -233,14 +269,51 @@
     c.onchange = () => { clickCheckbox(c, 'region') }
   }
 
-  let regionButton = document.querySelector('#region-filter > button') 
-  regionButton.onclick = () => {
-    if (regionSelector.style.display !== 'block') {
-      regionSelector.style.display = 'block'
-    } else {
-      regionSelector.style.display = ''
+  // Configure Language
+
+  for(let c of document.getElementsByName('language')) {
+    c.onchange = () => { clickCheckbox(c, 'language') }
+  }
+
+
+
+  function openFilter(filterName) {
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    filterButton.onclick = () => {
+      if (filterSelector.style.display !== 'block') {
+        filterSelector.style.display = 'block'
+      } else {
+        filterSelector.style.display = ''
+      }
+      categorySelector.style.display = ''
     }
   }
+
+
+  function configureFilterButton(filterName) {
+    let filterNames = Object.keys(filters)
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
+
+    filterButton.onclick = () => {
+      if (filterSelector.style.display !== 'block') {
+        filterSelector.style.display = 'block'
+      } else {
+        filterSelector.style.display = ''
+      }
+
+      for (var f of filterNames) {
+          if (f !== filterName) {
+            let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+            filterSelector.style.display = ''
+          }
+      }
+    }
+  }
+
+  configureFilterButton('region')
+  configureFilterButton('category')
+  configureFilterButton('language')
 
   displayProjects(projects)
 

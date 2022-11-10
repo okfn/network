@@ -898,6 +898,9 @@ p {
 .max-w-\[90\%\] {
   max-width: 90%;
 }
+.max-w-\[100\%\] {
+  max-width: 100%;
+}
 .flex-initial {
   flex: 0 1 auto;
 }
@@ -1060,6 +1063,9 @@ p {
 .pr-10 {
   padding-right: 2.5rem;
 }
+.pl-2 {
+  padding-left: 0.5rem;
+}
 .text-left {
   text-align: left;
 }
@@ -1108,6 +1114,11 @@ p {
 }
 .opacity-100 {
   opacity: 1;
+}
+.shadow-2xl {
+  --tw-shadow: 0 25px 50px -12px rgb(0 0 0 / 0.25);
+  --tw-shadow-colored: 0 25px 50px -12px var(--tw-shadow-color);
+  box-shadow: var(--tw-ring-offset-shadow, 0 0 #0000), var(--tw-ring-shadow, 0 0 #0000), var(--tw-shadow);
 }
 .filter {
   filter: var(--tw-blur) var(--tw-brightness) var(--tw-contrast) var(--tw-grayscale) var(--tw-hue-rotate) var(--tw-invert) var(--tw-saturate) var(--tw-sepia) var(--tw-drop-shadow);
