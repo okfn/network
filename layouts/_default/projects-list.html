@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="fixed mt-[50px] w-full z-10">
-<div id="project-info" class="grid md:grid-cols-5 flex z-10 absolute place-content-center left-0 top-0 right-0">
+<div class="fixed mt-[50px] w-full z-[200]">
+<div id="project-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
 
@@ -16,9 +16,6 @@
 
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 pl-5 pr-5 md:pl-0">
         <div class="projects-grid md:grid md:grid-cols-3 grid-cols-1">
-          {{ range $projNumber, $project := $projects }}
-             {{ partial "project-card.html" (dict "project" $project "ctx" $ "projNumber" $projNumber) }}
-          {{ end }}
           {{ range $.Site.Data.project }}
           {{ end }}
         </div>
@@ -32,41 +29,67 @@
 
 {{ define "scripts" }}
 
-<script src="https://cdn.jsdelivr.net/npm/muuri@0.9.5/dist/muuri.min.js"></script>
-<script src="https://cdn.jsdelivr.net/npm/web-animations-js@2.3.2/web-animations.min.js"></script>
 <script type="text/javascript">
+
+  let filters = {
+      region: []
+  }
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
 
   var projectInfo = document.getElementById("project-info")
   var projects = [
           {{ $projects := getCSV "," "okfn-network-projects.csv" }}
           {{ range $pi, $project := after 1 $projects }}
            {
-             "project_name": {{ index . 1 }},
-             "project_description": {{ index . 2 }},
-             "project_link": {{ index . 3 }},
-             "project_category": {{ index . 4 }},
-             "project_region": {{ index . 5 }},
-             "project_languages": {{ index . 6 }},  
-             "project_logo": {{ index . 8 }},
-             "project_organization": {{ index . 0 }}
+             "name": {{ index . 1 }},
+             "description": {{ index . 2 }},
+             "link": {{ index . 3 }},
+             "category": {{ index . 4 }},
+             "region": {{ index . 5 }},
+             "languages": {{ index . 6 }},  
+             "logo": {{ index . 8 }},
+             "organization": {{ index . 0 }},
              },
           {{ end }}
    ]
 
-  const projectCardTemplate = (project) => `{{ partial "project-card-template.html" }}`
+  projects = shuffleArray(projects)
+  for (var i in projects) {
+    projects[i]['project_number'] = i
+  }
 
+  const projectCardTemplate = (project) => `
+ <div class="item md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-10 mb-5 hover:underline hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
+  <div class="project-logo pl-5 pr-5 pt-2 pb-2">
+    <img class="max-w-[80%]"  src="{{ .Site.BaseURL }}images/logos/${project.logo}"> 
+  </div>
+  <div class="font-bold px-10 pt-5 text-2xl leading-none">
+    ${project.name}
+  </div>
+  <div class="px-10 pt-2">
+    ${project.category}
+  </div>
+</div>
+  `
   const projectInfoTemplate = (project) => `
     <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
-          <img src="{{ .Site.BaseURL }}images/logos/${project.project_logo}">
+          <img src="{{ .Site.BaseURL }}images/logos/${project.logo}">
           <div class="mt-10 text-2xl text-left font-bold">
-            ${project.project_name}
+            ${project.name}
           </div>
           <div class="text-left mt-5">
             <img class="float-left" src={{ .Site.BaseURL }}images/pin-angle-fill.png>
             <div class="mt-10 ml-10 text-sm text-left">
-            ${ project.project_region }
+            ${ project.region }
             </div>
           </div>
           <div class="my-10">
@@ -74,7 +97,7 @@
           </div>
           <div class="text-left mt-5">
             <img class="float-left" src="{{ .Site.BaseURL }}images/globe.png">
-            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="${ project.project_link }">${ project.project_link }</a>
+            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="${ project.project_link }">${ project.link }</a>
           </div>
         </div>
         <div class="md:col-span-2">
@@ -85,13 +108,13 @@
           <img class="float-right" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
         </div>
         <div class="text-left">
-        ${project.project_description}
+        ${project.description}
         </div>
         <div class="mt-10">
-          ${getLanguages(project.project_languages)}
+          ${getLanguages(project.languages)}
         </div>
         <div class="mt-5">
-          ${getCategories(project.project_category)}
+          ${getCategories(project.category)}
         </div>
 
         </div>
@@ -132,6 +155,94 @@
     projectInfo.style.display = "grid"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
   }
+
+  function displayProjects(projects) {
+    let projectsGrid = document.getElementsByClassName('projects-grid')[0]
+    projectsGrid.innerHTML = ''
+    for (var pi in projects) {
+      let projectDiv = document.createElement('div')
+      projectDiv.innerHTML = (projectCardTemplate)(projects[pi])
+      projectsGrid.appendChild(projectDiv)
+    }
+
+    /* Add number os displayed elements */
+
+    let resultsNumber = document.getElementById('results')
+    results.innerText = `${projects.length} projects matching your filters`
+  }
+
+  function addCheckbox(element, name, value, label) {
+    let checkbox = `<input type="checkbox" name=${name} value=${value}>  ${label}</input>`
+    let checkboxDom = document.createElement('div')
+    checkboxDom.innerHTML = checkbox
+    element.appendChild(checkboxDom)
+  }
+
+  let regions = []
+  function getRegions(regions, projects) {
+    for (var p of projects) {
+      for (var r of p.region.split(',')) {
+          r = r.trim()
+          if (r !== '' && regions.indexOf(r) < 0) {
+          regions.push(r)
+        }
+      }
+    }
+    regions.sort()
+  } 
+
+  getRegions(regions, projects)
+
+  let regionSelector = document.getElementsByClassName('region-selector')[0]
+  for (var r of regions) {
+    addCheckbox(regionSelector, 'region', r, r)
+  }
+
+  function filterProjects() {
+    let filteredProjects = []
+    for (var p of projects) {
+      let m = 0 
+      if (filters.region.length > 0) {
+        for (var r of filters.region)  {
+          if (p.region.indexOf(r) >= 0) {
+            m += 1
+          } 
+        }
+      } else {
+        m = 1 
+      }
+      if (m > 0)
+          filteredProjects.push(p)
+    }
+    return filteredProjects
+  }
+
+  function clickCheckbox(element, filterName) {
+      if (element.checked) {
+        filters[filterName].push(element.value)
+      } else {
+        let fIndex = filters[filterName].findIndex((f) => f === element.value)  
+        filters[filterName].splice(fIndex, 1)
+      }
+      displayProjects(filterProjects())
+  }
+
+  // Configure Region
+
+  for(let c of document.getElementsByName('region')) {
+    c.onchange = () => { clickCheckbox(c, 'region') }
+  }
+
+  let regionButton = document.querySelector('#region-filter > button') 
+  regionButton.onclick = () => {
+    if (regionSelector.style.display !== 'block') {
+      regionSelector.style.display = 'block'
+    } else {
+      regionSelector.style.display = ''
+    }
+  }
+
+  displayProjects(projects)
 
 </script>
 
