@@ -1523,6 +1523,10 @@ footer  a {
     grid-column-end: 5;
   }
 
+  .md\:mt-20 {
+    margin-top: 5rem;
+  }
+
   .md\:grid {
     display: grid;
   }
@@ -1565,5 +1569,9 @@ footer  a {
 
   .md\:pb-5 {
     padding-bottom: 1.25rem;
+  }
+
+  .md\:text-left {
+    text-align: left;
   }
 }
