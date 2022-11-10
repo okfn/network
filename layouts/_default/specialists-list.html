@@ -1,6 +1,6 @@
 {{ define "main" }}
-<div class="fixed mt-[50px] w-full z-10">
-<div id="specialist-info" class="grid md:grid-cols-5 flex z-10 absolute place-content-center left-0 top-0 right-0">
+<div class="fixed mt-[50px] w-full z-[200]">
+<div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
 
@@ -13,10 +13,7 @@
       {{ partial "specialists-header.html" . }}
       {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
       <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
-        <div class="md:grid md:grid-cols-3">
-          {{ range $specialistNumber, $specialist := after 1 $experts }}
-             {{ partial "specialist-card.html" (dict "specialist" . "ctx" $ "specialistNumber" $specialistNumber) }}
-          {{ end }}
+        <div class="specialists-grid md:grid md:grid-cols-3">
           {{ range $.Site.Data.project }}
           {{ end }}
         </div>
@@ -33,35 +30,69 @@
 
 <script type="text/javascript">
 
+  let filters = {
+      region: [],
+      category: [],
+      language: []
+  }
+
+  function shuffleArray(arr) {
+    for (let i = arr.length - 1; i > 0; i--) {
+      const j = Math.floor(Math.random() * (i + 1));
+      [arr[i], arr[j]] = [arr[j], arr[i]];
+    }
+    return arr;
+  }
+
   var specialistInfo = document.getElementById("specialist-info")
   var specialists = [
           {{ $specialists := getCSV "," "okfn-network-experts.csv" }}
           {{ range $pi, $specialist := after 1 $specialists }}
            {
-             "specialist_name": {{ index . 1 }},
-             "specialist_description": {{ index . 6 }},
-             "specialist_email": {{ index . 2 }},
-             "specialist_category": {{ index . 5 }},
-             "specialist_region": {{ index . 0 }},
-             "specialist_languages": {{ index . 4 }},  
-             "specialist_logo": {{ index . 8 }},
-             "specialist_organization": {{ index . 3 }}
+             "name": {{ index . 1 }},
+             "description": {{ index . 6 }},
+             "email": {{ index . 2 }},
+             "category": {{ index . 5 }},
+             "region": {{ index . 0 }},
+             "language": {{ index . 4 }},  
+             "pic": {{ index . 8 }},
+             "organization": {{ index . 3 }}
              },
           {{ end }}
    ]
+
+  specialists = shuffleArray(specialists)
+  for (var i in specialists) {
+    specialists[i]['specialist_number'] = i
+  }
+
+
+  const specialistCardTemplate = (specialist) => `
+          <div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick="openSpecialist(${specialist.specialist_number})">
+            <div class="specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
+              <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
+            </div>
+            <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
+              ${specialist.name}
+            </div>
+            <div class="px-10 pt-2" >
+              ${specialist.organization}
+            </div>
+          </div>
+  `
 
   const specialistInfoTemplate = (specialist) => `
     <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
-          <img src="{{ .Site.BaseURL }}images/directory/${specialist.specialist_logo}">
+          <img src="{{ .Site.BaseURL }}images/directory/${specialist.pic}">
           <div class="mt-10 text-2xl text-left font-bold">
-            ${specialist.specialist_name}
+            ${specialist.name}
           </div>
           <div class="text-left mt-5">
             <img class="float-left" src={{ .Site.BaseURL }}images/pin-angle-fill.png>
             <div class="mt-10 ml-10 text-sm text-left">
-            ${ specialist.specialist_region }
+            ${ specialist.region }
             </div>
           </div>
           <div class="my-10">
@@ -69,7 +100,7 @@
           </div>
           <div class="text-left mt-5">
             <img class="float-left" src="{{ .Site.BaseURL }}images/globe.png">
-            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.specialist_email }">${ specialist.specialist_email }</a>
+            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
           </div>
         </div>
         <div class="md:col-span-2">
@@ -80,13 +111,13 @@
           <img class="float-right" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
         </div>
         <div class="text-left">
-        ${specialist.specialist_description}
+        ${specialist.description}
         </div>
         <div class="mt-10">
-          ${getLanguages(specialist.specialist_languages)}
+          ${getLanguages(specialist.language)}
         </div>
         <div class="mt-5">
-          ${getCategories(specialist.specialist_category)}
+          ${getCategories(specialist.category)}
         </div>
 
         </div>
@@ -127,6 +158,164 @@
     specialistInfo.style.display = "grid"  
     specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
   }
+
+  function displaySpecialists(specialists) {
+    let specialistsGrid = document.getElementsByClassName('specialists-grid')[0]
+    specialistsGrid.innerHTML = ''
+    for (var pi in specialists) {
+      let specialistDiv = document.createElement('div')
+      specialistDiv.innerHTML = (specialistCardTemplate)(specialists[pi])
+      specialistsGrid.appendChild(specialistDiv)
+    }
+
+    /* Add number os displayed elements */
+
+    let resultsNumber = document.getElementById('results')
+    results.innerText = `${specialists.length} specialists matching your filters`
+  }
+
+  function addCheckbox(element, name, value, label) {
+    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
+    let checkboxDom = document.createElement('div')
+    checkboxDom.innerHTML = checkbox
+    element.appendChild(checkboxDom)
+  }
+
+  let regions = []
+  let categories = []
+  let languages = []
+
+  function getFilterChoices(filterChoices, filterName, projects) {
+    for (var p of projects) {
+      for (var r of p[filterName].split(',')) {
+          r = r.trim()
+          if (r !== '' && filterChoices.indexOf(r) < 0) {
+          filterChoices.push(r)
+        }
+      }
+    }
+    filterChoices.sort()
+  } 
+
+  getFilterChoices(regions, 'region', specialists)
+  getFilterChoices(languages, 'language', specialists)
+  getFilterChoices(categories, 'category', specialists)
+
+  let regionSelector = document.getElementsByClassName('region-selector')[0]
+  for (var r of regions) {
+    addCheckbox(regionSelector, 'region', r, r)
+  }
+
+  let categorySelector = document.getElementsByClassName('category-selector')[0]
+  for (var r of categories) {
+    addCheckbox(categorySelector, 'category', r, r)
+  }
+
+  let languageSelector = document.getElementsByClassName('language-selector')[0]
+  for (var r of languages) {
+    addCheckbox(languageSelector, 'language', r, r)
+  }
+
+
+  function filterSpecialists(specialists) {
+    let filteredSpecialists = []
+    let filterNames = Object.keys(filters)
+
+    for (var p of specialists) {
+      let m = 1
+      for (var filterName of filterNames) {
+        if (filters[filterName].length > 0) {
+          for (var f of filters[filterName]) { 
+            if (p[filterName].indexOf(f) >= 0) {
+              m = 1
+              break
+            } else {
+              m = 0
+            }
+          }
+          if (m == 0)
+            break
+        } 
+      }
+      if (m > 0)
+          filteredSpecialists.push(p)
+    }
+
+    return filteredSpecialists
+  }
+
+  function clickCheckbox(element, filterName) {
+      let filterButton = document.querySelector(`#${filterName}-filter > button > span`) 
+
+      if (element.checked) {
+        filters[filterName].push(element.value)
+        filterButton.innerText = ' ' +filters[filterName].join(', ')
+      } else {
+        let fIndex = filters[filterName].findIndex((f) => f === element.value)  
+        filters[filterName].splice(fIndex, 1)
+        filterButton.innerText = ' ' + filters[filterName].join(', ')
+      }
+      displaySpecialists(filterSpecialists(specialists))
+  }
+
+  // Configure Category
+
+  for(let c of document.getElementsByName('category')) {
+    c.onchange = () => { clickCheckbox(c, 'category') }
+  }
+
+  // Configure Region
+
+  for(let c of document.getElementsByName('region')) {
+    c.onchange = () => { clickCheckbox(c, 'region') }
+  }
+
+  // Configure Language
+
+  for(let c of document.getElementsByName('language')) {
+    c.onchange = () => { clickCheckbox(c, 'language') }
+  }
+
+
+  function openFilter(filterName) {
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    filterButton.onclick = () => {
+      if (filterSelector.style.display !== 'block') {
+        filterSelector.style.display = 'block'
+      } else {
+        filterSelector.style.display = ''
+      }
+      categorySelector.style.display = ''
+    }
+  }
+
+
+  function configureFilterButton(filterName) {
+    let filterNames = Object.keys(filters)
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
+
+    filterButton.onclick = () => {
+      if (filterSelector.style.display !== 'block') {
+        filterSelector.style.display = 'block'
+      } else {
+        filterSelector.style.display = ''
+      }
+
+      for (var f of filterNames) {
+          if (f !== filterName) {
+            let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+            filterSelector.style.display = ''
+          }
+      }
+    }
+  }
+
+  configureFilterButton('region')
+  configureFilterButton('category')
+  configureFilterButton('language')
+
+  displaySpecialists(specialists)
 
 </script>
 
