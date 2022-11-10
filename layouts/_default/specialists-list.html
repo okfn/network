@@ -12,7 +12,7 @@
       {{ $experts := getCSV "," "okfn-network-experts.csv" }}
       {{ partial "specialists-header.html" . }}
       {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
-      <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 pl-5 md:pl-0">
+      <div class="md:col-start-2 md:col-span-3 text-left mt-10 pb-12 md:pl-10 md:pl-0">
         <div class="specialists-grid md:grid md:grid-cols-3">
           {{ range $.Site.Data.project }}
           {{ end }}

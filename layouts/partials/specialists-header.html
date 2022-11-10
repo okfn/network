@@ -5,7 +5,7 @@
          <hr class="bg-black opacity-100" id="title-divider" width="100%"/>
       </div>
       <div class="col-end-5 col-span-3 text-left md:pl-10 md:pr-10 md:pb-5">
-        {{ .Params.description }}
+        {{ .Params.description | safeHTML}}
       </div>
     </div>
 </div>

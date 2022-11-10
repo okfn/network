@@ -1,8 +1,8 @@
 ---
 title: "Global Directory"
-description: 
+description: The <a class="font-bold" href="https://okfn.org/network">Open Knowledge Network</a> connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.
 footer_title: Nominate a specialist for the Director
-footer_text: We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
+footer_text: The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.
 footer_button: Fill the form
 footer_link: /specialist/add
 type: specialist
