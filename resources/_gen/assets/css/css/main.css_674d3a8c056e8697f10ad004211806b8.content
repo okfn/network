@@ -829,6 +829,10 @@ p {
   margin-top: 1.25rem;
   margin-bottom: 1.25rem;
 }
+.mx-5 {
+  margin-left: 1.25rem;
+  margin-right: 1.25rem;
+}
 .mx-4 {
   margin-left: 1rem;
   margin-right: 1rem;
@@ -862,11 +866,11 @@ p {
 .mt-\[50px\] {
   margin-top: 50px;
 }
-.mb-5 {
-  margin-bottom: 1.25rem;
-}
 .ml-10 {
   margin-left: 2.5rem;
+}
+.mb-5 {
+  margin-bottom: 1.25rem;
 }
 .ml-5 {
   margin-left: 1.25rem;
@@ -889,6 +893,9 @@ p {
 .h-80 {
   height: 20rem;
 }
+.max-h-6 {
+  max-height: 1.5rem;
+}
 .w-full {
   width: 100%;
 }
@@ -906,6 +913,9 @@ p {
 }
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+.grid-cols-2 {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
@@ -1523,6 +1533,19 @@ footer  a {
     grid-column-end: 5;
   }
 
+  .md\:float-left {
+    float: left;
+  }
+
+  .md\:mx-10 {
+    margin-left: 2.5rem;
+    margin-right: 2.5rem;
+  }
+
+  .md\:mr-2 {
+    margin-right: 0.5rem;
+  }
+
   .md\:mt-20 {
     margin-top: 5rem;
   }
@@ -1547,12 +1570,12 @@ footer  a {
     grid-template-columns: repeat(5, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-3 {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-2 {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
   .md\:pl-10 {

@@ -1,7 +1,19 @@
 {{ define "main" }}
 <div class="w-full text-center">
-    <div class="w-full pl-5 pt-5 pb-5">
-      <a href="https://okfn.org"><img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo"></a>
+    <div class="w-full pt-5">
+      <div class="grid md:grid-cols-2 md:mx-10 mx-5 grid-cols-2 mb-10">
+        <div class="md:col-span-1 col-span-1">
+          <a href="https://okfn.org/"><img src="{{ .Site.BaseURL }}images/okfn-net-logo.png" class="logo"></a>
+        </div>
+        <div class="font-bold md:col-span-1 md:pr-10 col-span-1">
+            <a class="ml-10 flex float-right" href="https://okfn.org/network">
+              <img class="self-center md:mr-2 md:float-left float-right max-h-6" src="{{ .Site.BaseURL }}images/chevron-left.png">
+              <span class="self-center">
+              Back to OKFN Network
+              </span>
+            </a>
+        </div>
+        </div>
     </div>
     <div class="md:grid md:grid-cols-5 page-content">
       {{ partial "form-header.html" . }}
