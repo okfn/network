@@ -2,6 +2,7 @@
 <html lang="{{ .Language.Lang }}">
 <head>
     {{ partial "head.html" . }}
+    {{ block "title" . }}{{ end }}
 </head>
 <body class="{{ .Params.bodyClasses }} relative">
 {{ block "main" . }}{{ end }}
