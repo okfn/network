@@ -73,7 +73,8 @@
              "region": {{ index . 0 }},
              "language": {{ index . 4 }},  
              "pic": {{ index . 8 }},
-             "organization": {{ index . 3 }}
+             "organization": {{ index . 3 }},
+             "pic_blend": {{ index . 9 }}
              },
           {{ end }}
    ]
@@ -81,12 +82,18 @@
   specialists = shuffleArray(specialists)
   for (var i in specialists) {
     specialists[i]['specialist_number'] = i
+    if (specialists[i]['pic_blend'] === 'FALSE') {
+      specialists[i]['pic_blend'] = 'bg-blend-screen'
+    } else {
+      specialists[i]['pic_blend'] = 'bg-blend-normal'
+    }
+
   }
 
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick="openSpecialist(${specialist.specialist_number})">
-            <div class="specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
+            <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
             <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">

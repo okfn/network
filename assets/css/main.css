@@ -287,7 +287,6 @@ mark.specialist {
   background-repeat: no-repeat;
   background-position: center;
   background-size: cover;
-  background-blend-mode: screen;
   background-color: #00D1FF;
   transition: all 0.35s linear;
 }
