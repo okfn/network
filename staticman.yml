@@ -15,7 +15,7 @@ specialist:
   requiredFields: ["name", "email", "affiliation", "area", "country", "reason"]
 
 project:
-  allowedFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages"]
+  allowedFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages", "link"]
   branch: "main"
   commitMessage: "Add new project from OKF network"
   filename: "entry-{@timestamp}"
@@ -28,6 +28,6 @@ project:
   moderation: true
   name: "OKF Network"
   path: "data/projects/{options.slug}"
-  requiredFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages"]
+  requiredFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages", "link"]
 
 
