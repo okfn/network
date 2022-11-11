@@ -1,8 +1,8 @@
 specialist:
   allowedFields: ["name", "email", "affiliation", "area", "country", "reason"]
   branch: "main"
-  commitMessage: "Add new project from OKF network"
-  filename: "entry{@timestamp}"
+  commitMessage: "Suggested new specialist from OKF network"
+  filename: "entry-{@timestamp}"
   format: "yaml"
   generatedFields:
     date:
@@ -14,5 +14,20 @@ specialist:
   path: "data/specialists/{options.slug}"
   requiredFields: ["name", "email", "affiliation", "area", "country", "reason"]
 
+project:
+  allowedFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages"]
+  branch: "main"
+  commitMessage: "Add new project from OKF network"
+  filename: "entry-{@timestamp}"
+  format: "yaml"
+  generatedFields:
+    date:
+      type: date
+      options:
+        format: "timestamp-seconds"
+  moderation: true
+  name: "OKF Network"
+  path: "data/projects/{options.slug}"
+  requiredFields: ["name", "description", "organisation_email", "organisation_website", "country", "languages"]
 
 
