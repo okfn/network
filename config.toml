@@ -2,4 +2,4 @@ baseURL = 'https://network.okfn.org/'
 languageCode = 'en-us'
 title = 'Open Knowledge Network'
 [params]
-  staticmanURL = 'https://staticman.vaz.io/'
+  staticmanURL = 'https://staticman.okfn.org/'
