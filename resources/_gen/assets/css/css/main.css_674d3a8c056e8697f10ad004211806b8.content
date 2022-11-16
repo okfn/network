@@ -893,6 +893,9 @@ p {
 .h-80 {
   height: 20rem;
 }
+.h-\[92\%\] {
+  height: 92%;
+}
 .max-h-6 {
   max-height: 1.5rem;
 }
@@ -910,6 +913,9 @@ p {
 }
 .flex-initial {
   flex: 0 1 auto;
+}
+.auto-rows-max {
+  grid-auto-rows: max-content;
 }
 .grid-cols-5 {
   grid-template-columns: repeat(5, minmax(0, 1fr));
@@ -1381,7 +1387,6 @@ textarea::placeholder {
 }
 
 .project-card {
-  height: 300px;
   background-color: #AEFFEC;
 }
 
@@ -1431,7 +1436,6 @@ mark.specialist {
 }
 
 .specialist-card {
-  height: 330px;
   background-color: #D5F4FB;
 }
 

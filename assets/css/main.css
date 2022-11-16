@@ -228,7 +228,6 @@ textarea::placeholder {
 }
 
 .project-card {
-  height: 300px;
   background-color: #AEFFEC;
 }
 
@@ -278,7 +277,6 @@ mark.specialist {
 }
 
 .specialist-card {
-  height: 330px;
   background-color: #D5F4FB;
 }
 

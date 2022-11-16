@@ -39,7 +39,7 @@
         </div>
         </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content-center">
+    <div class="md:grid md:grid-cols-5 project-content-center auto-rows-max">
       {{ $projects := getCSV "," "okfn-network-projects.csv" }}
       {{ $projects := after 1 $projects }}
       {{ partial "projects-header.html" . }}
@@ -99,14 +99,14 @@
   }
 
   const projectCardTemplate = (project) => `
- <div class="item md:col-span-1 project-card mx-4 rounded-tr-3xl rounded-bl-3xl pb-10 mb-5 hover:underline hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
+ <div class="item md:col-span-1 project-card mx-4 overflow-hidden h-[92%] rounded-tr-3xl rounded-bl-3xl pb-10 mb-5 hover:underline hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
   <div class="project-logo pl-5 pr-5 pt-2 pb-2">
     <img class="max-w-[80%]"  src="{{ .Site.BaseURL }}images/logos/${project.logo}"> 
   </div>
-  <div class="font-bold px-10 pt-5 text-2xl leading-none">
+  <div class="font-bold px-10 pt-5 text-2xl leading-none overflow-hidden text-ellipsis">
     ${project.name}
   </div>
-  <div class="px-10 pt-2">
+  <div class="px-10 pt-2 overflow-hidden text-ellipsis">
     ${project.category}
   </div>
 </div>

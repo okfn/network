@@ -41,7 +41,7 @@
         </div>
     </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content">
+    <div class="md:grid md:grid-cols-5 project-content auto-rows-max">
       {{ $experts := getCSV "," "okfn-network-experts.csv" }}
       {{ partial "specialists-header.html" . }}
       {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
@@ -108,14 +108,14 @@
 
 
   const specialistCardTemplate = (specialist) => `
-          <div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 hover:cursor-pointer text-ellipsis hover:underline" onclick="openSpecialist(${specialist.specialist_number})">
+          <div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis hover:underline" onclick="openSpecialist(${specialist.specialist_number})">
             <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
-            <div class="font-bold px-10 pt-10 text-2xl leading-none text-ellipsis">
+            <div class="font-bold px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
               ${specialist.name}
             </div>
-            <div class="px-10 pt-2" >
+            <div class="px-10 pt-2 overflow-hidden text-ellipsis">
               ${specialist.organization}
             </div>
           </div>
