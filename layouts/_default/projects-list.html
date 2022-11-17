@@ -68,6 +68,8 @@
       language: []
   }
 
+  let lastScroll = 0
+
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -182,11 +184,15 @@
 
   function closeDialog() {
     projectInfo.style.display = "none"  
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
   }
 
   function openProject(projectNumber) {
     projectInfo.style.display = "grid"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+    lastScroll = window.scrollY
+    document.getElementById('project-info').scrollIntoView()
   }
 
   function displayProjects(projects) {
