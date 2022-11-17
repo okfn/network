@@ -19,7 +19,7 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="fixed mt-[50px] w-full z-[200]">
+<div class="md:fixed mt-[50px] w-full z-[200]">
 <div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -68,6 +68,8 @@
       category: [],
       language: []
   }
+
+  let lastScroll = 0
 
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -197,6 +199,8 @@
       'Url': '/specialist/'
     }
     window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
 
   }
 
@@ -208,6 +212,8 @@
       'Url': '/specialist/' + specialists[specialistNumber]['url']
     }
     window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    lastScroll = window.scrollY
+    document.getElementById('specialist-info').scrollIntoView()
   }
 
   function displaySpecialists(specialists) {

@@ -899,6 +899,9 @@ p {
 .h-1\/2 {
   height: 50%;
 }
+.h-full {
+  height: 100%;
+}
 .max-h-6 {
   max-height: 1.5rem;
 }
@@ -940,6 +943,9 @@ p {
 }
 .self-center {
   align-self: center;
+}
+.overflow-auto {
+  overflow: auto;
 }
 .overflow-hidden {
   overflow: hidden;
@@ -1523,6 +1529,10 @@ footer  a {
 }
 
 @media (min-width: 720px) {
+
+  .md\:fixed {
+    position: fixed;
+  }
 
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
