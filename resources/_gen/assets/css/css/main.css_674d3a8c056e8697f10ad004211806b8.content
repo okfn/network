@@ -896,14 +896,20 @@ p {
 .h-\[92\%\] {
   height: 92%;
 }
+.h-1\/2 {
+  height: 50%;
+}
 .max-h-6 {
   max-height: 1.5rem;
 }
+.max-h-\[80\%\] {
+  max-height: 80%;
+}
+.min-h-\[50\%\] {
+  min-height: 50%;
+}
 .w-full {
   width: 100%;
-}
-.max-w-\[80\%\] {
-  max-width: 80%;
 }
 .max-w-\[90\%\] {
   max-width: 90%;
