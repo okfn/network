@@ -90,7 +90,8 @@
              "language": {{ index . 4 }},  
              "pic": {{ index . 8 }},
              "organization": {{ index . 3 }},
-             "pic_blend": {{ index . 9 }}
+             "pic_blend": {{ index . 9 }},
+             "url": {{ index . 10 }}
              },
           {{ end }}
    ]
@@ -105,7 +106,6 @@
     }
 
   }
-
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-4 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis hover:underline" onclick="openSpecialist(${specialist.specialist_number})">
@@ -192,11 +192,22 @@
 
   function closeDialog() {
     specialistInfo.style.display = "none"  
+    let stateObj = {
+      'Title': 'OKFN Global Directory',
+      'Url': '/specialist/'
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+
   }
 
   function openSpecialist(specialistNumber) {
     specialistInfo.style.display = "grid"  
     specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
+    let stateObj = {
+      'Title': 'OKFN Global Directory - ' + specialists[specialistNumber]['name'],
+      'Url': '/specialist/' + specialists[specialistNumber]['url']
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
   }
 
   function displaySpecialists(specialists) {
@@ -356,6 +367,15 @@
   configureFilterButton('language')
 
   displaySpecialists(specialists)
+
+  let locationPath = window.location.pathname.split('/')
+
+  if (locationPath.length > 2) {
+    let specialistURL = locationPath[2]
+    let specialistIndex = specialists.findIndex((s) => s.url == specialistURL)
+    if (specialistIndex >= 0) 
+      openSpecialist(specialistIndex)
+  }
 
 </script>
 

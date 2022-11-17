@@ -36,8 +36,11 @@ jobs:
         run: npm ci
 
       - name: Extract metadata
-        run: python extract-projects-categoris.py
+        run: python extract-projects-categories.py
             
+      - name: Create specialists pages
+        run: python create-specialists-pages.py
+ 
       - name: Build
         run: hugo --minify
 
