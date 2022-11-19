@@ -114,7 +114,7 @@
 </div>
   `
   const projectInfoTemplate = (project) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/logos/${project.logo}">
@@ -183,16 +183,18 @@
   }
 
   function closeDialog() {
-    projectInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    projectInfo.style.visibility = "hidden"  
     if (lastScroll != 0)
         window.scrollTo({top: lastScroll})
   }
 
   function openProject(projectNumber) {
-    projectInfo.style.display = "grid"  
+    projectInfo.style.visibility = "visible"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
     lastScroll = window.scrollY
     document.getElementById('project-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displayProjects(projects) {

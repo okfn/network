@@ -124,7 +124,7 @@
   `
 
   const specialistInfoTemplate = (specialist) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/directory/${specialist.pic}">
@@ -193,7 +193,8 @@
   }
 
   function closeDialog() {
-    specialistInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    specialistInfo.style.visibility = "hidden"  
     let stateObj = {
       'Title': 'OKFN Global Directory',
       'Url': '/specialist/'
@@ -205,7 +206,7 @@
   }
 
   function openSpecialist(specialistNumber) {
-    specialistInfo.style.display = "grid"  
+    specialistInfo.style.visibility = "visible"  
     specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
     let stateObj = {
       'Title': 'OKFN Global Directory - ' + specialists[specialistNumber]['name'],
@@ -214,6 +215,7 @@
     window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
     lastScroll = window.scrollY
     document.getElementById('specialist-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displaySpecialists(specialists) {
