@@ -328,23 +328,25 @@
     }
   }
 
-
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
     let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
 
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+ 
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
-            filterSelector.style.display = ''
+            filterSelector.classList.add('collapse')
           }
       }
     }

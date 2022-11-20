@@ -503,6 +503,11 @@ video {
   opacity: 1;
   transition: all .35s ease;
 }
+.accordion .collapse:not(.open) {
+  opacity: 0;
+  height: 0px;
+  transition: all .35s ease;
+}
 .button {
   padding: 0.625rem 1.5rem;
   border-radius: 0.5rem;
@@ -776,6 +781,12 @@ h6,.heading-6 {
 p {
   line-height: 1.625;
   font-weight: 300;
+}
+.visible {
+  visibility: visible;
+}
+.collapse {
+  visibility: collapse;
 }
 .absolute {
   position: absolute;
@@ -1471,6 +1482,27 @@ mark.specialist {
 
 .logo{
   max-height: 4.8em;
+}
+
+.filter-selector {
+  transition: all 0.3s;
+}
+
+.filter-selector.visible {
+  transition: all 0.3s ease-in-out;
+  transform: scaleY(1);
+  transform-origin: left top;
+
+}
+
+.filter-selector.collapse {
+  transition: all 0.3s ease-in-out;
+  transform-origin: left top;
+  transform: scaleY(0);
+}
+
+.filter-button {
+  transition: all 0.3s ease-in-out;
 }
 
 footer {

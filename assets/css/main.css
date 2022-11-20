@@ -311,6 +311,27 @@ mark.specialist {
   max-height: 4.8em;
 }
 
+.filter-selector {
+  transition: all 0.3s;
+}
+
+.filter-selector.visible {
+  transition: all 0.3s ease-in-out;
+  transform: scaleY(1);
+  transform-origin: left top;
+
+}
+
+.filter-selector.collapse {
+  transition: all 0.3s ease-in-out;
+  transform-origin: left top;
+  transform: scaleY(0);
+}
+
+.filter-button {
+  transition: all 0.3s ease-in-out;
+}
+
 footer {
   background-color: black;
   color: white;
