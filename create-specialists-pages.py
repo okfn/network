@@ -33,7 +33,7 @@ with open('okfn-network-experts.csv', mode = 'r') as file:
  
             if 'og_description' in l: 
                 description = '"Get in touch with our pool of experts in open data, data literacies, and more."'
-                specialist_lines[i] = re.sub(r'([\w]*:?) "(.*)".*', r'\1 ' + title, l) 
+                specialist_lines[i] = re.sub(r'([\w]*:?) "(.*)".*', r'\1 ' + description, l) 
  
 
         specialist_file.write(''.join(specialist_lines))
