@@ -229,10 +229,20 @@ textarea::placeholder {
 
 .project-card {
   background-color: #AEFFEC;
+  border-radius: 0 90px 0 90px;
+  height: 330px;
 }
 
 .project-logo {
   position: relative;
+  justify-content: center;
+  filter: saturate(0%);
+}
+
+.project-card:hover .project-logo{
+  filter: saturate(100%);
+  transition: all 0.35s linear;
+  cursor: pointer;
 }
 
 .project-logo:after {
@@ -289,8 +299,16 @@ mark.specialist {
   transition: all 0.35s linear;
 }
 
-.specialist-pic:hover {
+.specialist-card:hover .specialist-pic{
   background-color: transparent;
+}
+
+.specialist-card:hover #specialist-name{
+text-decoration: underline;
+}
+
+.specialist-card:hover{
+  cursor: pointer;
 }
 
 .logo{

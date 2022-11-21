@@ -41,30 +41,29 @@
         <form method="POST" class="font-miriam w-full form-{{ .Params.type }}" action="{{ $.Site.Params.staticmanURL }}v3/entry/github/okfn/network/main/project">
               <input name="options[redirect]" type="hidden" value="https://network.okfn.org/project">
               <label for="name">Project Name</label><br>
-              <input class="md:w-2/3 sm:w-full" type="text" id="name" name="fields[name]" placeholder=" Name of the project"><br>
+              <input class="md:w-2/3 sm:w-full text-lg" type="text" id="name" name="fields[name]" placeholder=" Name of the project"><br>
               <br>
               <label for="description">Project Description</label><br>
-              <textarea class="h-80 w-full" id="description" name="fields[description]" placeholder="Short description of the project..."></textarea><br><br>
+              <textarea class="h-80 w-full text-lg" id="description" name="fields[description]" placeholder="Short description of the project..."></textarea><br><br>
               <label for="organisation_email">Organisation email</label><br>
-              <input class="md:w-2/3 sm:w-full" type="text" id="organisation_email" name="fields[organisation_email]" placeholder="Organisation email"><br>
+              <input class="md:w-2/3 sm:w-full text-lg" type="text" id="organisation_email" name="fields[organisation_email]" placeholder="Organisation email"><br>
               <br>
               <label for="organisation_website">Organization website</label><br>
-              <input class="md:w-2/3 sm:w-full" type="text" id="organisation_website" name="fields[organisation_website]" placeholder="Organization website"><br>
+              <input class="md:w-2/3 sm:w-full text-lg" type="text" id="organisation_website" name="fields[organisation_website]" placeholder="Organization website"><br>
               <br>
               <label for="country">Country</label><br>
-              <select class="form-control md:w-1/5 sm:w-full mt-2" id="country" name="fields[country]">
+              <select class="form-control md:w-1/5 sm:w-full mt-2 text-lg" id="country" name="fields[country]">
               {{ range $.Site.Data.countries.countries }}
                  <option value="{{ .code }}">{{ .name }}</option>
               {{ end }}
               </select>
               <br>
               <label for="languages">Languages spoken</label><br>
-              <input class="md:w-2/3 sm:w-full" type="text" id="languages" name="fields[languages]" placeholder="Languages spoken"><br>
+              <input class="md:w-2/3 sm:w-full text-lg" type="text" id="languages" name="fields[languages]" placeholder="Languages spoken"><br>
               <br>
               <label for="link">Link to the project</label><br>
-              <input class="md:w-2/3 sm:w-full" type="text" id="link" name="fields[link]" placeholder="Project URL"><br>
-              <p class="md:w-2/3 mt-10 mb-10"></p>
-              <button class="mt-5 send-button hover:underline text-bold text-lg" type="submit"> Send </button>
+              <input class="md:w-2/3 sm:w-full text-lg" type="text" id="link" name="fields[link]" placeholder="Project URL"><br>
+              <button class="mt-10 mb-10 send-button hover:underline text-bold text-lg" type="submit"> Send </button>
           </form>
       </div>
     </div>

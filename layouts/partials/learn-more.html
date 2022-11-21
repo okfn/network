@@ -1,0 +1,16 @@
+<div class="md:w-100 text-center md:text-left md:grid md:grid-cols-5">
+  <div class="col-span-1 col-start-2 md:mt-20 md:pr-10">
+    <img src="{{ .Site.BaseURL}}/images/okfn-connect.png">
+  </div>
+  <div class="col-span-2 md:mt-20">
+   <div  class="text-5xl font-miriam">{{ .Params.learn_more_title }}</div>
+   <div class="text-2xl font-miriam pt-10">
+     {{ .Params.learn_more_description }}
+   </div>
+   <div class="col-span-5 pt-10 sm:text-center pb-10 md:text-left">
+    <a href="{{ .Site.BaseURL }}{{ .Params.footer_link }}">
+      <button class="font-bold font-miriam hover:underline">Learn more ➜</button>
+    </a>
+  </div>
+  </div>
+</div>

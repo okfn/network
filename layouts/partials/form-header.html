@@ -1,10 +1,10 @@
-<div class="md:col-end-5 md:col-span-3 mb-5">
-    <div class="grid md:grid-cols-5">
-      <div class="md:col-start-2 md:col-span-3 pl-5 pr-5">
-        <div class="font-miriam text-5xl"><mark class="{{ .Params.type }}">{{ .Params.title }}</mark></div>
-         <hr class="bg-black opacity-100 text-center" id="title-divider" style="width:90%; margin-left: auto; margin-right: auto;"/>
-         <div class="text-left text-lg md:pl-10 md:pr-10">
-          {{ .Params.description }}
+<div class="md:col-end-5 md:col-span-3">
+    <div class="grid grid-cols-5 pb-5">
+      <div class="md:col-start-2 md:col-span-3 col-span-5 pl-5 pr-5">
+        <div class="text-center font-miriam text-5xl"><mark class="{{ .Params.type }}">{{ .Params.title }}</mark></div>
+         <hr class="bg-black opacity-100" id="title-divider" style="width:90%; margin-left: auto; margin-right: auto;"/>
+         <div class="col-end-5 col-span-3 text-left text-lg md:pl-10 md:pr-10 md:pb-5">
+          {{ .Params.description | safeHTML }}
         </div>
       </div>
     </div>
