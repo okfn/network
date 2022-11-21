@@ -11,13 +11,13 @@
 <meta property="og:url" content="https://network.okfn.org/specialist/james-shrestha/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="James Shrestha is part of the Open Knowledge Network">
-<meta property="og:description" content="James Shrestha is part of the Open Knowledge Network">
+<meta property="og:description" content="Get in touch with our pool of experts in open data, data literacies, and more.">
 <meta property="og:image" content="https://network.okfn.org/images/directory/James-Shrestha.jpg">
 <meta name=twitter:card content="summary_large_image">
 <meta property="twitter:domain" content="network.okfn.org">
 <meta property="twitter:url" content="https://network.okfn.org/specialist/james-shrestha/">
 <meta name=twitter:title content="James Shrestha is part of the Open Knowledge Network">
-<meta name=twitter:description content="James Shrestha is part of the Open Knowledge Network">
+<meta name=twitter:description content="Get in touch with our pool of experts in open data, data literacies, and more.">
 <meta name=twitter:image content="https://network.okfn.org/images/directory/James-Shrestha.jpg">
 </head>
 <body class="specialist-body relative">
@@ -212,11 +212,11 @@ Refer to our <a href=https://okfn.org/attribution/>attributions</a> page for att
 
     </div>
     `;function getCategories(a){let b=a.split(','),c=a=>`
-    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5">
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5 mb-2">
       ${a}
     </button>
     `;return b.reduce((a,b)=>a+c(b,''),'')}function getLanguages(a){let b=a.split(','),c=a=>`
-    <button class="rounded rounded-full border-black border-2 px-5">
+    <button class="rounded rounded-full border-black border-2 px-5 mb-2">
       ${a}
     </button>
     `;return b.reduce((a,b)=>a+c(b,''),'')}function closeDialog(){document.getElementById('info-dialog').classList.remove('show-dialog'),specialistInfo.style.visibility="hidden";let a={Title:'OKFN Global Directory',Url:'/specialist/'};window.history.pushState(a,a.Title,a.Url),lastScroll!=0&&window.scrollTo({top:lastScroll})}function openSpecialist(a){specialistInfo.style.visibility="visible",specialistInfo.innerHTML=specialistInfoTemplate(specialists[a]);let b={Title:'OKFN Global Directory - '+specialists[a].name,Url:'/specialist/'+specialists[a].url};window.history.pushState(b,b.Title,b.Url),lastScroll=window.scrollY,document.getElementById('specialist-info').scrollIntoView(),document.getElementById('info-dialog').classList.add('show-dialog')}function displaySpecialists(a){let b=document.getElementsByClassName('specialists-grid')[0];b.innerHTML='';for(var c in a){let d=document.createElement('div');d.innerHTML=specialistCardTemplate(a[c]),b.appendChild(d)}let d=document.getElementById('results');results.innerText=`${a.length} specialists matching your filters`}function addCheckbox(b,c,d,e){let f=`<label class="text-sm block w-full"><input type="checkbox" name="${c}" value="${d}">  ${e}</input></label>`,a=document.createElement('div');a.innerHTML=f,b.appendChild(a)}let regions=[],categories=[],languages=[];function getFilterChoices(b,d,e){var c,a;for(c of e)for(a of c[d].split(','))a=a.trim(),a!==''&&b.indexOf(a)<0&&b.push(a);b.sort()}getFilterChoices(regions,'region',specialists),getFilterChoices(languages,'language',specialists),getFilterChoices(categories,'category',specialists);let regionSelector=document.getElementsByClassName('region-selector')[0];for(r of regions)addCheckbox(regionSelector,'region',r,r);let categorySelector=document.getElementsByClassName('category-selector')[0];for(r of categories)addCheckbox(categorySelector,'category',r,r);let languageSelector=document.getElementsByClassName('language-selector')[0];for(r of languages)addCheckbox(languageSelector,'language',r,r);function filterSpecialists(e){var b,a,d;let c=[],f=Object.keys(filters);for(b of e){let g=1;for(a of f)if(filters[a].length>0){for(d of filters[a]){if(b[a].indexOf(d)>=0){g=1;break}g=0}if(g==0)break}g>0&&c.push(b)}return c}function clickCheckbox(b,a){let c=document.querySelector(`#${a}-filter > button > span`);if(b.checked)filters[a].push(b.value),c.innerText=' '+filters[a].join(', ');else{let d=filters[a].findIndex(a=>a===b.value);filters[a].splice(d,1),c.innerText=' '+filters[a].join(', ')}displaySpecialists(filterSpecialists(specialists))}for(let a of document.getElementsByName('category'))a.onchange=()=>{clickCheckbox(a,'category')};for(let a of document.getElementsByName('region'))a.onchange=()=>{clickCheckbox(a,'region')};for(let a of document.getElementsByName('language'))a.onchange=()=>{clickCheckbox(a,'language')};function openFilter(b){let c=document.querySelector(`#${b}-filter > button`),a=document.getElementsByClassName(`${b}-selector`)[0];c.onclick=()=>{a.style.visibility!=='collapse'?(a.classList.remove('visible'),a.classList.add('collapse')):(a.classList.remove('collapse'),a.classList.add('visible'))}}function configureFilterButton(b){let c=Object.keys(filters),d=document.querySelector(`#${b}-filter > button`),a=document.getElementsByClassName(`${b}-selector`)[0];d.onclick=()=>{a.classList.contains('visible')?(a.classList.remove('visible'),a.classList.add('collapse')):(a.classList.remove('collapse'),a.classList.add('visible'));for(var d of c)if(d!==b){let a=document.getElementsByClassName(`${d}-selector`)[0];a.classList.add('collapse')}}}configureFilterButton('region'),configureFilterButton('category'),configureFilterButton('language'),displaySpecialists(specialists);let locationPath=window.location.pathname.split('/');if(locationPath.length>2){let b=locationPath[2],a=specialists.findIndex(a=>a.url==b);a>=0&&openSpecialist(a)}</script>
