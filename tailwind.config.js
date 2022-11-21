@@ -6,7 +6,7 @@ module.exports = withMT({
     // removeDeprecatedGapUtilities: true,
     // purgeLayersByDefault: true,
   },
-  content: ['layouts/**/*.html'],
+  content: ['layouts/**/*.html', 'content/**/*.md'],
   theme: {
     colors: {
       'project': '#AEFFEC',
