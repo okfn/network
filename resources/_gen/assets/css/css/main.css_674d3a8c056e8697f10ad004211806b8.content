@@ -812,11 +812,11 @@ p {
 .col-span-5 {
   grid-column: span 5 / span 5;
 }
-.col-span-1 {
-  grid-column: span 1 / span 1;
-}
 .col-span-3 {
   grid-column: span 3 / span 3;
+}
+.col-span-1 {
+  grid-column: span 1 / span 1;
 }
 .col-span-2 {
   grid-column: span 2 / span 2;
@@ -853,14 +853,14 @@ p {
   margin-left: 1rem;
   margin-right: 1rem;
 }
+.mt-12 {
+  margin-top: 3rem;
+}
 .mb-10 {
   margin-bottom: 2.5rem;
 }
 .ml-10 {
   margin-left: 2.5rem;
-}
-.mt-12 {
-  margin-top: 3rem;
 }
 .mt-2 {
   margin-top: 0.5rem;
@@ -901,11 +901,11 @@ p {
 .hidden {
   display: none;
 }
-.h-80 {
-  height: 20rem;
-}
 .h-auto {
   height: auto;
+}
+.h-80 {
+  height: 20rem;
 }
 .h-\[92\%\] {
   height: 92%;
@@ -990,6 +990,10 @@ p {
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
+.bg-black {
+  --tw-bg-opacity: 1;
+  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
+}
 .bg-\[\#00D1FF\] {
   --tw-bg-opacity: 1;
   background-color: rgb(0 209 255 / var(--tw-bg-opacity));
@@ -1005,10 +1009,6 @@ p {
 .bg-gray-900 {
   --tw-bg-opacity: 1;
   background-color: rgb(33 33 33 / var(--tw-bg-opacity));
-}
-.bg-black {
-  --tw-bg-opacity: 1;
-  background-color: rgb(0 0 0 / var(--tw-bg-opacity));
 }
 .object-cover {
   -o-object-fit: cover;
@@ -1032,14 +1032,6 @@ p {
   padding-left: 2.5rem;
   padding-right: 2.5rem;
 }
-.px-5 {
-  padding-left: 1.25rem;
-  padding-right: 1.25rem;
-}
-.py-1 {
-  padding-top: 0.25rem;
-  padding-bottom: 0.25rem;
-}
 .py-4 {
   padding-top: 1rem;
   padding-bottom: 1rem;
@@ -1047,6 +1039,14 @@ p {
 .px-8 {
   padding-left: 2rem;
   padding-right: 2rem;
+}
+.px-5 {
+  padding-left: 1.25rem;
+  padding-right: 1.25rem;
+}
+.py-1 {
+  padding-top: 0.25rem;
+  padding-bottom: 0.25rem;
 }
 .py-2 {
   padding-top: 0.5rem;
@@ -1067,8 +1067,14 @@ p {
 .pr-2 {
   padding-right: 0.5rem;
 }
-.pb-12 {
-  padding-bottom: 3rem;
+.pl-10 {
+  padding-left: 2.5rem;
+}
+.pt-10 {
+  padding-top: 2.5rem;
+}
+.pb-10 {
+  padding-bottom: 2.5rem;
 }
 .pl-5 {
   padding-left: 1.25rem;
@@ -1076,26 +1082,20 @@ p {
 .pr-5 {
   padding-right: 1.25rem;
 }
-.pb-10 {
-  padding-bottom: 2.5rem;
+.pb-12 {
+  padding-bottom: 3rem;
 }
-.pl-10 {
-  padding-left: 2.5rem;
+.pt-20 {
+  padding-top: 5rem;
 }
 .pr-10 {
   padding-right: 2.5rem;
-}
-.pt-10 {
-  padding-top: 2.5rem;
 }
 .pt-2 {
   padding-top: 0.5rem;
 }
 .pl-2 {
   padding-left: 0.5rem;
-}
-.pt-20 {
-  padding-top: 5rem;
 }
 .text-left {
   text-align: left;
@@ -1109,25 +1109,25 @@ p {
 .font-miriam {
   font-family: "Miriam Libre";
 }
-.text-lg {
-  font-size: 1.125rem;
-  line-height: 1.75rem;
+.text-5xl {
+  font-size: 3rem;
+  line-height: 1;
 }
 .text-2xl {
   font-size: 1.5rem;
   line-height: 2rem;
 }
-.text-sm {
-  font-size: 0.875rem;
-  line-height: 1.25rem;
-}
-.text-5xl {
-  font-size: 3rem;
-  line-height: 1;
-}
 .text-xs {
   font-size: 0.75rem;
   line-height: 1rem;
+}
+.text-lg {
+  font-size: 1.125rem;
+  line-height: 1.75rem;
+}
+.text-sm {
+  font-size: 0.875rem;
+  line-height: 1.25rem;
 }
 .font-bold {
   font-weight: 700;
@@ -1544,6 +1544,11 @@ footer  a {
   cursor: pointer;
 }
 
+.hover\:bg-gray-200:hover {
+  --tw-bg-opacity: 1;
+  background-color: rgb(238 238 238 / var(--tw-bg-opacity));
+}
+
 .hover\:bg-aeroblue-500:hover {
   --tw-bg-opacity: 1;
   background-color: rgb(174 255 236 / var(--tw-bg-opacity));
@@ -1554,9 +1559,9 @@ footer  a {
   background-color: rgb(255 128 219 / var(--tw-bg-opacity));
 }
 
-.hover\:text-black:hover {
+.hover\:text-gray-800:hover {
   --tw-text-opacity: 1;
-  color: rgb(0 0 0 / var(--tw-text-opacity));
+  color: rgb(66 66 74 / var(--tw-text-opacity));
 }
 
 .hover\:underline:hover {
@@ -1637,24 +1642,24 @@ footer  a {
     grid-template-columns: repeat(6, minmax(0, 1fr));
   }
 
-  .md\:grid-cols-2 {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   .md\:grid-cols-5 {
     grid-template-columns: repeat(5, minmax(0, 1fr));
+  }
+
+  .md\:grid-cols-2 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .md\:grid-cols-3 {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 
-  .md\:pr-10 {
-    padding-right: 2.5rem;
-  }
-
   .md\:pl-10 {
     padding-left: 2.5rem;
+  }
+
+  .md\:pr-10 {
+    padding-right: 2.5rem;
   }
 
   .md\:pl-0 {
@@ -1669,6 +1674,10 @@ footer  a {
     padding-right: 1.25rem;
   }
 
+  .md\:pb-5 {
+    padding-bottom: 1.25rem;
+  }
+
   .md\:pl-20 {
     padding-left: 5rem;
   }
@@ -1677,15 +1686,7 @@ footer  a {
     padding-right: 5rem;
   }
 
-  .md\:pb-5 {
-    padding-bottom: 1.25rem;
-  }
-
   .md\:text-left {
     text-align: left;
-  }
-
-  .md\:text-center {
-    text-align: center;
   }
 }
