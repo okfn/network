@@ -25,7 +25,7 @@
 
 body {
     font-family: 'DM Sans', sans-serif;
-    background: #fff url("../images/blurred_dots.png");
+    background: #fff url("../images/blurred_dots.svg");
     background-repeat: no-repeat;
     background-position: top right;
     background-size: 30%;
@@ -33,7 +33,7 @@ body {
 }
 
 body.project-body {
-    background: #fff url("../images/project-background.png");
+    background: #fff url("../images/project-background.svg");
     font-family: 'DM Sans', sans-serif;
     background-repeat: no-repeat;
     background-position: top right;
@@ -43,14 +43,14 @@ body.project-body {
 }
 
 .page-content {
-    background: url("../images/blurred_dots_bottom.png");
+    background: url("../images/blurred_dots_bottom.svg");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;
 }
 
 .project-content {
-    background: url("../images/project-background-bottom.png");
+    background: url("../images/project-background-bottom.svg");
     background-repeat: no-repeat;
     background-position: bottom left;
     background-size: 30%;
