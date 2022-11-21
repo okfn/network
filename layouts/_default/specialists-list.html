@@ -2,24 +2,24 @@
 <title>OKFN Network - Global Directory</title>
 <meta name="description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://network.okfn.org/project/">
+<meta property="og:url" content="{{ .Params.og_url }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="OKFN Network - Global Directory">
-<meta property="og:description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
-<meta property="og:image" content="https://network.okfn.org/images/OKF-logo-white-background.png">
+<meta property="og:title" content="{{ .Params.og_title }}">
+<meta property="og:description" content="{{ .Params.og_description }}">
+<meta property="og:image" content="{{ .Params.og_image }}">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="network.okfn.org">
-<meta property="twitter:url" content="https://network.okfn.org/project/">
-<meta name="twitter:title" content="OKFN Network - Global Directory">
-<meta name="twitter:description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
-<meta name="twitter:image" content="https://network.okfn.org/images/OKF-logo-white-background.png">
+<meta property="twitter:url" content="{{ .Params.og_url }}">
+<meta name="twitter:title" content="{{ .Params.og_title }}">
+<meta name="twitter:description" content="{{ .Params.og_description }}">
+<meta name="twitter:image" content="{{ .Params.og_image }}">
 
 {{ end }}
 
 {{ define "main" }}
-<div class="fixed mt-[50px] w-full z-[200]">
+<div class="md:fixed mt-[50px] w-full z-[200]">
 <div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -72,6 +72,8 @@
       language: []
   }
 
+  let lastScroll = 0
+
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -93,7 +95,8 @@
              "language": {{ index . 4 }},  
              "pic": {{ index . 8 }},
              "organization": {{ index . 3 }},
-             "pic_blend": {{ index . 9 }}
+             "pic_blend": {{ index . 9 }},
+             "url": {{ index . 10 }}
              },
           {{ end }}
    ]
@@ -108,7 +111,6 @@
     }
 
   }
-
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-5 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis" onclick="openSpecialist(${specialist.specialist_number})">
@@ -125,7 +127,7 @@
   `
 
   const specialistInfoTemplate = (specialist) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/directory/${specialist.pic}">
@@ -194,12 +196,29 @@
   }
 
   function closeDialog() {
-    specialistInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    specialistInfo.style.visibility = "hidden"  
+    let stateObj = {
+      'Title': 'OKFN Global Directory',
+      'Url': '/specialist/'
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
+
   }
 
   function openSpecialist(specialistNumber) {
-    specialistInfo.style.display = "grid"  
+    specialistInfo.style.visibility = "visible"  
     specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
+    let stateObj = {
+      'Title': 'OKFN Global Directory - ' + specialists[specialistNumber]['name'],
+      'Url': '/specialist/' + specialists[specialistNumber]['url']
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    lastScroll = window.scrollY
+    document.getElementById('specialist-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displaySpecialists(specialists) {
@@ -218,7 +237,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
+    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -322,13 +341,17 @@
 
   function openFilter(filterName) {
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
+
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (filterSelector.style.visibility !== 'collapse') {
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
+ 
       }
-      categorySelector.style.display = ''
     }
   }
 
@@ -339,16 +362,19 @@
     let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
 
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+ 
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
-            filterSelector.style.display = ''
+            filterSelector.classList.add('collapse')
           }
       }
     }
@@ -359,6 +385,15 @@
   configureFilterButton('language')
 
   displaySpecialists(specialists)
+
+  let locationPath = window.location.pathname.split('/')
+
+  if (locationPath.length > 2) {
+    let specialistURL = locationPath[2]
+    let specialistIndex = specialists.findIndex((s) => s.url == specialistURL)
+    if (specialistIndex >= 0) 
+      openSpecialist(specialistIndex)
+  }
 
 </script>
 

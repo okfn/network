@@ -18,7 +18,7 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="fixed mt-[50px] w-full z-[200]">
+<div class="md:fixed mt-[50px] w-full z-[200]">
 <div id="project-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -71,6 +71,8 @@
       language: []
   }
 
+  let lastScroll = 0
+
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -90,7 +92,7 @@
              "category": {{ index . 4 }},
              "region": {{ index . 5 }},
              "language": {{ index . 6 }},  
-             "logo": {{ index . 8 }},
+             "logo": {{ index . 8 }},https://github.com/okfn/network/pull/30/conflicts
              "organization": {{ index . 0 }},
              },
           {{ end }}
@@ -115,7 +117,7 @@
 </div>
   `
   const projectInfoTemplate = (project) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10 md:mt-20">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10 md:mt-20">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="{{ .Site.BaseURL }}images/logos/${project.logo}">
@@ -182,12 +184,18 @@
   }
 
   function closeDialog() {
-    projectInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    projectInfo.style.visibility = "hidden"  
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
   }
 
   function openProject(projectNumber) {
-    projectInfo.style.display = "grid"  
+    projectInfo.style.visibility = "visible"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+    lastScroll = window.scrollY
+    document.getElementById('project-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displayProjects(projects) {
@@ -206,7 +214,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
+    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -321,23 +329,25 @@
     }
   }
 
-
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
     let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
 
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+ 
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
-            filterSelector.style.display = ''
+            filterSelector.classList.add('collapse')
           }
       }
     }

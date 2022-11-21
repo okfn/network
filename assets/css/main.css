@@ -131,6 +131,20 @@ input[type=text] {
     background-color: #AEFFEC;
 }
 
+#specialist-info {
+  transition: all 0.3s;
+}
+
+#info-dialog {
+  transition: all 0.3s;
+	opacity: 0;
+  transform: scale(0);
+}
+
+#info-dialog.show-dialog {
+  opacity: 1;
+  transform: scale(1);
+}
 
 option {
     background-color: #FFDFF6;
@@ -313,6 +327,27 @@ text-decoration: underline;
 
 .logo{
   max-height: 4.8em;
+}
+
+.filter-selector {
+  transition: all 0.3s;
+}
+
+.filter-selector.visible {
+  transition: all 0.3s ease-in-out;
+  transform: scaleY(1);
+  transform-origin: left top;
+
+}
+
+.filter-selector.collapse {
+  transition: all 0.3s ease-in-out;
+  transform-origin: left top;
+  transform: scaleY(0);
+}
+
+.filter-button {
+  transition: all 0.3s ease-in-out;
 }
 
 footer {
