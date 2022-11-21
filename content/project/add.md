@@ -1,9 +1,9 @@
 ---
 title: "Add a project"
-description: We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
+description: The <a class="hover:underline font-bold" href="https://okfn.org/network">Open Knowledge Network</a> uses advocacy, technology and training to unlock information, to create and share knowledge.
 footer_title: Do you want to nominate a specialist?
-footer_text: We equip people with tools and capabilities and connect them with open knowledge communities worldwide.
-footer_button: Nominate a specialist
+footer_text: The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge. Discover our main projects in the <a class="hover:underline font-bold" href="https://okfn.org/network/project">Project Repository</a>.
+footer_button: Fill out the form
 footer_link: /specialist/add
 type: project
 bodyClasses: project-body
