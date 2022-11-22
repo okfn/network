@@ -39,7 +39,7 @@
         </div>
         </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content-center auto-rows-max">
+    <div class="md:grid md:grid-cols-5 project-content auto-rows-max">
       {{ $projects := getCSV "," "okfn-network-projects.csv" }}
       {{ $projects := after 1 $projects }}
       {{ partial "projects-header.html" . }}

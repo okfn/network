@@ -56,6 +56,13 @@ body.project-body {
     background-size: 30%;
 }
 
+.specialist-content {
+    background: url("../images/blurred_dots_bottom.png");
+    background-repeat: no-repeat;
+    background-position: bottom left;
+    background-size: 30%;
+}
+
 .wrapper{
     max-width: 1200px;
     margin: 0 auto;
