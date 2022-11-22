@@ -97,7 +97,8 @@
              "pic_original": {{ index . 8 }},
              "organization": {{ index . 3 }},
              "pic_blend": {{ index . 9 }},
-             "url": {{ index . 10 }}
+             "url": {{ index . 10 }},
+             "background_position": {{ index . 11 }}
              },
           {{ end }}
    ]
@@ -118,7 +119,7 @@
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-5 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis" onclick="openSpecialist(${specialist.specialist_number})">
-            <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
+ <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}'); background-position-y: ${(specialist.background_position)?specialist.background_position +"%":"50%"}"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
             <div id="specialist-name" class="font-bold px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
