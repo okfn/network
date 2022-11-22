@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script type="text/javascript" src="/js/animate-css-grid-1.4.3.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,14 +11,14 @@
 
 
   
-  <link rel="stylesheet" href="/css/main.min.b3629811cae4612a13dad52b2a990c254dced1e890225ff187e50d71698893b8.css" integrity="sha256-s2KYEcrkYSoT2tUrKpkMJU3O0eiQIl/xh+UNcWmIk7g="/>
+  <link rel="stylesheet" href="/css/main.min.0be300d43d6467a3d467512903fe8cef48dc2b362f0350bc783734df865d1a55.css" integrity="sha256-C+MA1D1kZ6PUZ1EpA/6M70jcKzYvA1C8eDc034ZdGlU="/>
 
 
     
 <title>OKFN Network - Global Directory</title>
 <meta name="description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
 
-<meta property="og:url" content="https://network.okfn.org/project/">
+<meta property="og:url" content="https://network.okfn.org/specialist/">
 <meta property="og:type" content="website">
 <meta property="og:title" content="OKFN Network - Global Directory">
 <meta property="og:description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
@@ -25,7 +27,7 @@
 
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="network.okfn.org">
-<meta property="twitter:url" content="https://network.okfn.org/project/">
+<meta property="twitter:url" content="https://network.okfn.org/specialist/">
 <meta name="twitter:title" content="OKFN Network - Global Directory">
 <meta name="twitter:description" content="The Open Knowledge Network connects specialists of the open movement and promotes them through the Open Knowledge Global Directory.">
 <meta name="twitter:image" content="https://network.okfn.org/images/OKF-logo-white-background.png">
@@ -34,7 +36,7 @@
 </head>
 <body class="specialist-body relative">
 
-<div class="fixed mt-[50px] w-full z-[200]">
+<div class="md:fixed mt-[50px] w-full z-[200]">
 <div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -56,7 +58,7 @@
         </div>
     </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content auto-rows-max">
+    <div class="md:grid md:grid-cols-5 page-content auto-rows-max">
       
       <div class="md:col-end-5 md:col-span-3">
     <div class="grid grid-cols-5 pb-5">
@@ -84,26 +86,26 @@
       </div>
       <div class="md-col-span2 text-left mx-10 mt-5">
         <div id="category-filter" class="md:col-span-1 col-span-1">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Category -  <span class="text-left pl-2"></span>
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="category-selector hidden absolute bg-white max-w-[100%] shadow-2xl border border-2 z-[100] p-4">
+          <div class="category-selector filter-selector collapse absolute bg-white max-w-[100%] border border-2 z-[100] p-4">
           </div>
         <div id="language-filter" class="md:col-span-1 col-span-1 mt-5">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Language -  <span class="text-left pl-2"></span>
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="language-selector hidden absolute bg-white max-w-[100%] shadow-2xl border border-2 z-[100] p-4">
+          <div class="language-selector filter-selector collapse absolute bg-white max-w-[100%] border border-2 z-[100] p-4">
           </div>
         </div>
         <div id="region-filter" class="md:col-span-1 col-span-1 mt-5">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Region -  <span class="text-left pl-2"></span>
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="region-selector hidden absolute bg-white max-w-[100%] shadow-2xl border border-2 z-[100] p-4">
+          <div class="region-selector filter-selector collapse absolute bg-white max-w-[100%] border border-2 z-[100] p-4">
           </div>
         </div>
       </div>
@@ -188,6 +190,8 @@
       language: []
   }
 
+  let lastScroll = 0
+
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -209,7 +213,8 @@
              "language": "English, Spanish",  
              "pic": "no-photo.png",
              "organization": "Asociación aLabs",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "daniel-vazquez"
              },
           
            {
@@ -221,7 +226,8 @@
              "language": "English",  
              "pic": "Mel-Flanagan_Nook.jpg",
              "organization": "Nook Studios",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "mel-flanagan"
              },
           
            {
@@ -233,7 +239,8 @@
              "language": "English, Dutch, French",  
              "pic": "Lotte.jpeg",
              "organization": "Open Knowledge Belgium",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "lotte-goyens"
              },
           
            {
@@ -245,7 +252,8 @@
              "language": "English, Portuguese, Spanish",  
              "pic": "fernanda_campagnucci.jpeg",
              "organization": "Open Knowledge Brazil",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "fernanda-campagnucci"
              },
           
            {
@@ -257,7 +265,8 @@
              "language": "English, Spanish",  
              "pic": "eduardo-bejar.jpeg",
              "organization": "Open Knowledge Ecuador",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "eduardo-bejar"
              },
           
            {
@@ -269,7 +278,8 @@
              "language": "Estonian, English",  
              "pic": "Hille_portrait.jpg",
              "organization": "Open Knowledge Estonia",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "maarja-leena-saar"
              },
           
            {
@@ -281,7 +291,8 @@
              "language": "Estonian, English",  
              "pic": "Maarja-Olesk-portrait.jpg",
              "organization": "Open Knowledge Estonia",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "hille-hinsberg"
              },
           
            {
@@ -293,7 +304,8 @@
              "language": "Amharic, English",  
              "pic": "Melkamu_Beyene.JPG",
              "organization": "Open Knowledge Ethiopia ",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "melkamu-beyene"
              },
           
            {
@@ -305,7 +317,8 @@
              "language": "English, Finnish",  
              "pic": "Tarmo.jpeg",
              "organization": "Open Knowledge Finland",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "tarmo-toikkanen"
              },
           
            {
@@ -317,7 +330,8 @@
              "language": "English, French",  
              "pic": "MICALLEF_DATACTIVIST-WEB_35.JPG",
              "organization": "Open Knowledge France",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "samuel-goeta"
              },
           
            {
@@ -329,7 +343,8 @@
              "language": "English",  
              "pic": "poncelet-ileleji.jpeg",
              "organization": "Jokkolabs ",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "poncelet-ileleji"
              },
           
            {
@@ -341,7 +356,8 @@
              "language": "English, German",  
              "pic": "Sonja-Fischbauer.jpeg",
              "organization": "Open Knowledge Germany",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "sonja-fischbauer"
              },
           
            {
@@ -353,7 +369,8 @@
              "language": "English, Greek",  
              "pic": "charalampos-bratsas.jpeg",
              "organization": "Open Knowledge Greece",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "charalampos-bratsas"
              },
           
            {
@@ -365,7 +382,8 @@
              "language": "English, Greek",  
              "pic": "kleanthis-koupidis.jpeg",
              "organization": "Open Knowledge Greece",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "kleanthis-koupidis"
              },
           
            {
@@ -377,7 +395,8 @@
              "language": "English",  
              "pic": "SCE_profile.png",
              "organization": "CivicSight (formerly Open Data Hong Kong)",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "scott-edmunds"
              },
           
            {
@@ -389,7 +408,8 @@
              "language": "English, Japanese",  
              "pic": "twatanabe.jpeg",
              "organization": "Open Knowledge Japan",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "tomoaki-watanabe"
              },
           
            {
@@ -401,7 +421,8 @@
              "language": "English, Nepalese",  
              "pic": "nikesh-balami.jpeg",
              "organization": "Open Knowledge Nepal",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "nikesh-balami"
              },
           
            {
@@ -413,7 +434,8 @@
              "language": "English, Nepalese",  
              "pic": "Sagar-Ghimire.jpg",
              "organization": "Open Knowledge Nepal",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "sagar-ghimire"
              },
           
            {
@@ -425,7 +447,8 @@
              "language": "English, Nepalese",  
              "pic": "James-Shrestha.jpg",
              "organization": "Open Knowledge Nepal",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "james-shrestha"
              },
           
            {
@@ -437,7 +460,8 @@
              "language": "English, Nepalese",  
              "pic": "Arjun-Gautam.jpg",
              "organization": "Open Knowledge Nepal",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "arjun-gautam"
              },
           
            {
@@ -449,7 +473,8 @@
              "language": "English",  
              "pic": "Oluseun-Onigbinde.jpg",
              "organization": "Open Knowledge Nigeria",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "oluseun-onigbinde"
              },
           
            {
@@ -461,7 +486,8 @@
              "language": "English, Somali",  
              "pic": "Mohamud-M-Hassan.jpeg",
              "organization": "Open Knowledge Somalia",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "mohamud-m.-hassan"
              },
           
            {
@@ -473,7 +499,8 @@
              "language": "English, Somali",  
              "pic": "Hussein-Osman-Abdullahi.jpeg",
              "organization": "Open Knowledge Somalia",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "husein-osman-abdullahi"
              },
           
            {
@@ -485,7 +512,8 @@
              "language": "English, Swedish",  
              "pic": "elenor.png",
              "organization": "Open Knowledge Sweden",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "elenor-weijmar"
              },
           
            {
@@ -497,7 +525,8 @@
              "language": "English, Swedish",  
              "pic": "no-photo.png",
              "organization": "Open Knowledge Sweden",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "mattias-axell"
              },
           
            {
@@ -509,7 +538,8 @@
              "language": "English, Swedish, Russian, French, Italian",  
              "pic": "alina.png",
              "organization": "Open Knowledge Sweden",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "alina-ostling"
              },
           
            {
@@ -521,7 +551,8 @@
              "language": "English, German, Russian",  
              "pic": "oleg-lavrovsky.jpeg",
              "organization": "Open Knowledge Switzerland",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "oleg-lavrovsky"
              },
           
            {
@@ -533,7 +564,8 @@
              "language": "English, German",  
              "pic": "fh_hires.jpg",
              "organization": "Open Knowledge Switzerland",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "florin-hasler"
              },
           
            {
@@ -545,7 +577,8 @@
              "language": "English, French, Italian",  
              "pic": "sara.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "sara-petti"
              },
           
            {
@@ -557,7 +590,8 @@
              "language": "English, Spanish",  
              "pic": "renata.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "renata-avila"
              },
           
            {
@@ -569,7 +603,8 @@
              "language": "English, French, Spanish",  
              "pic": "cedric.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "cedric-lombion"
              },
           
            {
@@ -581,7 +616,8 @@
              "language": "English, Portuguese, Spanish",  
              "pic": "carol.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "carol-matos"
              },
           
            {
@@ -593,7 +629,8 @@
              "language": "English,Filipino",  
              "pic": "ben.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "ben-hur-pintor"
              },
           
            {
@@ -605,7 +642,8 @@
              "language": "English,Spanish",  
              "pic": "patricio.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "patricio-del-boca"
              },
           
            {
@@ -617,7 +655,8 @@
              "language": "English,Russian",  
              "pic": "evgeny.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "evgeny-karev"
              },
           
            {
@@ -629,7 +668,8 @@
              "language": "Catalan,English,Spanish",  
              "pic": "adria.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "adria-mercader"
              },
           
            {
@@ -641,7 +681,8 @@
              "language": "English,Portuguese,Spanish",  
              "pic": "no-photo.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "lucas-pretti"
              },
           
            {
@@ -653,7 +694,8 @@
              "language": "English,Portuguese",  
              "pic": "edgar.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "edgar-zanella-alvarenga"
              },
           
            {
@@ -665,7 +707,8 @@
              "language": "English,Nepalese",  
              "pic": "shashi.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "shashi-gharti"
              },
           
            {
@@ -677,7 +720,34 @@
              "language": "English,Spanish",  
              "pic": "andres.png",
              "organization": "Open Knowledge Foundation",
-             "pic_blend": "FALSE"
+             "pic_blend": "FALSE",
+             "url": "andres-vazquez-flexes"
+             },
+          
+           {
+             "name": "Michal Kubáň",
+             "description": "Michal Kubáň has worked in the area of open government data since 2013. He worked an National Open Data Coordinator at the Ministry of Interior of the Czech Republic where he is in charge of national Open data policy. He also leads the Czech Open Data Task Force Team. He was a member of OECD Expert Group on Open Government Data and member of European Commission's Public Sector Information Expert Group. From 2013-2015 Michal worked as Open data evangelist and advocate at Open Society Fund Prague where he worked closely with the Czech state institutions to promote transparency and accountability through open data.",
+             "email": "kubanster@gmail.com",
+             "category": "Open Government Data",
+             "region": "Czech Republic",
+             "language": "Czech,English",  
+             "pic": "no-photo.png",
+             "organization": "Open Knowledge Czech Republic",
+             "pic_blend": "FALSE",
+             "url": "michal-kuban"
+             },
+          
+           {
+             "name": "Ivan Begtin",
+             "description": "Ivan Begtin is a founder of Infoculture (https://infoculture.ru), a Russian NGO dedicated to open data, open government, digital preservation, and plain language. Contributor to open source data projects https://github.com/ivbeg and creator of several open data projects like hubofdata.ru (Hub of data, data portal), clearspending.ru (Russian procurement transparency), openngo.ru (Open NGOs database), and many others.",
+             "email": "ivan@begtin.tech",
+             "category": "Open Data, Digital Preservation, Web Archives, Open Government Data",
+             "region": "Russian Federation",
+             "language": "English,Russian",  
+             "pic": "no-photo.png",
+             "organization": "Open Knowledge Russia",
+             "pic_blend": "FALSE",
+             "url": "ivan-begtin"
              },
           
    ]
@@ -692,7 +762,6 @@
     }
 
   }
-
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-5 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis" onclick="openSpecialist(${specialist.specialist_number})">
@@ -709,7 +778,7 @@
   `
 
   const specialistInfoTemplate = (specialist) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="https:\/\/network.okfn.org\/images/directory/${specialist.pic}">
@@ -756,7 +825,7 @@
   function getCategories(categories) {
     let categoriesList = categories.split(',')
     let categoriesDiv = (l) => `
-    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5">
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5 mb-2">
       ${l}
     </button>
     `
@@ -768,7 +837,7 @@
   function getLanguages(languages) {
     let languageList = languages.split(',')
     let languageDiv = (l) => `
-    <button class="rounded rounded-full border-black border-2 px-5">
+    <button class="rounded rounded-full border-black border-2 px-5 mb-2">
       ${l}
     </button>
     `
@@ -778,12 +847,29 @@
   }
 
   function closeDialog() {
-    specialistInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    specialistInfo.style.visibility = "hidden"  
+    let stateObj = {
+      'Title': 'OKFN Global Directory',
+      'Url': '/specialist/'
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
+
   }
 
   function openSpecialist(specialistNumber) {
-    specialistInfo.style.display = "grid"  
+    specialistInfo.style.visibility = "visible"  
     specialistInfo.innerHTML = specialistInfoTemplate(specialists[specialistNumber])
+    let stateObj = {
+      'Title': 'OKFN Global Directory - ' + specialists[specialistNumber]['name'],
+      'Url': '/specialist/' + specialists[specialistNumber]['url']
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    lastScroll = window.scrollY
+    document.getElementById('specialist-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displaySpecialists(specialists) {
@@ -802,7 +888,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
+    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -885,19 +971,19 @@
       displaySpecialists(filterSpecialists(specialists))
   }
 
-  
+  // Configure Category
 
   for(let c of document.getElementsByName('category')) {
     c.onchange = () => { clickCheckbox(c, 'category') }
   }
 
-  
+  // Configure Region
 
   for(let c of document.getElementsByName('region')) {
     c.onchange = () => { clickCheckbox(c, 'region') }
   }
 
-  
+  // Configure Language
 
   for(let c of document.getElementsByName('language')) {
     c.onchange = () => { clickCheckbox(c, 'language') }
@@ -906,13 +992,17 @@
 
   function openFilter(filterName) {
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
+
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (filterSelector.style.visibility !== 'collapse') {
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
+ 
       }
-      categorySelector.style.display = ''
     }
   }
 
@@ -923,16 +1013,19 @@
     let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
 
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+ 
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
-            filterSelector.style.display = ''
+            filterSelector.classList.add('collapse')
           }
       }
     }
@@ -943,6 +1036,15 @@
   configureFilterButton('language')
 
   displaySpecialists(specialists)
+
+  let locationPath = window.location.pathname.split('/')
+
+  if (locationPath.length > 2) {
+    let specialistURL = locationPath[2]
+    let specialistIndex = specialists.findIndex((s) => s.url == specialistURL)
+    if (specialistIndex >= 0) 
+      openSpecialist(specialistIndex)
+  }
 
 </script>
 

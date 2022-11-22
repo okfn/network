@@ -30,7 +30,7 @@ body {
 
 /*Header*/
 .header-container{
-    background: #fff url("../images/blurred_dots.svg");
+    background: #fff url("../images/blurred_dots.png");
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;

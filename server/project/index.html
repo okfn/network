@@ -1,6 +1,8 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<script type="text/javascript" src="/js/animate-css-grid-1.4.3.js"></script>
+
     <meta http-equiv="Content-Type" content="text/html" charset="UTF-8" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -9,7 +11,7 @@
 
 
   
-  <link rel="stylesheet" href="/css/main.min.b3629811cae4612a13dad52b2a990c254dced1e890225ff187e50d71698893b8.css" integrity="sha256-s2KYEcrkYSoT2tUrKpkMJU3O0eiQIl/xh+UNcWmIk7g="/>
+  <link rel="stylesheet" href="/css/main.min.0be300d43d6467a3d467512903fe8cef48dc2b362f0350bc783734df865d1a55.css" integrity="sha256-C+MA1D1kZ6PUZ1EpA/6M70jcKzYvA1C8eDc034ZdGlU="/>
 
 
     
@@ -33,7 +35,7 @@
 </head>
 <body class="project-body relative">
 
-<div class="fixed mt-[50px] w-full z-[200]">
+<div class="md:fixed mt-[50px] w-full z-[200]">
 <div id="project-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -54,7 +56,7 @@
         </div>
         </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content-center auto-rows-max">
+    <div class="md:grid md:grid-cols-5 project-content content-center auto-rows-max">
       
       
       <div class="md:col-end-5 md:col-span-3">
@@ -83,28 +85,26 @@
       </div>
       <div class="md-col-span-2 text-left mx-10 mt-5">
         <div id="category-filter" class="md:col-span-1 col-span-1">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Category - <span class="text-left pl-2"></span>
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="category-selector hidden absolute max-w-[100%] bg-white shadow-2xl border border-2 z-[100] p-4">
+          <div class="category-selector filter-selector collapse absolute max-w-[100%] bg-white border border-2 z-[100] p-4">
           </div>
         <div id="language-filter" class="md:col-span-1 col-span-1 mt-5">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Language - <span class="text-left pl-2"></span>
-
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="language-selector hidden absolute max-w-[100%] bg-white shadow-2xl border border-2 z-[100] p-4">
+          <div class="language-selector filter-selector collapse absolute max-w-[100%] bg-white border border-2 z-[100] p-4">
           </div>
         </div>
         <div id="region-filter" class="relative md:col-span-1 col-span-1 mt-5">
-          <button class="rounded-full border-black border-2 py-2 px-5 align-middle flex">
+          <button class="filter-button rounded-full border-black border-2 py-2 px-5 align-middle flex">
             Region - <span class="text-left pl-2"></span>
-
             <img class="float-right self-center ml-5" src=https://network.okfn.org//images/select-down.png>
           </button>
-          <div class="region-selector hidden absolute bg-white max-w-[100%] shadow-2xl border border-2 z-[100] p-4">
+          <div class="region-selector filter-selector collapse absolute bg-white max-w-[100%] border border-2 z-[100] p-4">
           </div>
         </div>
       </div>
@@ -189,6 +189,8 @@
       category: [],
       language: []
   }
+
+  let lastScroll = 0
 
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
@@ -817,7 +819,7 @@
 </div>
   `
   const projectInfoTemplate = (project) => `
-    <div class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10 md:mt-20">
+    <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10 md:mt-20">
       <div class="grid md:grid-cols-3">
         <div class="md:col-span-1 pr-10">
           <img src="https:\/\/network.okfn.org\/images/logos/${project.logo}">
@@ -862,7 +864,7 @@
   function getCategories(categories) {
     let categoriesList = categories.split(',')
     let categoriesDiv = (l) => `
-    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5">
+    <button class="rounded rounded-full text-[#00D1FF] border-[#00D1FF] border-2 px-5 mb-2">
       ${l}
     </button>
     `
@@ -874,7 +876,7 @@
   function getLanguages(languages) {
     let languageList = languages.split(',')
     let languageDiv = (l) => `
-    <button class="rounded rounded-full border-black border-2 px-5">
+    <button class="rounded rounded-full border-black border-2 px-5 mb-2">
       ${l}
     </button>
     `
@@ -884,12 +886,18 @@
   }
 
   function closeDialog() {
-    projectInfo.style.display = "none"  
+    document.getElementById('info-dialog').classList.remove('show-dialog')
+    projectInfo.style.visibility = "hidden"  
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
   }
 
   function openProject(projectNumber) {
-    projectInfo.style.display = "grid"  
+    projectInfo.style.visibility = "visible"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+    lastScroll = window.scrollY
+    document.getElementById('project-info').scrollIntoView()
+    document.getElementById('info-dialog').classList.add('show-dialog')
   }
 
   function displayProjects(projects) {
@@ -908,7 +916,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<input type="checkbox" name="${name}" value="${value}">  ${label}</input>`
+    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -991,7 +999,7 @@
       displayProjects(filterProjects(projects))
   }
 
-  
+  // Configure Category
 
   for(let c of document.getElementsByName('category')) {
     c.onchange = () => { clickCheckbox(c, 'category') }
@@ -1023,23 +1031,25 @@
     }
   }
 
-
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
     let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
 
     filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
+      if (!filterSelector.classList.contains('visible')) {
+        filterSelector.classList.remove('collapse')
+        filterSelector.classList.add('visible')
       } else {
-        filterSelector.style.display = ''
+        filterSelector.classList.remove('visible')
+        filterSelector.classList.add('collapse')
+ 
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
-            filterSelector.style.display = ''
+            filterSelector.classList.add('collapse')
           }
       }
     }
