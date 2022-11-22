@@ -94,6 +94,7 @@
              "region": {{ index . 0 }},
              "language": {{ index . 4 }},  
              "pic": {{ index . 8 }},
+             "pic_original": {{ index . 8 }},
              "organization": {{ index . 3 }},
              "pic_blend": {{ index . 9 }},
              "url": {{ index . 10 }}
@@ -109,6 +110,9 @@
     } else {
       specialists[i]['pic_blend'] = 'bg-blend-normal'
     }
+
+    // Remove picture extension
+    specialists[i]['pic'] = specialists[i]['pic'].split('.')[0] + '-small.jpg'
 
   }
 
