@@ -259,6 +259,10 @@ textarea::placeholder {
   cursor: pointer;
 }
 
+.project-card:hover #project-name {
+  text-decoration: underline;
+}
+  
 .project-logo:after {
   content: "";
   position: absolute;
@@ -329,6 +333,28 @@ text-decoration: underline;
   max-height: 4.8em;
 }
 
+@media only screen and (max-width: 600px){
+  .center-mobile{
+    display: flex;
+    justify-content: center;
+  }
+  .project-card .project-logo{
+    filter: saturate(100%);
+    transition: all 0.35s linear;
+    cursor: pointer;
+  }
+  .project-card:hover #project-name {
+    text-decoration: none;
+  }
+  .specialist-card .specialist-pic {
+    background-color: transparent;
+  }
+  .specialist-card #specialist-name {
+    text-decoration: none;
+  }
+
+}
+
 .filter-selector {
   transition: all 0.3s;
 }
@@ -368,4 +394,40 @@ footer > div.license > p {
 footer  a {
   color: white;
   font-weight: bold;
+}
+
+.filter-selector{
+  border-radius: 30px;
+  border-width: 3px;
+  border-color: #AEFFEC;
+}
+
+.checkbox-label{
+  font-family: 'DM Sans';
+  cursor: pointer;
+}
+
+.checkmark {
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+  accent-color: #AEFFEC;
+}
+
+.specialist-checkbox-label{
+  font-family: 'DM Sans';
+  cursor: pointer;
+}
+
+.specialist-checkmark{
+  margin-right: 10px;
+  height: 20px;
+  width: 20px;
+  accent-color: #FF80DB;
+}
+
+.specialist-filter-selector{
+  border-radius: 30px;
+  border-width: 3px;
+  border-color: #FF80DB;
 }

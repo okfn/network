@@ -117,7 +117,7 @@
             <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}');"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
-            <div id="specialist-name" class="font-bold px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
+            <div id="specialist-name" class="font-bold font-miriam px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
               ${specialist.name}
             </div>
             <div class="px-10 pt-2 overflow-hidden text-ellipsis">
@@ -237,7 +237,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="specialist-checkbox-label text-sm block w-full"><input class="specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)

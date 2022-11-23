@@ -104,11 +104,11 @@
   }
 
   const projectCardTemplate = (project) => `
- <div class="item md:col-span-1 project-card mx-5 overflow-hidden h-[92%] pb-10 mb-10 hover:underline hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
+ <div class="item md:col-span-1 project-card mx-5 overflow-hidden h-[92%] pb-10 mb-10 hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
   <div class="project-logo h-1/2 min-h-[50%] pl-10 pr-10 pt-10 pb-5">
     <img class="max-h-[80%]"  src="{{ .Site.BaseURL }}images/logos/${project.logo}"> 
   </div>
-  <div class="font-bold px-10 pt-5 mb-2 text-2xl leading-none overflow-hidden text-ellipsis">
+  <div id="project-name" class="font-miriam font-bold px-10 pt-5 mb-2 text-2xl leading-none overflow-hidden text-ellipsis">
     ${project.name}
   </div>
   <div class="px-10 pt-2 overflow-hidden text-ellipsis">
@@ -214,7 +214,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" class="checkmark" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
