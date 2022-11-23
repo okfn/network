@@ -67,7 +67,7 @@
 <script type="text/javascript">
 
   let filters = {
-      region: [],
+      country: [],
       category: [],
       language: []
   }
@@ -91,7 +91,7 @@
              "description": {{ index . 6 }},
              "email": {{ index . 2 }},
              "category": {{ index . 5 }},
-             "region": {{ index . 0 }},
+             "country": {{ index . 0 }},
              "language": {{ index . 4 }},  
              "pic": {{ index . 8 }},
              "pic_original": {{ index . 8 }},
@@ -142,7 +142,7 @@
           <div class="text-left mt-5">
             <img class="float-left" src={{ .Site.BaseURL }}images/pin-angle-fill.png>
             <div class="mt-10 ml-10 text-sm text-left">
-            ${ specialist.region }
+            ${ specialist.country }
             </div>
           </div>
           <div class="my-10">
@@ -248,7 +248,7 @@
     element.appendChild(checkboxDom)
   }
 
-  let regions = []
+  let countries = []
   let categories = []
   let languages = []
 
@@ -264,13 +264,13 @@
     filterChoices.sort()
   } 
 
-  getFilterChoices(regions, 'region', specialists)
+  getFilterChoices(countries, 'country', specialists)
   getFilterChoices(languages, 'language', specialists)
   getFilterChoices(categories, 'category', specialists)
 
-  let regionSelector = document.getElementsByClassName('region-selector')[0]
-  for (var r of regions) {
-    addCheckbox(regionSelector, 'region', r, r)
+  let countrySelector = document.getElementsByClassName('country-selector')[0]
+  for (var r of countries) {
+    addCheckbox(countrySelector, 'country', r, r)
   }
 
   let categorySelector = document.getElementsByClassName('category-selector')[0]
@@ -333,8 +333,8 @@
 
   // Configure Region
 
-  for(let c of document.getElementsByName('region')) {
-    c.onchange = () => { clickCheckbox(c, 'region') }
+  for(let c of document.getElementsByName('country')) {
+    c.onchange = () => { clickCheckbox(c, 'country') }
   }
 
   // Configure Language
@@ -385,7 +385,7 @@
     }
   }
 
-  configureFilterButton('region')
+  configureFilterButton('country')
   configureFilterButton('category')
   configureFilterButton('language')
 
