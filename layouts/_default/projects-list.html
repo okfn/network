@@ -6,7 +6,7 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="OKFN Network - Project Repository">
 <meta property="og:description" content="The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge.">
-<meta property="og:image" content="https://network.okfn.org/images/OKF-logo-white-background.png">
+<meta property="og:image" content="https://network.okfn.org/images/og/repository_fb.png">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
@@ -14,7 +14,7 @@
 <meta property="twitter:url" content="https://network.okfn.org/project/">
 <meta name="twitter:title" content="OKFN Network - Project Repository">
 <meta name="twitter:description" content="The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge.">
-<meta name="twitter:image" content="https://network.okfn.org/images/OKF-logo-white-background.png">
+<meta name="twitter:image" content="https://network.okfn.org/images/og/repository_tw.png">
 {{ end }}
 
 {{ define "main" }}
@@ -39,7 +39,7 @@
         </div>
         </div>
     </div>
-    <div class="md:grid md:grid-cols-5 project-content auto-rows-max">
+    <div class="md:grid md:grid-cols-5 project-content content-center auto-rows-max">
       {{ $projects := getCSV "," "okfn-network-projects.csv" }}
       {{ $projects := after 1 $projects }}
       {{ partial "projects-header.html" . }}
@@ -104,11 +104,11 @@
   }
 
   const projectCardTemplate = (project) => `
- <div class="item md:col-span-1 project-card mx-5 overflow-hidden h-[92%] pb-10 mb-10 hover:underline hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
+ <div class="item md:col-span-1 project-card mx-5 overflow-hidden h-[92%] pb-10 mb-10 hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
   <div class="project-logo h-1/2 min-h-[50%] pl-10 pr-10 pt-10 pb-5">
     <img class="max-h-[80%]"  src="{{ .Site.BaseURL }}images/logos/${project.logo}"> 
   </div>
-  <div class="font-bold px-10 pt-5 mb-2 text-2xl leading-none overflow-hidden text-ellipsis">
+  <div id="project-name" class="font-miriam font-bold px-10 pt-5 mb-2 text-2xl leading-none overflow-hidden text-ellipsis">
     ${project.name}
   </div>
   <div class="px-10 pt-2 overflow-hidden text-ellipsis">
@@ -214,7 +214,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" class="checkmark" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)

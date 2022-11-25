@@ -14,7 +14,7 @@
 <meta property="twitter:url" content="{{ .Params.og_url }}">
 <meta name="twitter:title" content="{{ .Params.og_title }}">
 <meta name="twitter:description" content="{{ .Params.og_description }}">
-<meta name="twitter:image" content="{{ .Params.og_image }}">
+<meta name="twitter:image" content="{{ .Params.og_image_tw }}">
 
 {{ end }}
 
@@ -41,7 +41,7 @@
         </div>
     </div>
     </div>
-    <div class="md:grid md:grid-cols-5 specialist-content auto-rows-max">
+    <div class="md:grid md:grid-cols-5 page-content auto-rows-max">
       {{ $experts := getCSV "," "okfn-network-experts.csv" }}
       {{ partial "specialists-header.html" . }}
       {{ partial "specialists-filters.html" (dict "experts" $experts "ctx" .) }}
@@ -122,7 +122,7 @@
  <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}'); background-position-y: ${(specialist.background_position)?specialist.background_position +"%":"50%"}"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
-            <div id="specialist-name" class="font-bold px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
+            <div id="specialist-name" class="font-bold font-miriam px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
               ${specialist.name}
             </div>
             <div class="px-10 pt-2 overflow-hidden text-ellipsis">
@@ -242,7 +242,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="text-sm block w-full"><input type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="specialist-checkbox-label text-sm block w-full"><input class="specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
