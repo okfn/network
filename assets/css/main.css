@@ -251,7 +251,6 @@ textarea::placeholder {
 .project-card {
   background-color: #AEFFEC;
   border-radius: 0 90px 0 90px;
-  height: 330px;
 }
 
 .project-logo {

@@ -907,11 +907,14 @@ p {
 .h-80 {
   height: 20rem;
 }
-.h-\[92\%\] {
-  height: 92%;
+.h-full {
+  height: 100%;
 }
 .h-1\/2 {
   height: 50%;
+}
+.h-\[92\%\] {
+  height: 92%;
 }
 .max-h-6 {
   max-height: 1.5rem;
@@ -960,6 +963,9 @@ p {
 }
 .overflow-hidden {
   overflow: hidden;
+}
+.overflow-x-hidden {
+  overflow-x: hidden;
 }
 .text-ellipsis {
   text-overflow: ellipsis;
@@ -1022,9 +1028,6 @@ p {
 }
 .p-6 {
   padding: 1.5rem;
-}
-.p-4 {
-  padding: 1rem;
 }
 .px-12 {
   padding-left: 3rem;
@@ -1428,7 +1431,6 @@ textarea::placeholder {
 .project-card {
   background-color: #AEFFEC;
   border-radius: 0 90px 0 90px;
-  height: 330px;
 }
 
 .project-logo {
