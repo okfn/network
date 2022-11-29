@@ -1,5 +1,5 @@
 specialist:
-  allowedFields: ["name", "email", "affiliation", "area", "country", "reason"]
+  allowedFields: ["name", "email", "website", "twitter", "github", "gitlab", "linkedin", "affiliation", "area", "country", "reason"]
   branch: "main"
   commitMessage: "Suggested new specialist from OKF network"
   filename: "entry-{@timestamp}"
