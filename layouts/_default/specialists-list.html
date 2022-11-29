@@ -148,12 +148,16 @@
           <div class="my-10">
             <hr class="border border-black opacity-100"></hr>
           </div>
-          <div class="text-left mt-5">
-            <img class="float-left" src="{{ .Site.BaseURL }}images/globe.png">
-            <a class="overflow-hidden text-[#00D1FF] float-left pl-5 text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
+          <div class="text-left mt-5 grid grid-cols-10">
+            <div class="place-items-center grid h-full">
+              <img  src="{{ .Site.BaseURL }}images/mail-icon.svg">
+            </div>
+            <div class="grid h-full col-span-9">
+              <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
+            </div>
           </div>
         </div>
-        <div class="md:col-span-2">
+        <div class="md:col-span-2 mt-10 md:mt-0">
         <div class="text-2xl text-left mb-10">
           <mark class="specialist">
           Bio

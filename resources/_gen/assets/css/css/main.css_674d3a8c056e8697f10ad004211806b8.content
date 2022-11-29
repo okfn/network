@@ -818,6 +818,9 @@ p {
 .col-span-1 {
   grid-column: span 1 / span 1;
 }
+.col-span-9 {
+  grid-column: span 9 / span 9;
+}
 .col-span-2 {
   grid-column: span 2 / span 2;
 }
@@ -949,8 +952,14 @@ p {
 .grid-cols-1 {
   grid-template-columns: repeat(1, minmax(0, 1fr));
 }
+.grid-cols-10 {
+  grid-template-columns: repeat(10, minmax(0, 1fr));
+}
 .place-content-center {
   place-content: center;
+}
+.place-items-center {
+  place-items: center;
 }
 .content-center {
   align-content: center;
@@ -1702,6 +1711,10 @@ footer  a {
 
   .md\:mt-20 {
     margin-top: 5rem;
+  }
+
+  .md\:mt-0 {
+    margin-top: 0px;
   }
 
   .md\:grid {
