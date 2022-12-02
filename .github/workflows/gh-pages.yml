@@ -41,6 +41,9 @@ jobs:
       - name: Create specialists pages
         run: python create-specialists-pages.py
  
+      - name: Create projects pages
+        run: python create-projects-pages.py
+ 
       - name: Build
         run: hugo --minify
 
