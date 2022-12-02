@@ -934,6 +934,9 @@ p {
 .w-full {
   width: 100%;
 }
+.max-w-\[70\%\] {
+  max-width: 70%;
+}
 .max-w-\[90\%\] {
   max-width: 90%;
 }
@@ -1720,8 +1723,16 @@ footer  a {
     margin-top: 0px;
   }
 
+  .md\:block {
+    display: block;
+  }
+
   .md\:grid {
     display: grid;
+  }
+
+  .md\:hidden {
+    display: none;
   }
 
   .md\:w-2\/3 {

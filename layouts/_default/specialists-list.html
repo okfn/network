@@ -139,8 +139,9 @@
   const specialistInfoTemplate = (specialist) => `
     <div id="info-dialog" class="md:col-span-3 md:col-start-2 bg-white rounded-[8px] border-4 border-[#00D1FF] p-10">
       <div class="grid md:grid-cols-3">
-        <div class="md:col-span-1 pr-10">
+        <div class="md:col-span-1 pr-10 relative">
           <img src="{{ .Site.BaseURL }}images/directory/${specialist.pic}">
+          <img class="absolute right-0 top-0 md:hidden" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
           <div class="mt-10 text-2xl text-left font-bold">
             ${specialist.name}
           </div>
@@ -167,7 +168,7 @@
           <mark class="specialist">
           Bio
           </mark>
-          <img class="float-right" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
+          <img class="float-right md:block hidden" src="{{ .Site.BaseURL }}images/close.png" onclick="closeDialog()">
         </div>
         <div class="text-left">
         ${specialist.description}
