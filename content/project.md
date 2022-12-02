@@ -10,4 +10,9 @@ learn_more_description: We enable people to take action to achieve local impact,
 type: project
 bodyClasses: project-body
 layout: projects-list
+og_url: "https://network.okfn.org/project/"
+og_title: "OKFN Network - Project Repository"
+og_description: "The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge."
+og_image: "https://network.okfn.org/images/og/repository_fb.png"
+og_image_tw: "https://network.okfn.org/images/og/repository_tw.png"
 ---

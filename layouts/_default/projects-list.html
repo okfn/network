@@ -2,19 +2,20 @@
 <title>OKFN Network - Project Repository</title>
 <meta name="description" content="The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge.">
 <!-- Facebook Meta Tags -->
-<meta property="og:url" content="https://network.okfn.org/project/">
+<meta property="og:url" content="{{ .Params.og_url }}">
 <meta property="og:type" content="website">
-<meta property="og:title" content="OKFN Network - Project Repository">
-<meta property="og:description" content="The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge.">
-<meta property="og:image" content="https://network.okfn.org/images/og/repository_fb.png">
+<meta property="og:title" content="{{ .Params.og_title }}">
+<meta property="og:description" content="{{ .Params.og_description }}">
+<meta property="og:image" content="{{ .Params.og_image }}">
 
 <!-- Twitter Meta Tags -->
 <meta name="twitter:card" content="summary_large_image">
 <meta property="twitter:domain" content="network.okfn.org">
-<meta property="twitter:url" content="https://network.okfn.org/project/">
-<meta name="twitter:title" content="OKFN Network - Project Repository">
-<meta name="twitter:description" content="The Open Knowledge Network uses advocacy, technology and training to unlock information, to create and share knowledge.">
-<meta name="twitter:image" content="https://network.okfn.org/images/og/repository_tw.png">
+<meta property="twitter:url" content="{{ .Params.og_url }}">
+<meta name="twitter:title" content="{{ .Params.og_title }}">
+<meta name="twitter:description" content="{{ .Params.og_description }}">
+<meta name="twitter:image" content="{{ .Params.og_image }}">
+
 {{ end }}
 
 {{ define "main" }}
@@ -94,6 +95,7 @@
              "language": {{ index . 6 }},  
              "logo": {{ index . 8 }},
              "organization": {{ index . 0 }},
+             "url": {{ index . 9 }}
              },
           {{ end }}
    ]
@@ -188,11 +190,25 @@
     projectInfo.style.visibility = "hidden"  
     if (lastScroll != 0)
         window.scrollTo({top: lastScroll})
+
+    let stateObj = {
+      'Title': 'OKFN Project Repository',
+      'Url': '/project/'
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+    if (lastScroll != 0)
+        window.scrollTo({top: lastScroll})
   }
 
   function openProject(projectNumber) {
     projectInfo.style.visibility = "visible"  
     projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+    let stateObj = {
+      'Title': 'OKFN Project Repository - ' + projects[projectNumber]['name'],
+      'Url': '/project/' + projects[projectNumber]['url']
+    }
+    window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
+
     lastScroll = window.scrollY
     document.getElementById('project-info').scrollIntoView()
     document.getElementById('info-dialog').classList.add('show-dialog')
@@ -359,6 +375,16 @@
   configureFilterButton('language')
 
   displayProjects(projects)
+
+  let locationPath = window.location.pathname.split('/')
+
+  if (locationPath.length > 2) {
+    let projectURL = locationPath[2]
+    let projectIndex = projects.findIndex((s) => s.url == projectURL)
+    if (projectIndex >= 0) 
+      openProject(projectIndex)
+  }
+
 
 </script>
 
