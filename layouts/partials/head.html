@@ -9,4 +9,5 @@
 {{ else }}
   {{ $styles := $styles | minify | fingerprint | resources.PostProcess }}
   <link rel="stylesheet" href="{{ $styles.RelPermalink }}" integrity="{{ $styles.Data.Integrity }}"/>
+  <script defer data-domain="network.okfn.org" src="https://plausible.io/js/script.js"></script>
 {{ end }}
