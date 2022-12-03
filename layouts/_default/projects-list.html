@@ -74,6 +74,8 @@
 
   let lastScroll = 0
 
+  let currentOpenFilter = ''
+
   function shuffleArray(arr) {
     for (let i = arr.length - 1; i > 0; i--) {
       const j = Math.floor(Math.random() * (i + 1));
@@ -232,7 +234,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" class="checkmark" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" class="checkmark filter-item" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -347,6 +349,8 @@
     }
   }
 
+
+
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
@@ -356,10 +360,14 @@
       if (!filterSelector.classList.contains('visible')) {
         filterSelector.classList.remove('collapse')
         filterSelector.classList.add('visible')
+        currentOpenFilter = filterName
+        console.log('open', filterName)
       } else {
         filterSelector.classList.remove('visible')
         filterSelector.classList.add('collapse')
- 
+        currentOpenFilter = ''
+        console.log('close', filterName)
+
       }
 
       for (var f of filterNames) {
@@ -386,6 +394,15 @@
       openProject(projectIndex)
   }
 
+  window.onclick = (evt) => {
+    if (evt) {
+      if (currentOpenFilter !== '' && !(evt.target.classList.contains('checkbox-label') || evt.target.classList.contains('filter-button') || evt.target.classList.contains('filter-item') ||  evt.target.classList.contains('filter-selector'))) {
+          console.log(`#${currentOpenFilter}-filter > button`)
+        let filterButton = document.querySelector(`#${currentOpenFilter}-filter > button`) 
+        filterButton.dispatchEvent(new Event('click'))
+      }
+    }
+  }
 
 </script>
 
