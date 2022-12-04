@@ -437,3 +437,11 @@ footer  a {
   border-width: 3px;
   border-color: #FF80DB;
 }
+
+button.specialist.open {
+  border-color: #FF80DB;
+}
+
+button.project.open {
+  border-color: #AEFFEC;
+}

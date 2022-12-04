@@ -304,15 +304,22 @@
   }
 
   function clickCheckbox(element, filterName) {
-      let filterButton = document.querySelector(`#${filterName}-filter > button > span`) 
+      let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
+      let filterButton = document.querySelector(`#${filterName}-filter > button`) 
 
       if (element.checked) {
         filters[filterName].push(element.value)
-        filterButton.innerText = ' ' +filters[filterName].join(', ')
+        filterButtonSpan.innerText = ' ' +filters[filterName].join(', ')
       } else {
         let fIndex = filters[filterName].findIndex((f) => f === element.value)  
         filters[filterName].splice(fIndex, 1)
-        filterButton.innerText = ' ' + filters[filterName].join(', ')
+        filterButtonSpan.innerText = ' ' + filters[filterName].join(', ')
+      }
+
+      if (filters[filterName].length == 0) {
+        filterButton.classList.remove('open')
+      } else {
+        filterButton.classList.add('open')
       }
       displayProjects(filterProjects(projects))
   }
@@ -335,22 +342,6 @@
     c.onchange = () => { clickCheckbox(c, 'language') }
   }
 
-
-
-  function openFilter(filterName) {
-    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
-    filterButton.onclick = () => {
-      if (filterSelector.style.display !== 'block') {
-        filterSelector.style.display = 'block'
-      } else {
-        filterSelector.style.display = ''
-      }
-      categorySelector.style.display = ''
-    }
-  }
-
-
-
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
@@ -361,18 +352,17 @@
         filterSelector.classList.remove('collapse')
         filterSelector.classList.add('visible')
         currentOpenFilter = filterName
-        console.log('open', filterName)
+
       } else {
         filterSelector.classList.remove('visible')
         filterSelector.classList.add('collapse')
         currentOpenFilter = ''
-        console.log('close', filterName)
-
       }
 
       for (var f of filterNames) {
-          if (f !== filterName) {
+          if (f != filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+            filterSelector.classList.remove('visible')
             filterSelector.classList.add('collapse')
           }
       }
@@ -395,11 +385,21 @@
   }
 
   window.onclick = (evt) => {
+    let filterNames = Object.keys(filters)
+
     if (evt) {
-      if (currentOpenFilter !== '' && !(evt.target.classList.contains('checkbox-label') || evt.target.classList.contains('filter-button') || evt.target.classList.contains('filter-item') ||  evt.target.classList.contains('filter-selector'))) {
-          console.log(`#${currentOpenFilter}-filter > button`)
-        let filterButton = document.querySelector(`#${currentOpenFilter}-filter > button`) 
-        filterButton.dispatchEvent(new Event('click'))
+      if (currentOpenFilter !== '' && 
+          !(evt.target.classList.contains('filter-button') ||
+            evt.target.parentElement.classList.contains('filter-button') ||
+            evt.target.classList.contains('checkbox-label') ||
+            evt.target.classList.contains('filter-item') ||
+            evt.target.classList.contains('filter-selector'))) {
+            for (var f of filterNames) {
+              let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+              filterSelector.classList.remove('visible')
+              filterSelector.classList.add('collapse')
+              currentOpenFilter = ''
+            } 
       }
     }
   }

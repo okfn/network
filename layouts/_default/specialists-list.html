@@ -72,6 +72,7 @@
       language: []
   }
 
+  let currentOpenFilter = ''
   let lastScroll = 0
 
   function shuffleArray(arr) {
@@ -252,7 +253,7 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="specialist-checkbox-label text-sm block w-full"><input class="specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let checkbox = `<label class="checkbox-label specialist-checkbox-label text-sm block w-full"><input class="filter-item specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -322,15 +323,22 @@
   }
 
   function clickCheckbox(element, filterName) {
-      let filterButton = document.querySelector(`#${filterName}-filter > button > span`) 
+      let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
+      let filterButton = document.querySelector(`#${filterName}-filter > button`) 
 
       if (element.checked) {
         filters[filterName].push(element.value)
-        filterButton.innerText = ' ' +filters[filterName].join(', ')
+        filterButtonSpan.innerText = ' ' +filters[filterName].join(', ')
       } else {
         let fIndex = filters[filterName].findIndex((f) => f === element.value)  
         filters[filterName].splice(fIndex, 1)
-        filterButton.innerText = ' ' + filters[filterName].join(', ')
+        filterButtonSpan.innerText = ' ' + filters[filterName].join(', ')
+      }
+
+      if (filters[filterName].length == 0) {
+        filterButton.classList.remove('open')
+      } else {
+        filterButton.classList.add('open')
       }
       displaySpecialists(filterSpecialists(specialists))
   }
@@ -353,24 +361,6 @@
     c.onchange = () => { clickCheckbox(c, 'language') }
   }
 
-
-  function openFilter(filterName) {
-    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
-    let filterSelector = document.getElementsByClassName(`${filterName}-selector`)[0]
-
-    filterButton.onclick = () => {
-      if (filterSelector.style.visibility !== 'collapse') {
-        filterSelector.classList.remove('visible')
-        filterSelector.classList.add('collapse')
-      } else {
-        filterSelector.classList.remove('collapse')
-        filterSelector.classList.add('visible')
- 
-      }
-    }
-  }
-
-
   function configureFilterButton(filterName) {
     let filterNames = Object.keys(filters)
     let filterButton = document.querySelector(`#${filterName}-filter > button`) 
@@ -380,15 +370,17 @@
       if (!filterSelector.classList.contains('visible')) {
         filterSelector.classList.remove('collapse')
         filterSelector.classList.add('visible')
+        currentOpenFilter = filterName
       } else {
         filterSelector.classList.remove('visible')
         filterSelector.classList.add('collapse')
- 
+        currentOpenFilter = ''
       }
 
       for (var f of filterNames) {
           if (f !== filterName) {
             let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+            filterSelector.classList.remove('visible')
             filterSelector.classList.add('collapse')
           }
       }
@@ -408,6 +400,26 @@
     let specialistIndex = specialists.findIndex((s) => s.url == specialistURL)
     if (specialistIndex >= 0) 
       openSpecialist(specialistIndex)
+  }
+
+  window.onclick = (evt) => {
+    let filterNames = Object.keys(filters)
+
+    if (evt) {
+      if (currentOpenFilter !== '' && 
+          !(evt.target.classList.contains('filter-button') ||
+            evt.target.parentElement.classList.contains('filter-button') ||
+            evt.target.classList.contains('checkbox-label') ||
+            evt.target.classList.contains('filter-item') ||
+            evt.target.classList.contains('filter-selector'))) {
+            for (var f of filterNames) {
+              let filterSelector = document.getElementsByClassName(`${f}-selector`)[0]
+              filterSelector.classList.remove('visible')
+              filterSelector.classList.add('collapse')
+              currentOpenFilter = ''
+            } 
+      }
+    }
   }
 
 </script>
