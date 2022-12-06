@@ -163,6 +163,7 @@
               <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
             </div>
           </div>
+          ${get_info(specialist['website'], specialist['website'], 'globe.png')}
           ${get_info(specialist['github'], 'https://github.com/' + specialist['github'], 'icons8-github.svg')}
           ${get_info(specialist['gitlab'], 'https://gitlab.com/' + specialist['gitlab'], 'icons8-gitlab.svg')}
           ${get_info(specialist['linkedin'], 'https://linkedin.com/in/' + specialist['linkedin'], 'icons8-linkedin-circled.svg')}
