@@ -19,7 +19,7 @@
 {{ end }}
 
 {{ define "main" }}
-<div class="md:fixed mt-[50px] w-full z-[200]">
+<div class=" mt-[50px] w-full z-[200]">
 <div id="specialist-info" class="grid md:grid-cols-5 flex z-[200] absolute place-content-center left-0 top-0 right-0">
 </div>
 </div>
@@ -163,6 +163,10 @@
               <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" target="_blank" href="mailto:${ specialist.email }">${ specialist.email }</a>
             </div>
           </div>
+          ${get_info(specialist['github'], 'https://github.com/' + specialist['github'], 'icons8-github.svg')}
+          ${get_info(specialist['gitlab'], 'https://gitlab.com/' + specialist['gitlab'], 'icons8-gitlab.svg')}
+          ${get_info(specialist['linkedin'], 'https://linkedin.com/in/' + specialist['linkedin'], 'icons8-linkedin-circled.svg')}
+          ${get_info(specialist['twitter'], 'https://twitter.com/' + specialist['twitter'], 'icons8-twitter.svg')}
         </div>
         <div class="md:col-span-2 mt-10 md:mt-0">
         <div class="text-2xl text-left mb-10">
@@ -186,6 +190,21 @@
 
     </div>
     `
+
+  function get_info(field, link, icon) {
+    if (!field) 
+        return ''
+
+    return `<div class="text-left mt-5 grid grid-cols-10">
+            <div class="place-items-center grid h-full">
+              <img  src="{{ .Site.BaseURL }}images/${icon}">
+            </div>
+            <div class="grid h-full col-span-9">
+               <a class="overflow-hidden h-full pl-2 inline text-[#00D1FF] text-ellipsis max-w-[90%]" href="${link}" target="_blank">${link}</a>
+            </div>
+          </div>
+    `
+  }
   
   function getCategories(categories) {
     let categoriesList = categories.split(',')
