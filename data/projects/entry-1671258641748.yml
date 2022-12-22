@@ -1,0 +1,16 @@
+_id: 54025090-7dd4-11ed-a0fe-8fed5d8cc458
+name: Open Climate
+description: >-
+  The Open Climate data-kit has been built to provide journalists’ and
+  researchers’ climate data in readily accessible format. On this platform you
+  can access and download time series data and graphs on : (a) temperature, (b)
+  rainfall, (c) river water flow, (d) cropland, (e) forest, and (f) climate
+  induced disaster. For most components the data covers a time range from
+  1986-2021. Dataful has curated the data from PDF files published by The
+  Bangladesh Bureau of Statistics.
+organisation_email: info@dataful.xyz
+organisation_website: 'https://dataful.xyz'
+country: BD
+languages: Bangla
+link: 'https://dataful.xyz/climate/home'
+date: 1671258641
