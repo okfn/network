@@ -1,0 +1,9 @@
+_id: 9b122380-722f-11ed-a0fe-8fed5d8cc458
+name: dribdat
+description: "An open source (MIT licensed) web application which helps to organize short sprints and hackathons. We use dribdat to run activities based on open licenses (Creative Commons, OdbL, etc.), community-developed templates (School of Data pipeline), and governance instruments (Hack Code of Conduct). \r\n\r\nBuilt around Web-friendly standards like Schema.org and Frictionless Data, dribdat features a collection of bootstraps (authentication, file uploading, data import/export, etc.), useful workflows (announce an event - publish challenges - form teams - develop projects) and channels (social media sharing, digital signage, summary reports). \r\n\r\nDribdat strives in itself to be an example of a hackable project that can be adapted to other needs and causes. It can be used just as a Python-powered backend to aggregate data from GitHub, GitLab and other repositories and fileshares in one place. There is a Vue.js app and a Node.js chatbot available as alternatives to the default Bootstrap user interface, easily customized with a bit of CSS. You can customize the layout and presets in an admin panel, or with YAML configuration files.\r\n\r\nYou can find links to a range of excellent events that have been powered by dribdat at our website and Open Collective. Please don't hesitate to get in touch if you'd like to get help accelerating your work in Open Knowledge."
+organisation_email: dribdat@datalets.ch
+organisation_website: 'https://dribdat.cc'
+country: CH
+languages: 'French, German, Italian, English'
+link: 'https://docs.dribdat.cc'
+date: 1669978431
