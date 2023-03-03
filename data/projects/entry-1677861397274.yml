@@ -1,0 +1,40 @@
+_id: 90ed14b0-b9e1-11ed-a0fe-8fed5d8cc458
+name: Garden State Open Data Index (GSODI)
+description: >-
+  This project has two components: 1) The GSODI report on open data concepts,
+  open data + AI and policy recommendations and 2) The GSODI index portal. The
+  Garden State Open Data Index (GSODI) 2023 report identifies concepts,
+  strategies, principles, and policies to enhance the “availability,
+  accessibility, usability and governance of open data. This is expected to lead
+  to enhanced and accelerated public informatics driven insights, discoveries
+  and value creation.” The GSODI is a mechanism that presents an ‘integrated
+  view’ and rich metadata on the information ecosystem in New Jersey and is
+  globally extensible. The GSODI report provides recommendations for ‘improving
+  the effectiveness and efficiency associated with open data initiatives’ by
+  integrating metadata information on ‘open-data portals and open-data datasets
+  in a cohesive manner’ under a new portal which is expected to be launched in
+  2023. The GSODI is designed to support research, decision making, planning,
+  and reporting efforts and is expected to lead to more efficient
+  insights-generation for an array of constituents across academic, media,
+  governance, professional, social, and political domains. Open data and
+  artificial intelligence (AI) are vital for future value creation. The value of
+  aligning open data with AI development and deployment requirements has been
+  elaborated upon in the Garden State Open Data Index (GSODI) 2023 report. The
+  GSODI research report also provides policy recommendations which can guide the
+  development of open data ecosystems to maximize support for AI systems and
+  applications. The searchable GSODI portal is expected to ‘serve as a
+  complementary and collaborative mechanism to existing open data
+  infrastructure’ and does not intend to host datasets or in any way replace the
+  many open data portals. Instead, it is expected to augment these open data
+  portals and increase the findability of open data. Furthermore, the GSODI
+  framework possesses a simple and flexible indexing framework and can therefore
+  be scaled into a universal open data index to integrate global open data.
+  Future research is expected to focus on scoring and ranking mechanisms along
+  with improved scalability leading to enhanced capabilities for supporting AI
+  research, development, and deployment.
+organisation_email: informatics@ejb.rutgers.edu
+organisation_website: 'https://www.rutgers.edu/'
+country: US
+languages: 'English, others'
+link: 'https://bloustein.rutgers.edu/opendata/'
+date: 1677861397
