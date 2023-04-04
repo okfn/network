@@ -48,8 +48,9 @@
 
       <div class="md:col-start-2 md:col-span-3 text-left mt-12 pb-12 md:pl-10 md:pl-5 md:pr-5 md:pl-0">
         <div class="projects-grid md:grid md:grid-cols-3 grid-cols-1 auto-rows-max">
-          {{ range $.Site.Data.project }}
-          {{ end }}
+        </div>
+        <h2 class="pb-12"> Other projects in the open space </h2>
+        <div class="outside-projects-grid md:grid md:grid-cols-3 grid-cols-1 auto-rows-max">
         </div>
       </div>
     </div>
@@ -97,18 +98,27 @@
              "language": {{ index . 6 }},  
              "logo": {{ index . 8 }},
              "organization": {{ index . 0 }},
-             "url": {{ index . 9 }}
+             "url": {{ index . 9 }},
+             "outside": {{ index . 10 }}
              },
           {{ end }}
    ]
+
+  var outsideProjects = projects.filter((p) => p.outside != '')
+  projects = projects.filter((p) => p.outside == '')
 
   projects = shuffleArray(projects)
   for (var i in projects) {
     projects[i]['project_number'] = i
   }
 
+  outsideProjects = shuffleArray(outsideProjects)
+  for (var i in outsideProjects) {
+    outsideProjects[i]['project_number'] = i
+  }
+
   const projectCardTemplate = (project) => `
- <div class="item md:col-span-1 project-card mx-5 overflow-x-hidden h-full pb-10 mb-10 hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number})">
+ <div class="item md:col-span-1 project-card mx-5 overflow-x-hidden h-full pb-10 mb-10 hover:cursor-pointer text-ellipsis" onclick="openProject(${project.project_number}, '${project.outside}')">
   <div class="project-logo h-1/2 min-h-[50%] pl-10 pr-10 pt-10 pb-5">
     <img class="max-h-[80%]"  src="{{ .Site.BaseURL }}images/logos/${project.logo}"> 
   </div>
@@ -203,12 +213,18 @@
         window.scrollTo({top: lastScroll})
   }
 
-  function openProject(projectNumber) {
+  function openProject(projectNumber, projectOutside) {
+    let project
+    if (projectOutside != '') {
+      project = outsideProjects[projectNumber]
+    } else {
+      project = projects[projectNumber]
+    } 
     projectInfo.style.visibility = "visible"  
-    projectInfo.innerHTML = projectInfoTemplate(projects[projectNumber])
+    projectInfo.innerHTML = projectInfoTemplate(project)
     let stateObj = {
-      'Title': 'OKFN Project Repository - ' + projects[projectNumber]['name'],
-      'Url': '/project/' + projects[projectNumber]['url']
+      'Title': 'OKFN Project Repository - ' + project['name'],
+      'Url': '/project/' + project['url']
     }
     window.history.pushState(stateObj, stateObj.Title, stateObj.Url)
 
@@ -220,17 +236,26 @@
   function displayProjects(projects) {
     let projectsGrid = document.getElementsByClassName('projects-grid')[0]
     projectsGrid.innerHTML = ''
-    for (var pi in projects) {
+    for (var pi in projects['projects']) {
       let projectDiv = document.createElement('div')
       projectDiv.classList.add('mb-10')
-      projectDiv.innerHTML = (projectCardTemplate)(projects[pi])
+      projectDiv.innerHTML = (projectCardTemplate)(projects['projects'][pi])
       projectsGrid.appendChild(projectDiv)
     }
 
     /* Add number os displayed elements */
 
     let resultsNumber = document.getElementById('results')
-    results.innerText = `${projects.length} projects matching your filters`
+    results.innerText = `${projects['projects'].length + projects['outside'].length} projects matching your filters`
+
+    let outsideProjectsGrid = document.getElementsByClassName('outside-projects-grid')[0]
+    outsideProjectsGrid.innerHTML = ''
+    for (var pi in projects['outside']) {
+      let projectDiv = document.createElement('div')
+      projectDiv.classList.add('mb-10')
+      projectDiv.innerHTML = (projectCardTemplate)(projects['outside'][pi])
+      outsideProjectsGrid.appendChild(projectDiv)
+    }
   }
 
   function addCheckbox(element, name, value, label) {
@@ -276,8 +301,8 @@
   }
 
 
-  function filterProjects(projects) {
-    let filteredProjects = []
+  function filterProjects() {
+    let filteredProjects = {'projects': [], 'outside': []}
     let filterNames = Object.keys(filters)
 
     for (var p of projects) {
@@ -297,7 +322,27 @@
         } 
       }
       if (m > 0)
-          filteredProjects.push(p)
+          filteredProjects['projects'].push(p)
+    }
+
+    for (var p of outsideProjects) {
+      let m = 1
+      for (var filterName of filterNames) {
+        if (filters[filterName].length > 0) {
+          for (var f of filters[filterName]) { 
+            if (p[filterName].indexOf(f) >= 0) {
+              m = 1
+              break
+            } else {
+              m = 0
+            }
+          }
+          if (m == 0)
+            break
+        } 
+      }
+      if (m > 0)
+          filteredProjects['outside'].push(p)
     }
 
     return filteredProjects
@@ -321,7 +366,7 @@
       } else {
         filterButton.classList.add('open')
       }
-      displayProjects(filterProjects(projects))
+      displayProjects(filterProjects())
   }
 
   // Configure Category
@@ -373,7 +418,7 @@
   configureFilterButton('category')
   configureFilterButton('language')
 
-  displayProjects(projects)
+  displayProjects({'projects': projects, 'outside': outsideProjects})
 
   let locationPath = window.location.pathname.split('/')
 
