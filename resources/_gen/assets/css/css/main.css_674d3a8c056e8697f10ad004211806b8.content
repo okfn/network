@@ -1682,10 +1682,6 @@ button.project.open {
 
 @media (min-width: 720px) {
 
-  .md\:fixed {
-    position: fixed;
-  }
-
   .md\:col-span-2 {
     grid-column: span 2 / span 2;
   }
