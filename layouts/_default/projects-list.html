@@ -215,11 +215,12 @@
 
   function openProject(projectNumber, projectOutside) {
     let project
-    if (projectOutside != '') {
+    if (projectOutside != '' && projectOutside != undefined) {
       project = outsideProjects[projectNumber]
     } else {
       project = projects[projectNumber]
     } 
+    
     projectInfo.style.visibility = "visible"  
     projectInfo.innerHTML = projectInfoTemplate(project)
     let stateObj = {
@@ -423,8 +424,10 @@
   let locationPath = window.location.pathname.split('/')
 
   if (locationPath.length > 2) {
+    console.log("ENTR")
     let projectURL = locationPath[2]
     let projectIndex = projects.findIndex((s) => s.url == projectURL)
+    console.log(projectIndex)
     if (projectIndex >= 0) 
       openProject(projectIndex)
   }
