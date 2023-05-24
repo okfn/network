@@ -16,7 +16,7 @@ with open('okfn-network-projects.csv', mode = 'r') as file:
         shutil.copy(source, destination)
 
         # Update metadata for project page
-        project_file = open(destination, 'r')
+        project_file = open(source, 'r')
         project_lines = project_file.readlines()
         project_file = open(destination, 'w')
 
