@@ -2,3 +2,8 @@
 public
 resources
 node_modules
+
+# Remove built content
+content/project
+content/specialist
+project_categories.json
