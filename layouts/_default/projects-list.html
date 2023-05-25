@@ -272,13 +272,10 @@
 
   function getFilterChoices(filterChoices, filterName, projects) {
     for (var p of projects) {
-      console.log('PROJECT :' + p['name'])
       for (var r of p[filterName].split(',')) {
-          console.log('Check ' + filterName + ':' + r)
           r = r.trim()
           if (r !== '' && filterChoices.indexOf(r) < 0) {
           filterChoices.push(r)
-          console.log('Push ' + filterName + ':' + r)
         }
       }
     }
