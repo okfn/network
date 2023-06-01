@@ -424,9 +424,8 @@
   let locationPath = window.location.pathname.split('/')
 
   if (locationPath.length > 2) {
-    console.log("ENTR")
     let projectURL = locationPath[2]
-    let projectIndex = projects.findIndex((s) => s.url == projectURL)
+    let projectIndex = all_projects.findIndex((s) => s.url == projectURL)
     console.log(projectIndex)
     if (projectIndex >= 0) 
       openProject(projectIndex)
