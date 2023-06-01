@@ -425,10 +425,14 @@
 
   if (locationPath.length > 2) {
     let projectURL = locationPath[2]
-    let projectIndex = all_projects.findIndex((s) => s.url == projectURL)
-    console.log(projectIndex)
+    let project_outside = ''
+    let projectIndex = projects.findIndex((s) => s.url == projectURL)
+    if (projectIndex < 0) {
+      projectIndex = outsideProjects.findIndex((s) => s.url == projectURL)
+      project_outside = 'Y'
+    }
     if (projectIndex >= 0) 
-      openProject(projectIndex)
+      openProject(projectIndex, project_outside)
   }
 
   window.onclick = (evt) => {
