@@ -1,0 +1,9 @@
+_id: cabd19d0-4607-11ee-a0fe-8fed5d8cc458
+name: DameGender
+description: "DameGender is a gender detection tool from personal names, but it's much more is a toolkit to research in datafeminism\r\n\r\nA traditional gender detection tool from personal names contains a dictionary of names and gender and commands to use the dictionary. DameGender brings:\r\n- A system to retrieve names from more of 20 statistical offices in the world and Wikidata, too.\r\n- Commands to statistical measurements about quality of datasets retrieved (accuracy, errors, confusion matrixes, ...)\r\n- Commands to count males and females in several contexts (git, news, csv files, mailing lists, ...)\r\n- A simple system to detect ethnicity\r\n- Suporte to standards\r\n- A system to transform dictionaries of names to csv, json, ...\r\n- A system to use, to measure and to improve the machine learning of gender detection tool from personal names\r\n- Much more"
+organisation_email: davidam@gmail.com
+organisation_website: 'https://damegender.davidam.com'
+country: AR
+languages: Español
+link: 'https://github.com/davidam/damegender'
+date: 1693270977
