@@ -73,8 +73,27 @@
       language: []
   }
 
-  let lastScroll = 0
+  let searchParams = new URLSearchParams(window.location.search)
 
+  for (let [param, pvalue] of searchParams.entries()) {
+    let filterValues = pvalue.split(',')
+    filters[param] = filterValues
+  }
+  
+  for (let filterName of Object.keys(filters)) {
+    let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+
+    filterButtonSpan.innerText = ' ' +filters[filterName].join(', ')
+
+    if (filters[filterName].length == 0) {
+      filterButton.classList.remove('open')
+    } else {
+      filterButton.classList.add('open')
+    }
+  }
+
+  let lastScroll = 0
   let currentOpenFilter = ''
 
   function shuffleArray(arr) {
@@ -260,7 +279,10 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" class="checkmark filter-item" name="${name}" value="${value}">  ${label}</input></label>`
+    let isChecked = false
+    if (filters[name].indexOf(value) >= 0)
+      isChecked = true
+    let checkbox = `<label class="checkbox-label text-sm block w-full pb-2"><input type="checkbox" ${isChecked?'checked ':''}class="checkmark filter-item" name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -347,6 +369,17 @@
     }
 
     return filteredProjects
+  } 
+
+  function updateSearch() {
+    let newSearch = ''
+    for (let f in filters) {
+      if (filters[f].length > 0) {
+        newSearch += (newSearch != '')?'&':''
+        newSearch += `${f}=${filters[f]}`
+      }
+    }
+    return newSearch
   }
 
   function clickCheckbox(element, filterName) {
@@ -367,6 +400,13 @@
       } else {
         filterButton.classList.add('open')
       }
+
+      let newSearch = updateSearch()
+      if (newSearch !== '')
+        newSearch = '?' + newSearch
+      
+      history.replaceState({},'', window.location.pathname + newSearch)
+
       displayProjects(filterProjects())
   }
 
@@ -419,7 +459,9 @@
   configureFilterButton('category')
   configureFilterButton('language')
 
-  displayProjects({'projects': projects, 'outside': outsideProjects})
+  // displayProjects({'projects': projects, 'outside': outsideProjects})
+
+  displayProjects(filterProjects())
 
   let locationPath = window.location.pathname.split('/')
 

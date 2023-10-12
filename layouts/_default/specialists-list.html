@@ -72,6 +72,26 @@
       language: []
   }
 
+  let searchParams = new URLSearchParams(window.location.search)
+
+  for (let [param, pvalue] of searchParams.entries()) {
+    let filterValues = pvalue.split(',')
+    filters[param] = filterValues
+  }
+  
+  for (let filterName of Object.keys(filters)) {
+    let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
+    let filterButton = document.querySelector(`#${filterName}-filter > button`) 
+
+    filterButtonSpan.innerText = ' ' +filters[filterName].join(', ')
+
+    if (filters[filterName].length == 0) {
+      filterButton.classList.remove('open')
+    } else {
+      filterButton.classList.add('open')
+    }
+  }
+
   let currentOpenFilter = ''
   let lastScroll = 0
 
@@ -273,7 +293,10 @@
   }
 
   function addCheckbox(element, name, value, label) {
-    let checkbox = `<label class="checkbox-label specialist-checkbox-label text-sm block w-full"><input class="filter-item specialist-checkmark" type="checkbox" name="${name}" value="${value}">  ${label}</input></label>`
+    let isChecked = false
+    if (filters[name].indexOf(value) >= 0)
+      isChecked = true
+    let checkbox = `<label class="checkbox-label specialist-checkbox-label text-sm block w-full"><input class="filter-item specialist-checkmark" type="checkbox" ${isChecked?'checked ':''} name="${name}" value="${value}">  ${label}</input></label>`
     let checkboxDom = document.createElement('div')
     checkboxDom.innerHTML = checkbox
     element.appendChild(checkboxDom)
@@ -342,6 +365,17 @@
     return filteredSpecialists
   }
 
+  function updateSearch() {
+    let newSearch = ''
+    for (let f in filters) {
+      if (filters[f].length > 0) {
+        newSearch += (newSearch != '')?'&':''
+        newSearch += `${f}=${filters[f]}`
+      }
+    }
+    return newSearch
+  }
+
   function clickCheckbox(element, filterName) {
       let filterButtonSpan = document.querySelector(`#${filterName}-filter > button > span`) 
       let filterButton = document.querySelector(`#${filterName}-filter > button`) 
@@ -360,6 +394,13 @@
       } else {
         filterButton.classList.add('open')
       }
+
+      let newSearch = updateSearch()
+      if (newSearch !== '')
+        newSearch = '?' + newSearch
+      
+      history.replaceState({},'', window.location.pathname + newSearch)
+
       displaySpecialists(filterSpecialists(specialists))
   }
 
@@ -411,7 +452,7 @@
   configureFilterButton('category')
   configureFilterButton('language')
 
-  displaySpecialists(specialists)
+  displaySpecialists(filterSpecialists(specialists))
 
   let locationPath = window.location.pathname.split('/')
 
