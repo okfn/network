@@ -1,0 +1,9 @@
+_id: 87923bc0-7336-11ee-a0fe-8fed5d8cc458
+name: Electoral Data Preservation Standard
+description: "The Electoral Data Preservation Standard defines formats, fields, and usage conventions that apply to national election results, managed by Dirección Nacional Electoral (DINE).\r\n\r\nGoals:\r\n1) Define the definitive storage format for electoral data in order to preserve the information in a standard, simple way, with easy access and processing.\r\n2) Define the format for the delivery of provisional data from the National Elections.\r\n\r\nThis project begins from the need to organize and standardize the provisional electoral data of the DINE\r\n* Stored scattered\r\n* Different resources, different technologies\r\n* Binary formats from different eras"
+organisation_email: soportedine@mininterior.gob.ar
+organisation_website: 'https://www.argentina.gob.ar/dine'
+country: AR
+languages: 'English, Spanish'
+link: 'https://resultados.mininterior.gob.ar/desarrollo'
+date: 1698238853
