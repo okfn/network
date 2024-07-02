@@ -1,0 +1,20 @@
+_id: 8da1e6f0-38a2-11ef-a0fe-8fed5d8cc458
+name: Decidim
+description: >-
+  Decidim is a Free Open-Source participatory democracy platform for cities and
+  organizations. It is used for designing, building and running participatory
+  processes, including voting. Decidim has been translated by the open source
+  community into 55 languages. The software and the project Decidim is steered
+  by its community at MetaDecidim (meta.decidim.org). It has been implemented by
+  450 entities in the 5 continents, with instances as small as a neighbors
+  association, and as big as the European Union or the country of Brazil,
+  reaching 3 million people. Decidim has a native elections component
+  (https://docs.decidim.org/bulletin-board/admin/introduction) and in 2023
+  partnered with Vocdoni to offer blockhain voting
+  (https://democracy-technologies.org/voting/decidim-partners-with-vocdoni-to-offer-blockchain-voting/)
+organisation_email: hola@decidim.org
+organisation_website: decidim.org
+country: ES
+languages: 'Spanish, Catalan, English, French'
+link: 'https://github.com/decidim/decidim'
+date: 1719945628
