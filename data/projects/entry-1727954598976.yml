@@ -1,0 +1,9 @@
+_id: e3ede7a0-8179-11ef-a0fe-8fed5d8cc458
+name: Murmurations Protocol
+description: "Murmurations is a distributed data sharing protocol to facilitate collaboration at scale.\r\n\r\nMurmurations  provides a way to share information about all kinds of data objects regardless of data type or ontology. Instead of trying to enforce any particular ontology, Murmurations applies the principles of composability to enable data holders to share data using existing ontologies, or to build on other’s work, to liberate the potential of open data sharing across platforms and networks. \r\n\r\nThe flexible approach to ontology is built around an open-source field library, to which anyone can contribute new fields. These fields are assembled into schemas, which anyone can use, or build on, to create new schemas. Whenever fields are re-used, data which is shared using these fields becomes interoperable, increasing the total value of the data in the network."
+organisation_email: 'https://murmurations.network/contact/'
+organisation_website: 'https://murmurations.network'
+country: GB
+languages: 'English, French'
+link: 'https://murmurations.network'
+date: 1727954598
