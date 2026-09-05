@@ -1,0 +1,9 @@
+_id: c4b44a80-1d38-11f1-a0fe-8fed5d8cc458
+name: Global Healthsites Mapping Project
+description: "Accurate health facility data is a critical yet chronically unreliable resource, undermining health\r\nsystem functions from routine care to emergency response. healthsites.io addresses this challenge by building a collaborative, open-data ecosystem anchored on OpenStreetMap. This strategy invites governments, NGOs, funders, and private sector stakeholders to share and maintain health facility data within a reciprocal system.\r\nhealthsites.io is driving the data validation process through the Emergency Health mapping\r\ncampaign. Our roadmap centres on developing a Location Validation Index (LVI) to score data\r\nquality and prioritise validation efforts, and a tiered API subscription model to ensure sustainable platform funding. In the meantime, the healthsites.io API is available today as a free, open service.\r\nBy supporting Emergency Health Mapping Campaigns and engaging as a data partner now,\r\norganisations directly enable the development of these capabilities while gaining access to a\r\ngrowing validated global baseline.\r\nThis creates a sustainable multiplier effect: all participants benefit from a shared resource that is more accurate, comprehensive, and impactful than any single organisation could achieve alone. It presents a well-governed working space for the application of AI and the supporting social licence.\r\nCrucially, it provides Ministries of Health with a practical model to justify investment in open,\r\ninteroperable data to their Ministries of Finance , transforming health facility data from a recurring project cost into a permanently maintained national infrastructure asset."
+organisation_email: sharehealthdata@healthsites.io
+organisation_website: 'https://healthsites.io'
+country: NL
+languages: 'English, German, Afrikaans'
+link: 'https://wiki.openstreetmap.org/wiki/Global_Healthsites_Mapping_Project'
+date: 1773226508
