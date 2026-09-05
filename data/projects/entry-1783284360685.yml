@@ -1,0 +1,18 @@
+_id: 87cc6ff0-78b2-11f1-a0fe-8fed5d8cc458
+name: Mapa de Transparencia del Estado Argentino
+description: >-
+  An independent academic civic tech initiative that monitors the Executive,
+  Legislative, and Judicial branches of the Argentine government in real time.
+  Powered by Explainable AI (XAI) and advanced data analytics, the platform
+  cross-references official open public data to analyze procurement contracts,
+  track over 1,100 public officials, and continuously calculate an Institutional
+  Risk Index (IRI) to expose systemic irregularities. Built entirely on
+  open-source technology, it provides an interactive visual dashboard and a
+  freely available public API to democratize access to institutional
+  transparency.
+organisation_email: viny01958@gmail.com
+organisation_website: 'https://viny2030comar-production.up.railway.app/'
+country: AR
+languages: 'english, spanish'
+link: 'https://mapatransparencia-production.up.railway.app/'
+date: 1783284360
