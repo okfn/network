@@ -1,0 +1,31 @@
+_id: 47d254f0-40aa-11f0-a0fe-8fed5d8cc458
+name: A high-resolution model of the magnetic field  induced by the Gulf Stream
+description: >-
+  A 0.08° resolution model of the magnetic field induced by the Gulf Stream is
+  presented. The model is based on the equation for the vertically integrated
+  electric current stream function and is forced by HYCOM velocity fields of the
+  same resolution.  As a first step, magnitudes of the induced magnetic field
+  were estimated using direct velocity measurements from 12 moorings in the
+  northwestern Atlantic. The goal of this analysis was to determine the expected
+  order of magnitude for the model results. The estimated magnitudes ranged from
+  20 to 130 nT.  Next, the model was run using twelve daily mean velocity fields
+  representing the middle of each month from July 2017 to May 2018. The largest
+  observed magnitude was 247 nT. To identify the sources of the induced electric
+  current, the forcing term on the right-hand side of the governing equation was
+  decomposed into two components representing distinct sources of horizontal
+  electric currents: (1) the intensity of water transport and (2) the spatial
+  gradients of water transport. The analysis revealed that the second source
+  contributes, on average, 92% of the induced current, demonstrating its
+  overwhelming dominance over the contribution from water transport.  An
+  analysis of the temporal variability of the induced magnetic field showed,
+  first, a seemingly random distribution of the locations of maximum magnitudes
+  within the domain, following the areas with the steepest spatial gradients in
+  water transport and, second, a strong correlation (0.87) between the
+  domain-wide maximum field magnitude and the average kinetic energy over the
+  domain.
+organisation_email: golubev.yury@gmail.com
+organisation_website: Advanced Marine Systems
+country: US
+languages: English
+link: N/A
+date: 1748976054
