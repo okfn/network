@@ -1,0 +1,9 @@
+_id: 730cf750-dfbc-11ef-a0fe-8fed5d8cc458
+name: Matilda
+description: "Matilda is a bibliographic open science platform based on open data and open-source software. It delivers services like citation tracking, author tracking, and complex search in a shareable and reusable way on a corpus of 143M works, updated daily with the freshest science content in the most inclusive possible way.  It is continuously available to all at the following url: https://matilda.science/?l=en \r\n\r\nAcademic texts have been liberated through open access. Data, software and protocols have been integrated into open science. However, the fundamental building block of text metadata has remained closed, and bibliometrics and bibliographic research have relied heavily on closed tools. Those with the most resources rely on commercial paying tools such as the Web of Science or Scopus, while others use Google Scholar, which is certainly free but is not based on open data and limits users' possibilities. Matilda is a platform released in September 2023 that enables open bibliographic research, in its sources, enrichments and results. It is part of the approach initiated by the initiative for open citations (I4OC) and now pursued by the Barcelona Declaration on Open Research Information."
+organisation_email: matilda_biblio@proton.me
+organisation_website: 'https://www.cnrs.fr/en'
+country: FR
+languages: 'French, English'
+link: 'https://matilda.science/?l=en'
+date: 1738318595
