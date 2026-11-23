@@ -124,7 +124,7 @@
              "organization": {{ index . 3 }},
              "pic_blend": {{ index . 9 }},
              "url": {{ index . 10 }},
-             "background_position": {{ index . 11 }} // TODO: Deprecated in favour of always background-position: center. Clean.
+             "background_position": {{ index . 11 }} // TODO: Deprecated in favour of always background-size: contain. Clean.
              },
           {{ end }}
    ]
@@ -145,7 +145,7 @@
 
   const specialistCardTemplate = (specialist) => `
           <div class="md:col-span-1 specialist-card mx-5 pb-10 mb-10 overflow-hidden h-[92%] rhover:cursor-pointer text-ellipsis" onclick="openSpecialist(${specialist.specialist_number})">
- <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}'); background-position-y: center"> 
+ <div class="${specialist.pic_blend} specialist-pic object-cover" style="background-image: url('{{ .Site.BaseURL }}images/directory/${specialist.pic}'); background-size: contain"> 
               <!--<img class="object-cover w-full" src="{{ .Site.BaseURL }}images/specialist.png"> -->
             </div>
             <div id="specialist-name" class="font-bold font-miriam px-10 pt-10 text-2xl leading-none overflow-hidden text-ellipsis">
