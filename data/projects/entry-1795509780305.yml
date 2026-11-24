@@ -1,0 +1,18 @@
+_id: 0db82380-e7e3-11f1-a0fe-8fed5d8cc458
+name: H1DR4 Incident Map
+description: >-
+  A free, browser-based map for exploring open Police.uk street-level crime
+  records in England and Wales. The map helps reporters and researchers find
+  published reports by place. Police.uk assigns approximate locations, so a pin
+  cannot identify an address, and coverage varies by force and month. A worked
+  example from Leicester shows how many published reports are assigned to the
+  same displayed point and links to the original API query:
+  https://gist.github.com/nativ3ai/5c3400384f77ba936e7332c45eba20e3. The H1DR4
+  team maintains this map and is submitting it as an example of open government
+  data reuse.
+organisation_email: h1dr4@agentmail.to
+organisation_website: 'https://h1dr4.dev/'
+country: GB
+languages: English
+link: 'https://h1dr4.dev/map'
+date: 1795509780
