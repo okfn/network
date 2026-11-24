@@ -1,0 +1,18 @@
+_id: eeb8f6b0-945b-11f1-a0fe-8fed5d8cc458
+name: VisaAdvisor Country Hub
+description: >-
+  VisaAdvisor Country Hub is an open, versioned travel-intelligence project that
+  separates source-backed facts from editorial planning judgments. The public
+  foundation pre-release links records to dated evidence, publishes its
+  methodology and limitations, and provides reusable CSV and JSON files under CC
+  BY 4.0 for the original compilation, structure and documentation. Developed
+  from Brazil for global and Arabic-speaking travellers, researchers and
+  publishers, its current scope includes 12 South America planning profiles and
+  a public field-evidence model. It is a foundation release, not a complete
+  global database. DOI: https://doi.org/10.5281/zenodo.21858354
+organisation_email: help@visaadvisor.ai
+organisation_website: 'https://visaadvisor.ai/'
+country: BR
+languages: 'Arabic, English, Portuguese'
+link: 'https://visaadvisor.ai/country-hub/'
+date: 1786325799
