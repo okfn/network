@@ -1,0 +1,17 @@
+_id: 21726350-e931-11f1-a0fe-8fed5d8cc458
+name: Vienna Building Logbook Checker (Wiener Bauwerksbuch-Pflicht-Check)
+description: >-
+  A free German-language web tool that turns open municipal building data into
+  an address-based first check for people responsible for buildings in Vienna.
+  It brings together City of Vienna open building data, the BEV cadastre and the
+  Federal Monuments Office register, and displays historical city maps for
+  context. Visitors can explore a building’s approximate period, monument status
+  and indicative building-logbook deadline without an account. It is
+  independently published by a Vienna building consultancy, not by the City of
+  Vienna, and does not replace official records or advice.
+organisation_email: info@dein-bauwerksbuch.wien
+organisation_website: 'https://dein-bauwerksbuch.wien/'
+country: AT
+languages: German
+link: 'https://dein-bauwerksbuch.wien/bauwerksbuch-check.html'
+date: 1795653265
